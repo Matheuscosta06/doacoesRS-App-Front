@@ -1,7 +1,7 @@
-import "react-native-gesture-handler";
-
-import Routes from "./src/routes/index";
-
+import { useContext } from "react";
+import { AuthContext } from "./src/contexts/AuthContext";
 export default function App() {
-  return <Routes />;
+  const { user } = useContext(AuthContext);
+  return user ? <PrivateTab /> : <PublicTab />
+
 }
