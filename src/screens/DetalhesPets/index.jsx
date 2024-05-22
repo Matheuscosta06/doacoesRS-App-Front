@@ -11,8 +11,17 @@ export default function DetalhesPets() {
     >
         <View style={styles.tituloContainer}>
             <Text style={styles.primeiraLetra}>P</Text>
-            <Text style={styles.titulo1}>ets</Text>
+            <Text style={styles.titulo1}>ETS</Text>
         </View>
+
+        <View style={styles.linhaLaranja} />
+
+        <View style={styles.subtitulocontainer}>
+            <Text style={styles.subtitulo}>DOAÇÕES</Text>
+        </View>
+
+        <View style={styles.linhaLaranja2} />
+
     </LinearGradient>
     );
 }
