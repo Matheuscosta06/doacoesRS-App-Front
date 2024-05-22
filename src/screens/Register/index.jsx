@@ -6,14 +6,14 @@ import axios from "axios";
 import { AuthContext } from '../../contexts/AuthContext';
 
 export default function Register() {
-    const { teste } = useContext(AuthContext)
+    const { creationUser } = useContext(AuthContext)
 
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
 
     const handleRegister = async () => {
-        await teste();
+        await creationUser(name, email, password);
     }   
     return (
         <View style={styles.Maincontainer}>
