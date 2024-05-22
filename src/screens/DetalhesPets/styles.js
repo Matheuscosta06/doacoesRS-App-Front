@@ -7,9 +7,6 @@ const styles = StyleSheet.create({
     },
   tituloContainer:{
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 50,
   },
 });
 
