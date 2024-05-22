@@ -4,6 +4,7 @@ import { StatusBar } from "expo-status-bar";
 
 import Login from "../screens/Login";
 import Register from "../screens/Register";
+import DetalhesPets from "../screens/DetalhesPets";
 
 const Tab = createBottomTabNavigator();
 
@@ -15,6 +16,7 @@ const PublicTab = () => {
       }}>
         <Tab.Screen name="Login" component={Login} />
         <Tab.Screen name="Register" component={Register} />
+        <Tab.Screen name="DetalhesPets" component={DetalhesPets} />
 
 
       </Tab.Navigator>
