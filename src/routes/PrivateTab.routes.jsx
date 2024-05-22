@@ -29,7 +29,7 @@ const PrivateTab = () => {
                 color={focused ? "#4B6584" : "#b9c3cd"} />
             ),
             tabBarLabel: ({ focused, color }) => (
-              <Text style={{ color, fontFamily: 'Poppins_500Medium', fontSize: 13 }}>Produtos</Text>
+              <Text style={{ color, fontSize: 13 }}>Produtos</Text>
             ),
             tabBarActiveTintColor: "#4B6584",
             tabBarInactiveTintColor: "#b9c3cd",
@@ -45,7 +45,7 @@ const PrivateTab = () => {
                 color={focused ? "#4B6584" : "#b9c3cd"} />
             ),
             tabBarLabel: ({ focused, color }) => (
-              <Text style={{ color, fontFamily: 'Poppins_500Medium', fontSize: 13 }}>Carrinho</Text>
+              <Text style={{ color, fontSize: 13 }}>Carrinho</Text>
             ),
             tabBarActiveTintColor: "#4B6584",
             tabBarInactiveTintColor: "#b9c3cd",
