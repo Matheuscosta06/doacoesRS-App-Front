@@ -2,8 +2,10 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Title from '../../components/Title';
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Login() {
+  const navigation = useNavigation();
   return (
     <View style={styles.containerApp}>
       <View style={styles.container}>
@@ -26,7 +28,7 @@ export default function Login() {
           <TouchableOpacity style={styles.button}>
             <Text style={styles.txt}>Entrar</Text>
           </TouchableOpacity>
-          <Text style={styles.txtNeedAcc}>Não tem uma conta? <Text style={styles.yellow}>Crie!</Text></Text>
+          <Text style={styles.txtNeedAcc}>Não tem uma conta? <TouchableOpacity onPress={() => navigation.navigate(`Register`)}><Text style={styles.yellow}>Crie!</Text></TouchableOpacity></Text>
         </View>
       </View>
     </View>
