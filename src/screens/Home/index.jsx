@@ -19,14 +19,25 @@ export default function Home() {
         <Text style={styles.title01}>Rio Grande do Sul</Text>
         </View>
 
+        <View style={styles.btnHeader}>
         <TouchableOpacity
           onPress={() => navigation.navigate("Home")}
           style={styles.button}
         >
           <Text style={styles.buttonText}>Doe Agora</Text>
         </TouchableOpacity>
+        </View>
+
 
       </View>
+
+      <View style={styles.phrase}>
+      <Text style={styles.phrase0}>Seu gesto, nossa força:</Text>
+      <Text style={styles.phrase01}>doar hoje, construir amanhã.</Text>
+      </View>
+
+      
+      
     </ScrollView>
   )
 }

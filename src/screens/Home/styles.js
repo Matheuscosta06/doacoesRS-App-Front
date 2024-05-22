@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { Button } from "react-native-web";
+
 
 const styles = StyleSheet.create({
   container: {
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   head: {
     backgroundColor: '#283444',
     display: 'flex',
-    height: 450,
+    height: 430,
     borderBottomStartRadius: 50,
     borderBottomEndRadius: 50
   },
@@ -17,15 +17,15 @@ const styles = StyleSheet.create({
     width:350,
     height: 330,
     marginTop: -55,
-    marginLeft: 230
+    marginLeft: 210
   },
   titleHeader:{
-    marginLeft: 20
+    marginLeft: 20,
+    marginTop: -50
   },
   title0: {
     color: '#fff',
     fontSize: 50,
-    marginTop: -30,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -33,12 +33,35 @@ const styles = StyleSheet.create({
     color: '#FFA41B',
     fontSize: 40
   },
+  btnHeader: {
+    alignItems: 'center',
+    marginTop: 55
+  },
   button: {
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: "#FFA41B",
-    alignItems: "center",
     borderRadius: 10,
-  }
+    height: 30,
+    width: 150
+  },
+  buttonText: {
+    color: '#fff'
+  },
+  phrase: {
+    display: 'flex',
+    flexDirection: "column",
+    alignItems: 'center',
+    marginTop: 15
+  },
+  phrase0:{
+    color: '#283444',
+    fontSize: 26
+  },
+  phrase01:{
+    color: '#283444',
+    fontSize: 26
+  },
 });
 
 export default styles;
