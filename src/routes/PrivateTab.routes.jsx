@@ -30,9 +30,7 @@ const PrivateTab = () => {
                 size={24}
                 color={focused ? "#4B6584" : "#b9c3cd"} />
             ),
-            tabBarLabel: ({ focused, color }) => (
-              <Text style={{ color, fontSize: 13 }}>Produtos</Text>
-            ),
+
             tabBarActiveTintColor: "#4B6584",
             tabBarInactiveTintColor: "#b9c3cd",
           }
@@ -45,9 +43,6 @@ const PrivateTab = () => {
                 name="list"
                 size={24}
                 color={focused ? "#4B6584" : "#b9c3cd"} />
-            ),
-            tabBarLabel: ({ focused, color }) => (
-              <Text style={{ color, fontSize: 13 }}>Categoria</Text>
             ),
             tabBarActiveTintColor: "#4B6584",
             tabBarInactiveTintColor: "#b9c3cd",
@@ -62,9 +57,6 @@ const PrivateTab = () => {
                 size={24}
                 color={focused ? "#4B6584" : "#b9c3cd"} />
             ),
-            tabBarLabel: ({ focused, color }) => (
-              <Text style={{ color, fontSize: 13 }}>Presente</Text>
-            ),
             tabBarActiveTintColor: "#4B6584",
             tabBarInactiveTintColor: "#b9c3cd",
           }
@@ -77,9 +69,6 @@ const PrivateTab = () => {
                 name="users"
                 size={24}
                 color={focused ? "#4B6584" : "#b9c3cd"} />
-            ),
-            tabBarLabel: ({ focused, color }) => (
-              <Text style={{ color, fontSize: 13 }}>Sobre</Text>
             ),
             tabBarActiveTintColor: "#4B6584",
             tabBarInactiveTintColor: "#b9c3cd",
