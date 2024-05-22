@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const apiURL = process.env.EXPO_PUBLIC_API_URL;
+  const apiURL = "http://localhost:4000";
   const [user, setUser] = useState('');
   const [acessToken, setAcessToken] = useState('');
   const [globalLoading, setGlobalLoading] = useState(false);
@@ -74,8 +74,24 @@ const AuthProvider = ({ children }) => {
     return response.data.users;
   };
 
+  // const creationUser = async (name, email, password) => {
+  //   setGlobalLoading(true);
+  //   const response = await axios.post(`${apiURL}/users`, {
+  //     name: name,
+  //     email: email,
+  //     password: password
+  //   });
+  //   setGlobalLoading(false);
+  //   return response.data;
+  // };
+
+  const teste = async () => {
+    await axios.get(`${apiURL}/`);
+    console.log('teste');
+  }
+
   return (
-    <AuthContext.Provider value={{ setUser, signIn, getUsers, globalLoading, popUpMessage }}>
+    <AuthContext.Provider value={{ setUser, signIn, getUsers, globalLoading, popUpMessage, teste }}>
       {children}
     </AuthContext.Provider>
   );
