@@ -8,7 +8,7 @@ import Category from "../screens/Category";
 import Sobre from "../screens/Sobre";
 import { Text } from 'react-native';
 import DetalhesPets from "../screens/DetalhesPets";
-
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
