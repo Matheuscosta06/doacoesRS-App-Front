@@ -7,6 +7,7 @@ import Gift from "../screens/Gift";
 import Category from "../screens/Category";
 import Sobre from "../screens/Sobre";
 import { Text } from 'react-native';
+import DetalhesPets from "../screens/DetalhesPets";
 
 
 const Tab = createBottomTabNavigator();
@@ -70,6 +71,23 @@ const PrivateTab = () => {
                 name="users"
                 size={24}
                 color={focused ? "#4B6584" : "#b9c3cd"} />
+            ),
+            tabBarActiveTintColor: "#4B6584",
+            tabBarInactiveTintColor: "#b9c3cd",
+          }
+          }
+        />
+
+        <Tab.Screen name="DetalhesPets" component={DetalhesPets}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="dog"
+                size={24}
+                color={focused ? "#4B6584" : "#b9c3cd"} />
+            ),
+            tabBarLabel: ({ focused, color }) => (
+              <Text style={{ color, fontFamily: 'Poppins_500Medium', fontSize: 13 }}>Pets</Text>
             ),
             tabBarActiveTintColor: "#4B6584",
             tabBarInactiveTintColor: "#b9c3cd",
