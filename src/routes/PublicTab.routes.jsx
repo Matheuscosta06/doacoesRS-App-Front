@@ -4,6 +4,7 @@ import { StatusBar } from "expo-status-bar";
 
 import Login from "../screens/Login";
 import Register from "../screens/Register";
+import DetalhesPets from "../screens/DetalhesPets";
 
 const Tab = createBottomTabNavigator();
 
@@ -11,10 +12,15 @@ const PublicTab = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator screenOptions={{
-        headerShown: true,
+        headerShown: false,
+        tabBarStyle: {
+          display: "none",
+        },
+
       }}>
         <Tab.Screen name="Login" component={Login} />
         <Tab.Screen name="Register" component={Register} />
+        <Tab.Screen name="DetalhesPets" component={DetalhesPets} />
 
 
       </Tab.Navigator>
