@@ -1,7 +1,7 @@
-import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, Image, TouchableOpacity, SafeAreaView } from 'react-native'
 import styles from './styles'
-import Title from '../../components/Title'
 import { useNavigation } from "@react-navigation/native";
+import Carrossel from '../../components/Carrossel';
 
 export default function Home() {
   const navigation = useNavigation();
@@ -35,6 +35,16 @@ export default function Home() {
       <Text style={styles.phrase0}>Seu gesto, nossa força:</Text>
       <Text style={styles.phrase01}>doar hoje, construir amanhã.</Text>
       </View>
+
+      <View style={styles.estatisticas}>
+      <Text style={styles.phrase0}>Seu gesto, nossa força:</Text>
+      </View>
+
+      <SafeAreaView>
+            <Carrossel />
+        </SafeAreaView>
+
+        cons
 
       
       
