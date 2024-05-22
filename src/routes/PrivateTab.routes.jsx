@@ -22,6 +22,7 @@ const PrivateTab = () => {
           paddingTop: 10,
         },
       }}>
+
         <Tab.Screen name="Home" component={Home}
           options={{
             tabBarIcon: ({ focused }) => (
