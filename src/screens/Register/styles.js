@@ -40,6 +40,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#ffffff"
   },
+  input: {
+    width: 230,
+    margin: 10,
+    fontSize: 24,
+  }
 });
 
 export default styles;

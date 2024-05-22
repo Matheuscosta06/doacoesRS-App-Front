@@ -34,10 +34,10 @@ export default function Register() {
                 <Text style={styles.title}>Cadastrar</Text>
                 <Text style={styles.subTitle}>Usuario:</Text>
                 <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva seu  nome de usuario" value={name} onChangeText={setName} />
-                <TextInput style={styles.input} placeholder="Escreva seu email" value={email} onChangeText={setEmail} />
+                <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva seu email" value={email} onChangeText={setEmail} />
 
                 <Text style={styles.subTitle}>Senhas:</Text>
-                <TextInput style={styles.input} placeholder="Crie uma senha " value={password} onChangeText={setPassword} />
+                <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Crie uma senha " value={password} onChangeText={setPassword} />
 
                 <TouchableOpacity style={styles.button} onPress={handleRegister}>
                     <Text style={styles.buttonText}>Fazer Login</Text>
