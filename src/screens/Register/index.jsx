@@ -2,7 +2,6 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import { useContext, useEffect, useState } from 'react'
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
-import { AuthContext } from '../../contexts/AuthContext';
 import axios from "axios";
 
 export default function Register() {
@@ -10,7 +9,7 @@ export default function Register() {
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
-    const { teste } = useContext(AuthContext);
+
 
 
     const handleRegister = async () => {
