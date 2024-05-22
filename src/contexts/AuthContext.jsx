@@ -11,38 +11,38 @@ const AuthProvider = ({ children }) => {
   const [globalLoading, setGlobalLoading] = useState(false);
   const [popUpMessage, setPopUpMessage] = useState(null);
 
-  useEffect(() => {
-    const loadingStoreData = async () => {
-      setGlobalLoading(true);
-      const storageToken = await AsyncStorage.getItem("@asyncStorage:refreshToken");
+  // useEffect(() => {
+  //   const loadingStoreData = async () => {
+  //     setGlobalLoading(true);
+  //     const storageToken = await AsyncStorage.getItem("@asyncStorage:refreshToken");
 
-      if (storageToken) {
-        try {
-          const isLogged = await axios.post(`${apiURL}/users/refresh`, {
-            refreshToken: JSON.parse(storageToken)
-          });
-          if (isLogged) {
-            const userById = await axios.get(`${apiURL}/users/${isLogged.data.refreshToken.user_id}`, {
-              headers: {
-                Authorization: `Bearer ${isLogged.data.token}`
-              }
-            });
-            setAcessToken(isLogged.data.token);
-            const { password, ...userWithoutPassword } = userById.data.user;
-            setUser(userWithoutPassword);
-          }
-        } catch (error) {
-          setPopUpMessage("Faça login novamente");
-          setTimeout(() => {
-            setPopUpMessage(null);
-          }, 3000);
-          AsyncStorage.clear();
-        }
-      }
-      setGlobalLoading(false);
-    };
-    loadingStoreData();
-  }, []);
+  //     if (storageToken) {
+  //       try {
+  //         const isLogged = await axios.post(`${apiURL}/users/refresh`, {
+  //           refreshToken: JSON.parse(storageToken)
+  //         });
+  //         if (isLogged) {
+  //           const userById = await axios.get(`${apiURL}/users/${isLogged.data.refreshToken.user_id}`, {
+  //             headers: {
+  //               Authorization: `Bearer ${isLogged.data.token}`
+  //             }
+  //           });
+  //           setAcessToken(isLogged.data.token);
+  //           const { password, ...userWithoutPassword } = userById.data.user;
+  //           setUser(userWithoutPassword);
+  //         }
+  //       } catch (error) {
+  //         setPopUpMessage("Faça login novamente");
+  //         setTimeout(() => {
+  //           setPopUpMessage(null);
+  //         }, 3000);
+  //         AsyncStorage.clear();
+  //       }
+  //     }
+  //     setGlobalLoading(false);
+  //   };
+  //   loadingStoreData();
+  // }, []);
 
   const signIn = async (name, password) => {
     const isLogged = await axios.post(`${apiURL}/users/login/ `, {
