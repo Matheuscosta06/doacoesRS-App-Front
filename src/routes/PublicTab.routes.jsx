@@ -11,7 +11,11 @@ const PublicTab = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator screenOptions={{
-        headerShown: true,
+        headerShown: false,
+        tabBarStyle: {
+          display: "none",
+        },
+
       }}>
         <Tab.Screen name="Login" component={Login} />
         <Tab.Screen name="Register" component={Register} />

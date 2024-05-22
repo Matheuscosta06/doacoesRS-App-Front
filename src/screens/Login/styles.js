@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 15,
     fontFamily: "JosefinSans_500Medium",
+    width: "100%",
   },
   txt: {
     color: "#fff",
