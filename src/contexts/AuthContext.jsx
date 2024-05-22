@@ -86,7 +86,7 @@ const AuthProvider = ({ children }) => {
   // };
 
   const teste = async () => {
-    await axios.get(`${apiURL}/`);
+    await axios.get(`${apiURL}/users`);
     console.log('teste');
   }
 
