@@ -15,9 +15,19 @@ export default function Register() {
 
     const handleRegister = async () => {
         try {
-            await teste();
+            if (!name || !email || !password) {
+                alert('Preencha todos os campos')
+                return
+            } else {
+                await axios.post(`${apiURL}/users`, {
+                    name: name,
+                    email: email,
+                    password: password
+                })
+                alert('Usuario cadastrado com sucesso')
+            }
         } catch (error) {
-            console.log(error)
+            return console.log(error)
         }
     }
 
