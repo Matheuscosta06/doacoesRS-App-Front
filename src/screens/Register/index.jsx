@@ -27,20 +27,24 @@ export default function Register() {
 
 
 
-return (
-    <View style={styles.container}>
-        <Text>Cadastrar</Text>
-        <Text>Usuario:</Text>
-        <TextInput style={styles.input} placeholder="Escreva seu  nome de usuario" value={name} onChangeText={setName} />
-        <TextInput style={styles.input} placeholder="Escreva seu email" value={email} onChangeText={setEmail} />
+    return (
+        <View style={styles.Maincontainer}>
 
-        <Text>Senhas:</Text>
-        <TextInput style={styles.input} placeholder="Crie uma senha " value={password} onChangeText={setPassword} />
+            <View style={styles.container}>
+                <Text style={styles.title}>Cadastrar</Text>
+                <Text style={styles.subTitle}>Usuario:</Text>
+                <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva seu  nome de usuario" value={name} onChangeText={setName} />
+                <TextInput style={styles.input} placeholder="Escreva seu email" value={email} onChangeText={setEmail} />
 
-        <TouchableOpacity style={styles.button} onPress={handleRegister}>
-            <Text style={styles.buttonText}>Fazer Login</Text>
-        </TouchableOpacity>
+                <Text style={styles.subTitle}>Senhas:</Text>
+                <TextInput style={styles.input} placeholder="Crie uma senha " value={password} onChangeText={setPassword} />
 
-    </View>
-)
-    }
+                <TouchableOpacity style={styles.button} onPress={handleRegister}>
+                    <Text style={styles.buttonText}>Fazer Login</Text>
+                </TouchableOpacity>
+            </View>
+
+
+        </View>
+    )
+}
