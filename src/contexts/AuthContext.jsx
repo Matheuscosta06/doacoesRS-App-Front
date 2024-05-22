@@ -74,19 +74,10 @@ const AuthProvider = ({ children }) => {
     return response.data.users;
   };
 
-  const creationUser = async (name, email, password) => {
-    setGlobalLoading(true);
-    const response = await axios.post(`${apiURL}/users`, {
-      name: name,
-      email: email,
-      password: password
-    });
-    setGlobalLoading(false);
-    return response.data;
-  };
 
   return (
-    <AuthContext.Provider value={{ setUser, signIn, getUsers, globalLoading, popUpMessage, creationUser }}>
+    <AuthContext.Provider value={{ setUser, signIn, getUsers, globalLoading, popUpMessage
+     }}>
       {children}
     </AuthContext.Provider>
   );
