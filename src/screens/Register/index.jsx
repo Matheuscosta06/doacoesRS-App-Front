@@ -9,11 +9,54 @@ export default function Register() {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-    const [msgError, setMsgError] = useState('')
+    const [msgError, setMsgError] = useState('');
+
+    const errorArry = [];
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setMsgError("");
+        }, 7000);
+
+        return () => clearTimeout(timeout);
+    }, [msgError]);
+
+    const validate = () => {
+        if (!name) {
+            errorArry.push('*Preencha o campo nome')
+        }
+
+        if (!email) {
+            errorArry.push('*Preencha o campo email')
+        }
+
+        if (!password) {
+            errorArry.push('*Preencha o campo senha')
+        }
+        if (email) {
+            axios.get(`${apiURL}/users?email=${email}`).then((response) => {
+                if (response.data.length > 0) {
+                    errorArry.push('*Ja existe um usuario com este email')
+                }
+            })
+        }
+        if (password.length < 7) {
+            errorArry.push('*A senha deve ter no minimo 7 caracteres')
+        }
+        if (errorArry.length > 0) {
+            setMsgError(errorArry.join('\n'))
+            return false;
+        }
+
+        return true;
+    }
+
 
     const handleRegister = async () => {
         try {
-            if (name && password && email) {
+            if (!validate()) {
+                return;
+            } else {
                 const response = await axios.post(`${apiURL}/users`, {
                     name,
                     email,
@@ -21,8 +64,6 @@ export default function Register() {
                 });
                 console.log(response.data);
                 setMsgError('Usuario cadastrado com sucesso')
-            } else {
-                setMsgError('Preencha os campos corretamente')
             }
         } catch (error) {
             if (error.response) {

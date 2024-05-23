@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     width: 230,
     margin: 10,
     fontSize: 24,
+    color: "#ffffff",
   }
 });
 
