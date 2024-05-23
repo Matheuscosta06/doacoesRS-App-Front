@@ -11,14 +11,28 @@ export default function Register() {
     const [email, setEmail] = useState('')
 
     const handleRegister = async () => {
+        const userAlreadyExists = await axios.get(`${apiURL}/users/email/${email}`);
+
+        if (!name || !email || !password) {
+            return setMsgError('Preencha todos os campos')
+        }
+        if (userAlreadyExists) {
+            return setMsgError('Email ja cadastrado')
+        }
         try {
-            await axios.post(`${apiURL}/users`, {
-                name: name,
-                email: email,
-                password: password
-              });
+            const response = await axios.post(`${apiURL}/users`, {
+                name,
+                email,
+                password
+            });
+            if (response.status === 201) {
+                setMsgError('Usuario cadastrado com sucesso')
+                setTimeout(() => {
+                    navigation.navigate('Login')
+                }, 2000)
+            }
         } catch (error) {
-            console.error(error)
+            setMsgError('Erro ao cadastrar usuario')
         }
     }
 
