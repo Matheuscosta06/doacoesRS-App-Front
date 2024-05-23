@@ -28,7 +28,12 @@ export default function Login() {
           <TouchableOpacity style={styles.button}>
             <Text style={styles.txt}>Entrar</Text>
           </TouchableOpacity>
-          <Text style={styles.txtNeedAcc}>Não tem uma conta? <TouchableOpacity onPress={() => navigation.navigate(`Register`)}><Text style={styles.yellow}>Crie!</Text></TouchableOpacity></Text>
+          <View style={styles.containerInfo}>
+            <Text style={styles.txtNeedAcc}>Não tem uma conta? </Text>
+            <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate(`Register`)}>
+              <Text style={styles.yellow}>Crie!</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>

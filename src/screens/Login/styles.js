@@ -63,9 +63,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   yellow: {
+    fontSize: 15,
     color: "#FFA41B",
     fontFamily: "JosefinSans_500Medium",
-  }
+  },
+
+  containerInfo: {
+    flexDirection: "row",
+    justifyContent: "center",
+  },
 });
 
 export default styles;
