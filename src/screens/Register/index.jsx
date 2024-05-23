@@ -2,6 +2,7 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import { useContext, useEffect, useState } from 'react'
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
+import AntDesign from '@expo/vector-icons/AntDesign';
 import axios from "axios";
 
 export default function Register() {
@@ -28,19 +29,13 @@ export default function Register() {
 
         if (!email) {
             errorArry.push('*Preencha o campo email')
+        } else if (!email.includes('@')) {
+            errorArry.push('*Email invalido')
         }
 
         if (!password) {
             errorArry.push('*Preencha o campo senha')
-        }
-        if (email) {
-            axios.get(`${apiURL}/users?email=${email}`).then((response) => {
-                if (response.data.length > 0) {
-                    errorArry.push('*Ja existe um usuario com este email')
-                }
-            })
-        }
-        if (password.length < 7) {
+        } else if (password.length < 7) {
             errorArry.push('*A senha deve ter no minimo 7 caracteres')
         }
         if (errorArry.length > 0) {
@@ -76,19 +71,36 @@ export default function Register() {
 
 
     return (
-        <View style={styles.Maincontainer}>
+        <View style={styles.mainContainer}>
 
             <View style={styles.container}>
                 <Text style={styles.title}>Cadastrar</Text>
                 {
                     msgError && <Text style={{ color: 'red' }}>{msgError}</Text>
                 }
+
+
                 <Text style={styles.subTitle}>Usuario:</Text>
-                <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva seu  nome de usuario" value={name} onChangeText={setName} />
-                <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva seu email" value={email} onChangeText={setEmail} />
+                <View style={styles.inputContainer}>
+                    <AntDesign name="user" size={24} color="#fff" />
+                    <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva seu nome de usuario" value={name} onChangeText={setName} />
+                </View>
+
+                <View style={styles.inputContainer}>
+                    <AntDesign name="mail" size={24} color="#fff" />
+                    <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva seu email" value={email} onChangeText={setEmail} />
+                </View>
 
                 <Text style={styles.subTitle}>Senhas:</Text>
-                <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Crie uma senha " value={password} onChangeText={setPassword} />
+                <View style={styles.inputContainer}>
+                    <AntDesign name="lock" size={24} color="#fff" />
+                    <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva sua senha" value={password} onChangeText={setPassword} />
+                </View>
+
+                <View style={styles.inputContainer}>
+                    <AntDesign name="lock" size={24} color="#fff" />
+                    <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Confirme sua senha" />
+                </View>
 
                 <TouchableOpacity style={styles.button} onPress={handleRegister}>
                     <Text style={styles.buttonText}>Fazer Login</Text>
