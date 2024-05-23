@@ -6,33 +6,30 @@ import axios from "axios";
 
 export default function Register() {
 
-    const [name, setName] = useState('')
-    const [password, setPassword] = useState('')
-    const [email, setEmail] = useState('')
+    const [name, setName] = useState('');
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [msgError, setMsgError] = useState('')
 
     const handleRegister = async () => {
-        const userAlreadyExists = await axios.get(`${apiURL}/users/email/${email}`);
-
-        if (!name || !email || !password) {
-            return setMsgError('Preencha todos os campos')
-        }
-        if (userAlreadyExists) {
-            return setMsgError('Email ja cadastrado')
-        }
         try {
-            const response = await axios.post(`${apiURL}/users`, {
-                name,
-                email,
-                password
-            });
-            if (response.status === 201) {
+            if (name && password && email) {
+                const response = await axios.post(`${apiURL}/users`, {
+                    name,
+                    email,
+                    password
+                });
+                console.log(response.data);
                 setMsgError('Usuario cadastrado com sucesso')
-                setTimeout(() => {
-                    navigation.navigate('Login')
-                }, 2000)
+            } else {
+                setMsgError('Preencha os campos corretamente')
             }
         } catch (error) {
-            setMsgError('Erro ao cadastrar usuario')
+            if (error.response) {
+                setMsgError(error.response.data.message)
+            } else {
+                setMsgError('Erro ao cadastrar usuario')
+            }
         }
     }
 
@@ -42,6 +39,9 @@ export default function Register() {
 
             <View style={styles.container}>
                 <Text style={styles.title}>Cadastrar</Text>
+                {
+                    msgError && <Text style={{ color: 'red' }}>{msgError}</Text>
+                }
                 <Text style={styles.subTitle}>Usuario:</Text>
                 <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva seu  nome de usuario" value={name} onChangeText={setName} />
                 <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva seu email" value={email} onChangeText={setEmail} />
