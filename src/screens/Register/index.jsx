@@ -9,6 +9,7 @@ export default function Register() {
 
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmedPassword, setConfirmedPassword] = useState('');
     const [email, setEmail] = useState('');
     const [msgError, setMsgError] = useState('');
 
@@ -37,6 +38,10 @@ export default function Register() {
             errorArry.push('*Preencha o campo senha')
         } else if (password.length < 7) {
             errorArry.push('*A senha deve ter no minimo 7 caracteres')
+        } else if (!confirmedPassword) {
+            errorArry.push('*Preencha o campo confirmar senha')
+        } else if (confirmedPassword !== password) {
+            errorArry.push('*As senhas não conferem')
         }
         if (errorArry.length > 0) {
             setMsgError(errorArry.join('\n'))
@@ -98,8 +103,8 @@ export default function Register() {
                 </View>
 
                 <View style={styles.inputContainer}>
-                    <AntDesign name="lock" size={24} color="#fff" />
-                    <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Confirme sua senha" />
+                    <AntDesign name="unlock" size={24} color="#fff" />
+                    <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva sua senha" value={confirmedPassword} onChangeText={setConfirmedPassword} />
                 </View>
 
                 <TouchableOpacity style={styles.button} onPress={handleRegister}>
