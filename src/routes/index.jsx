@@ -4,7 +4,7 @@ import PublicTab from "./PublicTab.routes";
 import { AuthContext } from "../contexts/AuthContext";
 
 function Routes() {
-  return <PrivateTab />
+  return <PublicTab />
 }
 
 export default Routes;

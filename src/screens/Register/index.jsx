@@ -6,19 +6,30 @@ import axios from "axios";
 
 export default function Register() {
 
-    const [name, setName] = useState('')
-    const [password, setPassword] = useState('')
-    const [email, setEmail] = useState('')
+    const [name, setName] = useState('');
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [msgError, setMsgError] = useState('')
 
     const handleRegister = async () => {
         try {
-            await axios.post(`${apiURL}/users`, {
-                name: name,
-                email: email,
-                password: password
-              });
+            if (name && password && email) {
+                const response = await axios.post(`${apiURL}/users`, {
+                    name,
+                    email,
+                    password
+                });
+                console.log(response.data);
+                setMsgError('Usuario cadastrado com sucesso')
+            } else {
+                setMsgError('Preencha os campos corretamente')
+            }
         } catch (error) {
-            console.error(error)
+            if (error.response) {
+                setMsgError(error.response.data.message)
+            } else {
+                setMsgError('Erro ao cadastrar usuario')
+            }
         }
     }
 
@@ -28,6 +39,9 @@ export default function Register() {
 
             <View style={styles.container}>
                 <Text style={styles.title}>Cadastrar</Text>
+                {
+                    msgError && <Text style={{ color: 'red' }}>{msgError}</Text>
+                }
                 <Text style={styles.subTitle}>Usuario:</Text>
                 <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva seu  nome de usuario" value={name} onChangeText={setName} />
                 <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva seu email" value={email} onChangeText={setEmail} />

@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
   },
   yellow: {
     color: "#FFA41B",
+    fontFamily: "JosefinSans_500Medium",
   }
 });
 
