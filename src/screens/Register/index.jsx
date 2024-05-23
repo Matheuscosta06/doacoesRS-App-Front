@@ -12,6 +12,7 @@ export default function Register() {
     const [confirmedPassword, setConfirmedPassword] = useState('');
     const [email, setEmail] = useState('');
     const [msgError, setMsgError] = useState('');
+    const [emailVerification, setEmailVerification] = useState('');
 
     const errorArry = [];
 
@@ -27,13 +28,11 @@ export default function Register() {
         if (!name) {
             errorArry.push('*Preencha o campo nome')
         }
-
         if (!email) {
             errorArry.push('*Preencha o campo email')
         } else if (!email.includes('@')) {
             errorArry.push('*Email invalido')
         }
-
         if (!password) {
             errorArry.push('*Preencha o campo senha')
         } else if (password.length < 7) {
@@ -50,8 +49,7 @@ export default function Register() {
 
         return true;
     }
-
-
+    
     const handleRegister = async () => {
         try {
             if (!validate()) {
