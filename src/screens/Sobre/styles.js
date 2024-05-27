@@ -60,7 +60,41 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: "JosefinSans_500Medium",
     color: "#000",
-  }
+  },
+  cardEquipe: {
+    backgroundColor: "#283444",
+    marginTop: 20,
+    alignItems: "center",
+  },
+  linha:{
+    margin: 50,
+    width : 340,
+    backgroundColor: "#FFA41B",
+    height: 4,
+    
+  },
+  nomeEquipe:{
+   color: "#fff",
+   fontSize: 40,
+   marginTop: -10,
+   fontFamily: "JosefinSans_700Bold",
+  },
+  fotoEquipe: {
+    width: 400,
+    height: 300,
+  margin: "auto",
+    
+    borderRadius: 10,
+  },
+  cardImg:{
+    width: 405,
+    height: 305,
+    borderRadius: 10,
+    alignItems: "center",
+    backgroundColor: "#FFA41B",
+    margin: 40,
+  },
+  
 
 
 });
