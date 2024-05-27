@@ -18,12 +18,12 @@ export default function DetalhesPets() {
 
     return (
         <LinearGradient
-            colors={['#1DC59C', '#0E415F']}
+            colors={['#AD1DC5', '#4A0A3C']}
             style={styles.container}
         >
             <View style={styles.tituloContainer}>
-                <Text style={styles.primeiraLetra}>P</Text>
-                <Text style={styles.titulo1}>ETS</Text>
+                <Text style={styles.primeiraLetra}>R</Text>
+                <Text style={styles.titulo1}>OUPAS</Text>
             </View>
 
             <View style={styles.linhaLaranja} />

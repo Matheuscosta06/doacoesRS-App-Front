@@ -11,13 +11,13 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   primeiraLetra:{
-      fontSize: 80,
+      fontSize: 70,
       color: '#283444',
       fontWeight: 'bold',
       marginBottom: -8,
   },
   titulo1:{
-      fontSize: 50,
+      fontSize: 40,
       color: '#283444',
       marginTop: "auto",
       fontWeight: 'bold', 
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
       height:5,
       backgroundColor: '#FF7D04',
       marginHorizontal: 30,
-      marginRight:"50%",
+      marginRight:"25%",
       marginTop: -10,
   },    
   subtitulocontainer:{
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
       marginTop: "20%",
       marginLeft: "10%",
       marginRight: "10%", 
-      backgroundColor:"#045844",
+      backgroundColor:"#6b0404",
         borderRadius: 10,
   },
   imagem:{
