@@ -5,6 +5,6 @@ import { AuthContext } from "../contexts/AuthContext";
 
 function Routes() {
   return <PrivateTab />
-}
 
+}
 export default Routes;
