@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from 'react'
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
 import AntDesign from '@expo/vector-icons/AntDesign';
 import axios from "axios";
+import PoPError from '../../components/PoPError';
 
 export default function Register() {
 
@@ -19,7 +20,7 @@ export default function Register() {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setMsgError("");
-        }, 7000);
+        }, 9000);
 
         return () => clearTimeout(timeout);
     }, [msgError]);
@@ -49,39 +50,39 @@ export default function Register() {
 
         return true;
     }
-    
+
     const handleRegister = async () => {
         try {
+            const responseEmail = await axios.get(`${apiURL}/users/email/ss@`);
             if (!validate()) {
                 return;
-            } else {
-                const response = await axios.post(`${apiURL}/users`, {
-                    name,
-                    email,
-                    password
-                });
-                console.log(response.data);
-                setMsgError('Usuario cadastrado com sucesso')
             }
+            if (responseEmail.data.email == email) {
+                setMsgError('Email já cadastrado')
+                return;
+            }
+
+            const response = await axios.post(`${apiURL}/users`, {
+                name,
+                email,
+                password
+            });
+            console.log(response.data);
+            setMsgError('Usuario cadastrado com sucesso')
+
         } catch (error) {
-            if (error.response) {
-                setMsgError(error.response.data.message)
-            } else {
-                setMsgError('Erro ao cadastrar usuario')
-            }
+            setMsgError('Erro ao cadastrar usuario')
         }
     }
 
 
     return (
         <View style={styles.mainContainer}>
-
+            {
+                msgError && <PoPError msg={msgError} />
+            }
             <View style={styles.container}>
                 <Text style={styles.title}>Cadastrar</Text>
-                {
-                    msgError && <Text style={{ color: 'red' }}>{msgError}</Text>
-                }
-
 
                 <Text style={styles.subTitle}>Usuario:</Text>
                 <View style={styles.inputContainer}>
