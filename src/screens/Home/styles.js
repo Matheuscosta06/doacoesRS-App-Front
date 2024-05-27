@@ -86,12 +86,11 @@ const styles = StyleSheet.create({
   buttonText_doar: {
     fontSize: 21,
     color: '#283444',
-    fontFamily: 'bold'
+
   },
   buttonText_doar1: {
     fontSize: 21,
     color: '#faab14',
-    fontFamily: 'bold'
   },
   button_doar1:{
     marginTop: 20,

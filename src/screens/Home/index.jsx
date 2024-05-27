@@ -75,6 +75,15 @@ export default function Home() {
       </View>
       <Text style={styles.attEstatisticas}>*Atualizado diariamente</Text>
       </View>
+
+      <TouchableOpacity
+          onPress={() => navigation.navigate("News01")}
+          style={styles.button}
+        >
+          <Text style={styles.buttonText}>Noticias</Text>
+        </TouchableOpacity>
+
+      
       
 
     </ScrollView>
