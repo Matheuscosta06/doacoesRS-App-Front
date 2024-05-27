@@ -4,10 +4,12 @@ import { useContext, useEffect, useState } from 'react'
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
 import AntDesign from '@expo/vector-icons/AntDesign';
 import axios from "axios";
-import PoPError from '../../components/PoPError';
+import PoPError from '../../components/PoPError'
+import { useNavigation } from '@react-navigation/native';;
 
 export default function Register() {
 
+    const navigation = useNavigation();
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [confirmedPassword, setConfirmedPassword] = useState('');
