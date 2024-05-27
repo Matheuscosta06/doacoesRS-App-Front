@@ -71,9 +71,9 @@ export default function DetalhesPets() {
                         </TouchableOpacity>
                     </View>
 
-                    <View style={styles.addcarrinho}>
+                    <TouchableOpacity onPress={} style={styles.addcarrinho}>
                         <Text style={styles.addcarrinhoText}>Adicionar ao carrinho</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
             </View>
         </LinearGradient>
