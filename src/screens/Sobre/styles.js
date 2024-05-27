@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     margin: 20,
     marginTop: 50,
     borderRadius: 20,
-    height: 1250,
+    height: 900,
   },
   tituloObj: {
     fontSize: 51,
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     margin: 15,
   },
   textObj: {
-    fontSize: 28,
+    fontSize: 23,
     padding: 0,
     margin: 20,
     textAlign: "center",
@@ -99,6 +99,44 @@ const styles = StyleSheet.create({
     width: 340,
     backgroundColor: "#FFA41B",
     height: 6,
+  },
+  backImg: {
+    backgroundColor: "#283444",
+    borderRadius: 140,
+    width: 165,
+    height: 165,
+    alignItems: "center",
+    marginBottom: -90,
+    zIndex: 112,
+    margin: "auto",
+  },
+  fotoMembro: {
+    borderRadius: 140,
+    width: 150,
+    height: 150,
+    margin: "auto",
+  },
+  cardDetalhe: {
+    width: 340,
+    height: 280,
+    backgroundColor: "#D9D9D9",
+    borderWidth: 5,
+    borderColor: "#FFA41B",
+    borderRadius: 25,
+    textAlign: "center",
+  },
+  nomeMembro: {
+    textAlign: "center",
+    marginTop: 100,
+    fontSize: 20,
+    fontFamily: " JosefinSans_700Bold",
+  },
+  membro: { textAlign: "center" },
+  textMembro: {
+    textAlign: "center",
+    marginTop: 30,
+    padding: 0,
+    margin: 4,
   },
 });
 
