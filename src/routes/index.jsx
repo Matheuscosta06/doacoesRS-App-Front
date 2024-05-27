@@ -4,13 +4,9 @@ import PublicTab from "./PublicTab.routes";
 import { AuthContext } from "../contexts/AuthContext";
 
 function Routes() {
-
-  // const { user } = useContext(AuthContext);
-  // return user ? <PrivateTab /> : <PublicTab />
-  return <PrivateTab />
-}
-  const { user } = useContext(AuthContext);
-  return user ? <PrivateTab /> : <PublicTab />
+  
+   const { user } = useContext(AuthContext);
+   return user ? <PrivateTab /> : <PublicTab />
 
 
 }

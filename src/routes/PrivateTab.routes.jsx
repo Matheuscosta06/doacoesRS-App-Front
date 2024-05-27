@@ -23,7 +23,7 @@ const PrivateTab = () => {
         headerShown: false,
         tabBarStyle: {
           height: 104,
-          paddingBottom: 2
+          paddingBottom: 2,
           paddingTop: 10,
           backgroundColor: '#FFA41B',
           margin: 10,
