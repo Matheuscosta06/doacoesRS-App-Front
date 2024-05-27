@@ -112,6 +112,67 @@ const styles = StyleSheet.create({
     color: '#283444',
     fontSize: 32,
     alignItems: 'center'
+  },
+  estatisticas: {
+    marginTop: 15,
+    alignItems:  'center',
+  },
+  estatistica1: {
+    backgroundColor: '#fff',
+    width: 400,
+    height: 250,
+    borderWidth: 8,
+    borderColor: "#faab14",
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  info1: {
+    color: '#283444',
+    fontSize: 42,
+  },
+  estatistica2: {
+    marginTop: 15,
+    backgroundColor: '#fff',
+    width: 400,
+    height: 250,
+    borderWidth: 8,
+    borderColor: "#faab14",
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  info2: {
+    color: '#283444',
+    fontSize: 42,
+  },
+  estatistica3: {
+    marginTop: 15,
+    backgroundColor: '#fff',
+    width: 400,
+    height: 250,
+    borderWidth: 8,
+    borderColor: "#faab14",
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  infoCidade1:{
+    color: '#283444',
+    fontSize: 32,
+  },
+  infoCidade2:{
+    color: '#283444',
+    fontSize: 32,
+  },
+  infoCidade3:{
+    color: '#283444',
+    fontSize: 32,
+    marginBottom: 5
+  },
+  titleInfo: {
+    color: '#faab14',
+    fontSize: 32
   }
 });
 
