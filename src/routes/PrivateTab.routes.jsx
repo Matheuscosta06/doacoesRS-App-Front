@@ -10,6 +10,7 @@ import { Text } from 'react-native';
 import DetalhesPets from "../screens/DetalhesPets";
 import DetalhesAlimentos from "../screens/DetalhesAlimentos";
 import DetalhesRoupas from "../screens/DetalhesRoupas";
+import DetalhesHigiene from "../screens/DetalhesHigiene";
 import { FontAwesome5 } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
@@ -84,6 +85,19 @@ const PrivateTab = () => {
           }
         />
 
+        <Tab.Screen name="DetalhesPets" component={DetalhesPets}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="dog"
+                size={38}
+                color={focused ? "#4B6584" : "#b9c3cd"} />
+            ),
+            tabBarActiveTintColor: "#4B6584",
+            tabBarInactiveTintColor: "#b9c3cd",
+          }
+          }
+        />
 
 
 

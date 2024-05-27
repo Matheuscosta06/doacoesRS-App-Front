@@ -18,7 +18,7 @@ export default function DetalhesPets() {
 
     return (
         <LinearGradient
-            colors={['#AD1DC5', '#4A0A3C']}
+            colors={['#36C5D8', '#093338']}
             style={styles.container}
         >
             <View style={styles.tituloContainer}>
