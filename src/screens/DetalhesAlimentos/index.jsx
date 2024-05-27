@@ -18,12 +18,12 @@ export default function DetalhesPets() {
 
     return (
         <LinearGradient
-            colors={['#1DC59C', '#0E415F']}
+            colors={['#FF0000', '#400A0A']}
             style={styles.container}
         >
             <View style={styles.tituloContainer}>
-                <Text style={styles.primeiraLetra}>P</Text>
-                <Text style={styles.titulo1}>ETS</Text>
+                <Text style={styles.primeiraLetra}>A</Text>
+                <Text style={styles.titulo1}>LIMENTOS</Text>
             </View>
 
             <View style={styles.linhaLaranja} />
@@ -35,11 +35,11 @@ export default function DetalhesPets() {
             <View style={styles.linhaLaranja2} />
 
             <View style={styles.containerProdutos}>
-                <Image source={require('../../../assets/racaoAdulto.png')} style={styles.imagem} />
+                <Image source={require('../../../assets/feijao.png')} style={styles.imagem} />
             
                 <View style={styles.desc}>
-                    <Text style={styles.tituloDesc}>Ração - adulto</Text>
-                    <Text style={styles.preco}>R$56</Text>
+                    <Text style={styles.tituloDesc}>Feijão</Text>
+                    <Text style={styles.preco}>R$90</Text>
                     <View style={styles.quantidadeProdutos}>
                         <TouchableOpacity onPress={incrementarQuantidade} style={styles.mais} >
                             <Text style={styles.maisButton}>+</Text>
@@ -56,10 +56,10 @@ export default function DetalhesPets() {
                 </View>
             </View>
             <View style={styles.containerProdutos}>
-                <Image source={require('../../../assets/racaoAdulto.png')} style={styles.imagem} />
+                <Image source={require('../../../assets/arroz.png')} style={styles.imagem} />
             
                 <View style={styles.desc}>
-                    <Text style={styles.tituloDesc}>Ração - filhote </Text>
+                    <Text style={styles.tituloDesc}>Arroz </Text>
                     <Text style={styles.preco}>R$80</Text>
                     <View style={styles.quantidadeProdutos}>
                         <TouchableOpacity onPress={incrementarQuantidade} style={styles.mais} >

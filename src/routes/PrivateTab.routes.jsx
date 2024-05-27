@@ -8,6 +8,8 @@ import Category from "../screens/Category";
 import Sobre from "../screens/Sobre";
 import { Text } from 'react-native';
 import DetalhesPets from "../screens/DetalhesPets";
+import DetalhesAlimentos from "../screens/DetalhesAlimentos";
+import DetalhesRoupas from "../screens/DetalhesRoupas";
 import { FontAwesome5 } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
@@ -94,6 +96,41 @@ const PrivateTab = () => {
           }
           }
         />
+
+        <Tab.Screen name="DetalhesAlimentos" component={DetalhesAlimentos}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="bone"
+                size={24}
+                color={focused ? "#4B6584" : "#b9c3cd"} />
+            ),
+            tabBarLabel: ({ focused, color }) => (
+              <Text style={{ color, fontFamily: 'Poppins_500Medium', fontSize: 13 }}>Alimentos</Text>
+            ),
+            tabBarActiveTintColor: "#4B6584",
+            tabBarInactiveTintColor: "#b9c3cd",
+          }
+          }
+        />
+
+        <Tab.Screen name="DetalhesRoupas" component={DetalhesRoupas}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="tshirt"
+                size={24}
+                color={focused ? "#4B6584" : "#b9c3cd"} />
+            ),
+            tabBarLabel: ({ focused, color }) => (
+              <Text style={{ color, fontFamily: 'Poppins_500Medium', fontSize: 13 }}>Roupas</Text>
+            ),
+            tabBarActiveTintColor: "#4B6584",
+            tabBarInactiveTintColor: "#b9c3cd",
+          }
+          }
+        />
+
 
       </Tab.Navigator>
     </NavigationContainer>
