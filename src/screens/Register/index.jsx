@@ -68,6 +68,7 @@ export default function Register() {
                 password
             });
             console.log(response.data);
+            navigation.navigate('Login');
             setMsgError('Usuario cadastrado com sucesso')
 
         } catch (error) {
@@ -107,8 +108,14 @@ export default function Register() {
                 </View>
 
                 <TouchableOpacity style={styles.button} onPress={handleRegister}>
-                    <Text style={styles.buttonText}>Fazer Login</Text>
+                    <Text style={styles.buttonText}>Fazer Cadastro</Text>
                 </TouchableOpacity>
+                <View style={styles.containerInfo}>
+                    <Text style={styles.txtNeedAcc}>Já tem uma conta? </Text>
+                    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate(`Login`)}>
+                        <Text style={styles.yellow}>Entre!</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
 
 
