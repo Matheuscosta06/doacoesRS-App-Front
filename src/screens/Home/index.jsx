@@ -1,7 +1,7 @@
 import { View, Text, ScrollView, Image, TouchableOpacity, SafeAreaView } from 'react-native'
 import styles from './styles'
 import { useNavigation } from "@react-navigation/native";
-import Carrossel from '../../components/Carrossel';
+
 
 export default function Home() {
   const navigation = useNavigation();
@@ -36,16 +36,25 @@ export default function Home() {
       <Text style={styles.phrase01}>doar hoje, construir amanhã.</Text>
       </View>
 
-      <View style={styles.estatisticas}>
-      <Text style={styles.phrase0}>Seu gesto, nossa força:</Text>
+      <View style={styles.btn_doacoes}>
+      <TouchableOpacity
+          onPress={() => navigation.navigate("Home")}
+          style={styles.button_doar}
+        >
+          <Text style={styles.buttonText_doar}>Cadastre sua doação</Text>
+          <Text style={styles.buttonText_doar1}>Aqui</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Home")}
+          style={styles.button_doar1}
+        >
+          <Text style={styles.buttonText_doar}>Cadastre sua doação</Text>
+          <Text style={styles.buttonText_doar1}>Aqui</Text>
+        </TouchableOpacity>
       </View>
 
-      <SafeAreaView>
-            <Carrossel />
-        </SafeAreaView>
-
-        cons
-
+      
+  
       
       
     </ScrollView>

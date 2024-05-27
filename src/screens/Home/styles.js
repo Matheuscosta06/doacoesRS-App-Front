@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: "column",
     alignItems: 'center',
-    marginTop: 15
+    marginTop: 40
   },
   phrase0:{
     color: '#283444',
@@ -61,6 +61,41 @@ const styles = StyleSheet.create({
   phrase01:{
     color: '#283444',
     fontSize: 26
+  },
+  btn_doacoes:{
+    marginTop: 40,
+    alignItems: 'center'
+  },
+  button_doar:{
+    backgroundColor: '#fff',
+    width: 400,
+    height: 200,
+    borderWidth: 8,
+    borderColor: "#faab14",
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  buttonText_doar: {
+    fontSize: 21,
+    color: '#283444',
+    fontFamily: 'bold'
+  },
+  buttonText_doar1: {
+    fontSize: 21,
+    color: '#faab14',
+    fontFamily: 'bold'
+  },
+  button_doar1:{
+    marginTop: 20,
+    backgroundColor: '#fff',
+    width: 400,
+    height: 200,
+    borderWidth: 8,
+    borderColor: "#283444",
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 });
 
