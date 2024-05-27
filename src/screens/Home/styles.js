@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { Button } from "react-native-web";
+
 
 const styles = StyleSheet.create({
   container: {
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   head: {
     backgroundColor: '#283444',
     display: 'flex',
-    height: 450,
+    height: 430,
     borderBottomStartRadius: 50,
     borderBottomEndRadius: 50
   },
@@ -17,15 +17,15 @@ const styles = StyleSheet.create({
     width:350,
     height: 330,
     marginTop: -55,
-    marginLeft: 230
+    marginLeft: 210
   },
   titleHeader:{
-    marginLeft: 20
+    marginLeft: 20,
+    marginTop: -50
   },
   title0: {
     color: '#fff',
     fontSize: 50,
-    marginTop: -30,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -33,11 +33,149 @@ const styles = StyleSheet.create({
     color: '#FFA41B',
     fontSize: 40
   },
+  btnHeader: {
+    alignItems: 'center',
+    marginTop: 55
+  },
   button: {
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: "#FFA41B",
-    alignItems: "center",
     borderRadius: 10,
+    height: 30,
+    width: 150
+  },
+  blueLine: {
+    backgroundColor: "#283444",
+    height: 3.5,
+    width: "47%",
+    marginVertical: 10,
+    alignSelf: "center",
+  },
+  buttonText: {
+    color: '#fff'
+  },
+  phrase: {
+    display: 'flex',
+    flexDirection: "column",
+    alignItems: 'center',
+    marginTop: 40
+  },
+  phrase0:{
+    color: '#283444',
+    fontSize: 26
+  },
+  phrase01:{
+    color: '#283444',
+    fontSize: 26
+  },
+  btn_doacoes:{
+    marginTop: 40,
+    alignItems: 'center'
+  },
+  button_doar:{
+    backgroundColor: '#fff',
+    width: 400,
+    height: 200,
+    borderWidth: 8,
+    borderColor: "#faab14",
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  buttonText_doar: {
+    fontSize: 21,
+    color: '#283444',
+    fontFamily: 'bold'
+  },
+  buttonText_doar1: {
+    fontSize: 21,
+    color: '#faab14',
+    fontFamily: 'bold'
+  },
+  button_doar1:{
+    marginTop: 20,
+    backgroundColor: '#fff',
+    width: 400,
+    height: 200,
+    borderWidth: 8,
+    borderColor: "#283444",
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  titleHome:{
+    alignItems: 'center',
+  },
+  titleName: {
+    marginTop: 40,
+    color: '#283444',
+    fontSize: 32,
+    alignItems: 'center'
+  },
+  estatisticas: {
+    marginTop: 15,
+    alignItems:  'center',
+  },
+  estatistica1: {
+    backgroundColor: '#fff',
+    width: 400,
+    height: 250,
+    borderWidth: 8,
+    borderColor: "#faab14",
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  info1: {
+    color: '#283444',
+    fontSize: 42,
+  },
+  estatistica2: {
+    marginTop: 15,
+    backgroundColor: '#fff',
+    width: 400,
+    height: 250,
+    borderWidth: 8,
+    borderColor: "#faab14",
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  info2: {
+    color: '#283444',
+    fontSize: 42,
+  },
+  estatistica3: {
+    marginTop: 15,
+    backgroundColor: '#fff',
+    width: 400,
+    height: 250,
+    borderWidth: 8,
+    borderColor: "#faab14",
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  infoCidade1:{
+    color: '#283444',
+    fontSize: 32,
+  },
+  infoCidade2:{
+    color: '#283444',
+    fontSize: 32,
+  },
+  infoCidade3:{
+    color: '#283444',
+    fontSize: 32,
+    marginBottom: 5
+  },
+  titleInfo: {
+    color: '#faab14',
+    fontSize: 32
+  },
+  attEstatisticas: {
+    color: '#bab8b8'
   }
 });
 
