@@ -61,7 +61,22 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: "JosefinSans_700Bold",
   },
+  txtNeedAcc: {
+    color: "#fff",
+    fontSize: 15,
+    fontFamily: "JosefinSans_500Medium",
+    textAlign: "center",
+  },
+  yellow: {
+    fontSize: 15,
+    color: "#FFA41B",
+    fontFamily: "JosefinSans_500Medium",
+  },
 
+  containerInfo: {
+    flexDirection: "row",
+    justifyContent: "center",
+  },
 });
 
 export default styles;
