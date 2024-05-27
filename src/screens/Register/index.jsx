@@ -53,25 +53,26 @@ export default function Register() {
 
     const handleRegister = async () => {
         try {
-            try {
-                if (!validate()) {
-                    return;
-                }
-                const responseEmail = await axios.get(`${apiURL}/users/email/${email}`);
-                if (responseEmail.data) {
-                    setMsgError('Email ja cadastrado')
-                    return;
-                }
-            } catch (error) {
-                const response = await axios.post(`${apiURL}/users`, {
-                    name,
-                    email,
-                    password
-                });
-                console.log(response.data);
-                navigation.navigate('Login');
+            if (!validate()) {
+                return;
             }
+            const responseEmail = await axios.get(`${apiURL}/users/email/${email}`);
+            if (responseEmail.data.email == email) {
+                setMsgError('Email ja cadastrado')
+                return;
+            }
+                
+
+            const response = await axios.post(`${apiURL}/users`, {
+                name,
+                email,
+                password
+            });
+            console.log(response.data);
+            navigation.navigate('Login');
+
         } catch (error) {
+            console.log(error);
             setMsgError('Erro ao cadastrar usuario')
         }
     }
