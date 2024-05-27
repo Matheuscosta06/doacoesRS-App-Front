@@ -69,7 +69,6 @@ export default function Register() {
             });
             console.log(response.data);
             navigation.navigate('Login');
-            setMsgError('Usuario cadastrado com sucesso')
 
         } catch (error) {
             setMsgError('Erro ao cadastrar usuario')
