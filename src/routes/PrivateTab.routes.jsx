@@ -20,9 +20,13 @@ const PrivateTab = () => {
       <Tab.Navigator screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          height: 64,
+          height: 104,
           paddingBottom: 2,
           paddingTop: 10,
+          backgroundColor: '#FFA41B',
+          margin: 10,
+          borderRadius: 10,
+  
         },
       }}>
 
@@ -31,7 +35,7 @@ const PrivateTab = () => {
             tabBarIcon: ({ focused }) => (
               <Feather
                 name="home"
-                size={24}
+                size={38}
                 color={focused ? "#4B6584" : "#b9c3cd"} />
             ),
 
@@ -45,7 +49,7 @@ const PrivateTab = () => {
             tabBarIcon: ({ focused }) => (
               <Feather
                 name="list"
-                size={24}
+                size={38}
                 color={focused ? "#4B6584" : "#b9c3cd"} />
             ),
             tabBarActiveTintColor: "#4B6584",
@@ -58,7 +62,7 @@ const PrivateTab = () => {
             tabBarIcon: ({ focused }) => (
               <Feather
                 name="gift"
-                size={24}
+                size={38}
                 color={focused ? "#4B6584" : "#b9c3cd"} />
             ),
             tabBarActiveTintColor: "#4B6584",
@@ -71,7 +75,7 @@ const PrivateTab = () => {
             tabBarIcon: ({ focused }) => (
               <Feather
                 name="users"
-                size={24}
+                size={38}
                 color={focused ? "#4B6584" : "#b9c3cd"} />
             ),
             tabBarActiveTintColor: "#4B6584",
@@ -80,56 +84,9 @@ const PrivateTab = () => {
           }
         />
 
-        <Tab.Screen name="DetalhesPets" component={DetalhesPets}
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <FontAwesome5
-                name="dog"
-                size={24}
-                color={focused ? "#4B6584" : "#b9c3cd"} />
-            ),
-            tabBarLabel: ({ focused, color }) => (
-              <Text style={{ color, fontFamily: 'Poppins_500Medium', fontSize: 13 }}>Pets</Text>
-            ),
-            tabBarActiveTintColor: "#4B6584",
-            tabBarInactiveTintColor: "#b9c3cd",
-          }
-          }
-        />
 
-        <Tab.Screen name="DetalhesAlimentos" component={DetalhesAlimentos}
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <FontAwesome5
-                name="bone"
-                size={24}
-                color={focused ? "#4B6584" : "#b9c3cd"} />
-            ),
-            tabBarLabel: ({ focused, color }) => (
-              <Text style={{ color, fontFamily: 'Poppins_500Medium', fontSize: 13 }}>Alimentos</Text>
-            ),
-            tabBarActiveTintColor: "#4B6584",
-            tabBarInactiveTintColor: "#b9c3cd",
-          }
-          }
-        />
 
-        <Tab.Screen name="DetalhesRoupas" component={DetalhesRoupas}
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <FontAwesome5
-                name="tshirt"
-                size={24}
-                color={focused ? "#4B6584" : "#b9c3cd"} />
-            ),
-            tabBarLabel: ({ focused, color }) => (
-              <Text style={{ color, fontFamily: 'Poppins_500Medium', fontSize: 13 }}>Roupas</Text>
-            ),
-            tabBarActiveTintColor: "#4B6584",
-            tabBarInactiveTintColor: "#b9c3cd",
-          }
-          }
-        />
+
 
 
       </Tab.Navigator>
