@@ -35,10 +35,10 @@ export default function DetalhesPets() {
             <View style={styles.linhaLaranja2} />
 
             <View style={styles.containerProdutos}>
-                <Image source={require('../../../assets/racaoAdulto.png')} style={styles.imagem} />
+                <Image source={require('../../../assets/tenis.png')} style={styles.imagem} />
             
                 <View style={styles.desc}>
-                    <Text style={styles.tituloDesc}>Ração - adulto</Text>
+                    <Text style={styles.tituloDesc}>Tênis/Calçados</Text>
                     <Text style={styles.preco}>R$56</Text>
                     <View style={styles.quantidadeProdutos}>
                         <TouchableOpacity onPress={incrementarQuantidade} style={styles.mais} >
@@ -56,10 +56,10 @@ export default function DetalhesPets() {
                 </View>
             </View>
             <View style={styles.containerProdutos}>
-                <Image source={require('../../../assets/racaoAdulto.png')} style={styles.imagem} />
+                <Image source={require('../../../assets/camiseta.png')} style={styles.imagem} />
             
                 <View style={styles.desc}>
-                    <Text style={styles.tituloDesc}>Ração - filhote </Text>
+                    <Text style={styles.tituloDesc}>Camisetas</Text>
                     <Text style={styles.preco}>R$80</Text>
                     <View style={styles.quantidadeProdutos}>
                         <TouchableOpacity onPress={incrementarQuantidade} style={styles.mais} >
