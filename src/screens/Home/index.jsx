@@ -53,10 +53,12 @@ export default function Home() {
         </TouchableOpacity>
       </View>
 
+      <View style={styles.titleHome}>
+      <Text style={styles.titleName}>Estatísticas do RS</Text>
+      <View style={styles.blueLine} />
+      </View>
       
-  
-      
-      
+
     </ScrollView>
   )
 }

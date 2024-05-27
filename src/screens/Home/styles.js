@@ -45,6 +45,13 @@ const styles = StyleSheet.create({
     height: 30,
     width: 150
   },
+  blueLine: {
+    backgroundColor: "#283444",
+    height: 3.5,
+    width: "47%",
+    marginVertical: 10,
+    alignSelf: "center",
+  },
   buttonText: {
     color: '#fff'
   },
@@ -97,6 +104,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  titleHome:{
+    alignItems: 'center',
+  },
+  titleName: {
+    marginTop: 40,
+    color: '#283444',
+    fontSize: 32,
+    alignItems: 'center'
+  }
 });
 
 export default styles;
