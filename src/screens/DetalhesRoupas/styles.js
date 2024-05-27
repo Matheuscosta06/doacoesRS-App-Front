@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
       height:5,
       backgroundColor: '#FF7D04',
       marginHorizontal: 30,
-      marginRight:"50%",
+      marginRight:"32%",
       marginTop: -10,
   },    
   subtitulocontainer:{
