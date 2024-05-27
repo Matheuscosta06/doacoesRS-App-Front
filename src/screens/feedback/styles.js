@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   txt3: {
-    color: "#fff",
+    color: "#000",
     fontSize: 20,
     fontFamily: "josefinSans_400Regular",
   },
@@ -69,41 +69,65 @@ const styles = StyleSheet.create({
   feed: {
     width: 300,
     height: 200,
-    backgroundColor: "#ffA41B",
+    backgroundColor: "#fff",
     borderRadius: 10,
     marginTop: 20,
     padding: 10,
   },
   input: {
-    width: 250,
+    width: 300,
     height: 50,
-    backgroundColor: "#ffA41B",
+    backgroundColor: "#fff",
     borderRadius: 10,
     marginTop: 20,
-    padding: 10,
-    color: "#fff",
+    padding: 20,
+    alignItems: "center",
   },
-  button: {
+  txtbtn: {
+    color: "#fff",
+    fontSize: 20,
+    fontFamily: "josefinSans_400Regular",
+    textAlign: "center",
+  },
+  txt4: {
+    color: "#000",
+    fontSize: 20,
+    fontFamily: "josefinSans_400Regular",
+  },
+  texto: {
+    color: "#fff",
+    fontSize: 20,
+    fontFamily: "josefinSans_400Regular",
+    marginTop: 50,
+    textAlign: "center",
+  },
+
+  btn: {
     width: 150,
     height: 50,
     backgroundColor: "#ffA41B",
     borderRadius: 10,
     marginTop: 20,
     padding: 10,
+  },
+  divpaibtn: {
     alignItems: "center",
     justifyContent: "center",
-  },
-  txtbtn: {
-    color: "#fff",
-    fontSize: 20,
-    fontFamily: "josefinSans_400Regular",
-  },
-  txt4: {
-    color: "#fff",
-    fontSize: 20,
-    fontFamily: "josefinSans_400Regular",
+    marginBottom: 20,
   },
 
+
+  ask: {
+    backgroundColor: "#D9D9D9",
+    borderRadius: 10,
+    padding: 10,
+    marginBottom: 5,
+  },
+  answer: {
+    backgroundColor: "#D9D9D9",
+    borderRadius: 10,
+    padding: 10,
+  },
 
 
 });
