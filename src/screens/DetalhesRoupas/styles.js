@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
   },
   imagem:{
-      width: 160,
-      height: 190,
+      width: 140,
+      height: 170,
   },
   desc:{
     flexDirection: 'column',
