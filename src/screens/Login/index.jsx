@@ -4,31 +4,56 @@ import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
 import { AuthContext } from '../../contexts/AuthContext';
 import { useContext, useState } from 'react';
+import PoPError from '../../components/PoPError';
 
 export default function Login() {
   const navigation = useNavigation();
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const { signIn } = useContext(AuthContext);
+  const [msgError, setMsgError] = useState('');
+
+  const errorArry = [];
 
   const handleLogin = async () => {
     try {
-      if (name && password) {
-        await signIn(name, password);
-      } else {
-        alert('Preencha todos os campos');
+      if (!validate()) {
+        return;
       }
+        await signIn(name, password);
     } catch (error) {
       if (error.response) {
-        alert(error.response.data.message);
+        setMsgError(error.response.data.message);
       } else {
-        alert(error.message);
+        setMsgError(error.message);
       }
     }
   }
 
+  const validate = () => {
+    if (!name) {
+      errorArry.push('*Preencha o campo nome')
+    }
+    if (!password) {
+      errorArry.push('*Preencha o campo senha')
+    } else if (password.length < 7) {
+      errorArry.push('*A senha deve ter no minimo 7 caracteres')
+    }
+
+    if (errorArry.length > 0) {
+      setMsgError(errorArry.join('\n'))
+      return false;
+    }
+
+    return true;
+  }
+
+
   return (
     <View style={styles.containerApp}>
+      {
+        msgError && <PoPError msg={msgError} setMsgError={setMsgError} />
+      }
       <View style={styles.container}>
         <Text style={styles.title}>Entrar</Text>
         <View style={styles.containerLogin}>

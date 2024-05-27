@@ -4,10 +4,12 @@ import { useContext, useEffect, useState } from 'react'
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
 import AntDesign from '@expo/vector-icons/AntDesign';
 import axios from "axios";
-import PoPError from '../../components/PoPError';
+import PoPError from '../../components/PoPError'
+import { useNavigation } from '@react-navigation/native';;
 
 export default function Register() {
 
+    const navigation = useNavigation();
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [confirmedPassword, setConfirmedPassword] = useState('');
@@ -53,12 +55,7 @@ export default function Register() {
 
     const handleRegister = async () => {
         try {
-            const responseEmail = await axios.get(`${apiURL}/users/email/ss@`);
             if (!validate()) {
-                return;
-            }
-            if (responseEmail.data.email == email) {
-                setMsgError('Email já cadastrado')
                 return;
             }
 
@@ -69,10 +66,14 @@ export default function Register() {
             });
             console.log(response.data);
             navigation.navigate('Login');
-            setMsgError('Usuario cadastrado com sucesso')
 
         } catch (error) {
-            setMsgError('Erro ao cadastrar usuario')
+            if (error.response) {
+                setMsgError(error.response.data.message);
+            } else {
+                setMsgError(error.message);
+                console.log(error);
+            }
         }
     }
 
@@ -80,7 +81,7 @@ export default function Register() {
     return (
         <View style={styles.mainContainer}>
             {
-                msgError && <PoPError msg={msgError} setMsgError={setMsgError}  />
+                msgError && <PoPError msg={msgError} setMsgError={setMsgError} />
             }
             <View style={styles.container}>
                 <Text style={styles.title}>Cadastrar</Text>
