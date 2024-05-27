@@ -79,7 +79,7 @@ export default function Register() {
     return (
         <View style={styles.mainContainer}>
             {
-                msgError && <PoPError msg={msgError} />
+                msgError && <PoPError msg={msgError} setMsgError={setMsgError}  />
             }
             <View style={styles.container}>
                 <Text style={styles.title}>Cadastrar</Text>
