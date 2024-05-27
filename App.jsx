@@ -1,7 +1,20 @@
-import "react-native-gesture-handler";
-
-import Routes from "./src/routes/index";
+import Routes from "./src/routes";
+import AuthProvider from "./src/contexts/AuthContext";
+import { useFonts, JosefinSans_300Light, JosefinSans_500Medium, JosefinSans_700Bold } from '@expo-google-fonts/josefin-sans';
 
 export default function App() {
-  return <Routes />;
+  let [fontsLoaded, fontError] = useFonts({
+    JosefinSans_300Light,
+    JosefinSans_500Medium,
+    JosefinSans_700Bold,
+  });
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+  return (
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
+  );
 }

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
+    "dev": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
@@ -11,13 +11,19 @@
   "dependencies": {
     "@expo-google-fonts/josefin-sans": "^0.2.3",
     "@expo/metro-runtime": "~3.2.1",
+    "@expo/vector-icons": "^14.0.2",
+    "@react-native-async-storage/async-storage": "^1.23.1",
+    "@react-native-picker/picker": "^2.7.6",
     "@react-navigation/bottom-tabs": "^6.5.19",
     "@react-navigation/drawer": "^6.6.14",
     "@react-navigation/native": "^6.1.16",
     "@react-navigation/native-stack": "^6.9.25",
     "@types/react-native-snap-carousel": "^3.8.11",
     "bootstrap": "^5.3.3",
+    "axios": "^1.7.2",
     "expo": "~51.0.8",
+    "expo-font": "~12.0.5",
+    "expo-linear-gradient": "^13.0.2",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
     "react-bootstrap": "^2.10.2",
@@ -28,6 +34,13 @@
     "react-native-safe-area-context": "4.10.1",
     "react-native-screens": "3.31.1",
     "react-native-snap-carousel": "^3.9.1",
+    "react-dom": "18.2.0",
+    "react-native": "0.74.1",
+    "react-native-gesture-handler": "~2.16.1",
+    "react-native-picker-select": "^9.1.3",
+    "react-native-reanimated": "~3.10.1",
+    "react-native-safe-area-context": "4.10.1",
+    "react-native-screens": "3.31.1",
     "react-native-web": "~0.19.10"
   },
   "devDependencies": {
