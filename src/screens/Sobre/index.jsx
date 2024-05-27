@@ -83,7 +83,23 @@ export default function Sobre() {
             />
           </View>
           <View style={styles.cardDetalhe}>
-            <Text style={styles.nomeMembro}>Enrico Lona</Text>
+            <Text style={styles.nomeMembro}>Felipe Pedro</Text>
+            <Text style={styles.membro}>membro</Text>
+            <Text style={styles.textMembro}>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo.
+            </Text>
+          </View>
+          <View style={styles.backImg}>
+            <Image
+              style={styles.fotoMembro}
+              source={require("../../../assets/Night.jpeg")}
+            />
+          </View>
+          <View style={styles.cardDetalhe}>
+            <Text style={styles.nomeMembro}>João Victor</Text>
             <Text style={styles.membro}>membro</Text>
             <Text style={styles.textMembro}>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -99,7 +115,7 @@ export default function Sobre() {
             />
           </View>
           <View style={styles.cardDetalhe}>
-            <Text style={styles.nomeMembro}>Enrico Lona</Text>
+            <Text style={styles.nomeMembro}>Matheus Carvalho</Text>
             <Text style={styles.membro}>membro</Text>
             <Text style={styles.textMembro}>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -115,7 +131,7 @@ export default function Sobre() {
             />
           </View>
           <View style={styles.cardDetalhe}>
-            <Text style={styles.nomeMembro}>Enrico Lona</Text>
+            <Text style={styles.nomeMembro}>Matheus Gomes</Text>
             <Text style={styles.membro}>membro</Text>
             <Text style={styles.textMembro}>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -127,11 +143,11 @@ export default function Sobre() {
           <View style={styles.backImg}>
             <Image
               style={styles.fotoMembro}
-              source={require("../../../assets/Enrico.png")}
+              source={require("../../../assets/Zambon.jpg")}
             />
           </View>
           <View style={styles.cardDetalhe}>
-            <Text style={styles.nomeMembro}>Enrico Lona</Text>
+            <Text style={styles.nomeMembro}>Matheus Zambon</Text>
             <Text style={styles.membro}>membro</Text>
             <Text style={styles.textMembro}>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem

@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
     borderColor: "#FFA41B",
     borderRadius: 25,
     textAlign: "center",
+    margin: 30,
   },
   nomeMembro: {
     textAlign: "center",
