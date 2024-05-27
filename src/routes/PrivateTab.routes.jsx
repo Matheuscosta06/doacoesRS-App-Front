@@ -6,6 +6,7 @@ import Home from "../screens/Home";
 import Gift from "../screens/Gift";
 import Category from "../screens/Category";
 import Sobre from "../screens/Sobre";
+import Feedback from "../screens/feedback";
 import { Text } from 'react-native';
 import DetalhesPets from "../screens/DetalhesPets";
 import DetalhesAlimentos from "../screens/DetalhesAlimentos";
@@ -22,7 +23,7 @@ const PrivateTab = () => {
         headerShown: false,
         tabBarStyle: {
           height: 104,
-          paddingBottom: 2,
+          paddingBottom: 2
           paddingTop: 10,
           backgroundColor: '#FFA41B',
           margin: 10,
@@ -99,7 +100,19 @@ const PrivateTab = () => {
           }
         />
 
-
+        <Tab.Screen name="Feedback" component={Feedback}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <Feather
+                name="message-square"
+                size={24}
+                color={focused ? "#4B6584" : "#b9c3cd"} />
+            ),
+            tabBarActiveTintColor: "#4B6584",
+            tabBarInactiveTintColor: "#b9c3cd",
+          }
+          }
+        />
 
 
 
