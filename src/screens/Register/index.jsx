@@ -53,23 +53,24 @@ export default function Register() {
 
     const handleRegister = async () => {
         try {
-            const responseEmail = await axios.get(`${apiURL}/users/email/ss@`);
-            if (!validate()) {
-                return;
+            try {
+                if (!validate()) {
+                    return;
+                }
+                const responseEmail = await axios.get(`${apiURL}/users/email/${email}`);
+                if (responseEmail.data) {
+                    setMsgError('Email ja cadastrado')
+                    return;
+                }
+            } catch (error) {
+                const response = await axios.post(`${apiURL}/users`, {
+                    name,
+                    email,
+                    password
+                });
+                console.log(response.data);
+                navigation.navigate('Login');
             }
-            if (responseEmail.data.email == email) {
-                setMsgError('Email já cadastrado')
-                return;
-            }
-
-            const response = await axios.post(`${apiURL}/users`, {
-                name,
-                email,
-                password
-            });
-            console.log(response.data);
-            navigation.navigate('Login');
-
         } catch (error) {
             setMsgError('Erro ao cadastrar usuario')
         }
@@ -79,7 +80,7 @@ export default function Register() {
     return (
         <View style={styles.mainContainer}>
             {
-                msgError && <PoPError msg={msgError} setMsgError={setMsgError}  />
+                msgError && <PoPError msg={msgError} setMsgError={setMsgError} />
             }
             <View style={styles.container}>
                 <Text style={styles.title}>Cadastrar</Text>
