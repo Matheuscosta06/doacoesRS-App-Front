@@ -58,12 +58,6 @@ export default function Register() {
             if (!validate()) {
                 return;
             }
-            const responseEmail = await axios.get(`${apiURL}/users/email/${email}`);
-            if (responseEmail.data.email == email) {
-                setMsgError('Email ja cadastrado')
-                return;
-            }
-                
 
             const response = await axios.post(`${apiURL}/users`, {
                 name,
@@ -74,8 +68,12 @@ export default function Register() {
             navigation.navigate('Login');
 
         } catch (error) {
-            console.log(error);
-            setMsgError('Erro ao cadastrar usuario')
+            if (error.response) {
+                setMsgError(error.response.data.message);
+            } else {
+                setMsgError(error.message);
+                console.log(error);
+            }
         }
     }
 
