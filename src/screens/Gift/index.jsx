@@ -5,7 +5,7 @@ import Title from '../../components/Title'
 export default function Gift() {
   return (
     <View style={styles.container}>
-      <Title title={'Gift today is beutiful day'} />
+      
     </View>
   )
 }
