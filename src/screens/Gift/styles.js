@@ -6,7 +6,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#24396e",
     alignItems: "center",
     justifyContent: "center"
-  }
+  },
+  txt1: {
+    color: "#fff",
+    fontSize: 40,
+    textAlign: "center",
+    fontFamily: "JosefinSans_700Bold",
+  },
 });
 
 export default styles;
