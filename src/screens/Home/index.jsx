@@ -73,6 +73,7 @@ export default function Home() {
         <Text style={styles.infoCidade3}>Arroio do Meio</Text>
         <Text style={styles.titleInfo}>Cidades + afetadas</Text>
       </View>
+      <Text style={styles.attEstatisticas}>*Atualizado diariamente</Text>
       </View>
       
 

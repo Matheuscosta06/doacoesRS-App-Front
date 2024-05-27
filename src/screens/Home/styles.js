@@ -173,6 +173,9 @@ const styles = StyleSheet.create({
   titleInfo: {
     color: '#faab14',
     fontSize: 32
+  },
+  attEstatisticas: {
+    color: '#bab8b8'
   }
 });
 
