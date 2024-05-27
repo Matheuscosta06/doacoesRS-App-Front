@@ -4,7 +4,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFA41B",
-
   },
   cardPrincipal: {
     backgroundColor: "#283444",
@@ -18,20 +17,19 @@ const styles = StyleSheet.create({
     fontFamily: "JosefinSans_700Bold",
     color: "#fff",
     marginLeft: 32,
-
   },
   novaG: {
     marginTop: 15,
     fontSize: 35,
     marginLeft: 47,
     fontFamily: "JosefinSans_700Bold",
-    color: "#FFA41B"
+    color: "#FFA41B",
   },
   solut: {
     fontSize: 35,
     marginLeft: 163,
     fontFamily: "JosefinSans_700Bold",
-    color: "#FFA41B"
+    color: "#FFA41B",
   },
   fotoRS: {
     marginTop: -120,
@@ -66,37 +64,42 @@ const styles = StyleSheet.create({
     marginTop: 20,
     alignItems: "center",
   },
-  linha:{
+  linha1: {
     margin: 50,
-    width : 340,
+    width: 340,
     backgroundColor: "#FFA41B",
-    height: 4,
-    
+    height: 6,
+    border: "none",
   },
-  nomeEquipe:{
-   color: "#fff",
-   fontSize: 40,
-   marginTop: -10,
-   fontFamily: "JosefinSans_700Bold",
+  nomeEquipe: {
+    color: "#fff",
+    fontSize: 37,
+    marginTop: -10,
+    fontFamily: "JosefinSans_700Bold",
   },
   fotoEquipe: {
-    width: 400,
+    width: 360,
     height: 300,
-  margin: "auto",
-    
+    margin: "auto",
+
     borderRadius: 10,
   },
-  cardImg:{
-    width: 405,
+  cardImg: {
+    width: 365,
     height: 305,
     borderRadius: 10,
     alignItems: "center",
     backgroundColor: "#FFA41B",
     margin: 40,
   },
-  
-
-
+  linha2: {
+    margin: 40,
+    marginTop: 7,
+    border: "none",
+    width: 340,
+    backgroundColor: "#FFA41B",
+    height: 6,
+  },
 });
 
 export default styles;
