@@ -16,4 +16,8 @@ const styles = StyleSheet.create({
   
 });
 
+<<<<<<< HEAD
 export default styles;
+=======
+export default styles;
+>>>>>>> e3d21dfeaea072bdfbb87982c6b6940ec23b41ef
