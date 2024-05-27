@@ -36,6 +36,75 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffA41B",
     marginLeft: 80,
   },
+  card1: {
+    width: 300,
+    height: 200,
+    backgroundColor: "#ffA41B",
+    borderRadius: 10,
+    marginTop: 20,
+    padding: 10,
+  },
+  card2: {
+    width: 300,
+    height: 200,
+    backgroundColor: "#ffA41B",
+    borderRadius: 10,
+    marginTop: 20,
+    padding: 10,
+  },
+  card3: {
+    width: 300,
+    height: 200,
+    backgroundColor: "#ffA41B",
+    borderRadius: 10,
+    marginTop: 20,
+    padding: 10,
+  },
+  txt3: {
+    color: "#fff",
+    fontSize: 20,
+    fontFamily: "josefinSans_400Regular",
+  },
+
+  feed: {
+    width: 300,
+    height: 200,
+    backgroundColor: "#ffA41B",
+    borderRadius: 10,
+    marginTop: 20,
+    padding: 10,
+  },
+  input: {
+    width: 250,
+    height: 50,
+    backgroundColor: "#ffA41B",
+    borderRadius: 10,
+    marginTop: 20,
+    padding: 10,
+    color: "#fff",
+  },
+  button: {
+    width: 150,
+    height: 50,
+    backgroundColor: "#ffA41B",
+    borderRadius: 10,
+    marginTop: 20,
+    padding: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  txtbtn: {
+    color: "#fff",
+    fontSize: 20,
+    fontFamily: "josefinSans_400Regular",
+  },
+  txt4: {
+    color: "#fff",
+    fontSize: 20,
+    fontFamily: "josefinSans_400Regular",
+  },
+
+
 
 });
 
