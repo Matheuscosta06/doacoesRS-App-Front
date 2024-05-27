@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, } from 'react-native';
 import styles from './styles';
 import React from 'react';
 
@@ -11,7 +11,7 @@ export default function Category() {
         <TouchableOpacity style={styles.card}>
 
           <View style={styles.cardzin}>
-
+            <Image source={require('../../../assets/pets.jpg')} style={styles.piximg} />
             <Text style={styles.cardText}>PET's</Text>
           </View>
 
@@ -20,6 +20,7 @@ export default function Category() {
         <TouchableOpacity style={styles.card}>
 
           <View style={styles.cardzin}>
+            <Image source={require('../../../assets/alimento.jpg')} style={styles.piximg} />
 
             <Text style={styles.cardText}>Alimentos/Água</Text>
           </View>
@@ -29,7 +30,7 @@ export default function Category() {
         <TouchableOpacity style={styles.card}>
 
           <View style={styles.cardzin}>
-
+            <Image source={require('../../../assets/roupas.jpg')} style={styles.piximg} />
             <Text style={styles.cardText}>Roupas</Text>
           </View>
 
@@ -38,7 +39,7 @@ export default function Category() {
         <TouchableOpacity style={styles.card}>
 
           <View style={styles.cardzin}>
-
+            <Image source={require('../../../assets/higiene.jpg')} style={styles.piximg} />
             <Text style={styles.cardText}>Higiene</Text>
           </View>
 
