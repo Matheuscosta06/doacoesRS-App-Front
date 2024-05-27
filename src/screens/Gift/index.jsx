@@ -39,7 +39,7 @@ export default function Gift() {
         ]}
 
         width={200}
-        
+
       />
 
       <View style={styles.Inputcontainer1}>
@@ -66,7 +66,7 @@ export default function Gift() {
 
       />
 
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("home")} >
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Home")} >
         <Text style={styles.txtbtn}>Doar</Text>
       </TouchableOpacity>
 
