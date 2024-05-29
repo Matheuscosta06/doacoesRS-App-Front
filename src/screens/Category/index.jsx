@@ -10,17 +10,37 @@ export default function Category() {
 
   const navigation = useNavigation();
 
+  const [productsHygiene, setProductsHygiene] = useState([])
+  const [productsPet, setProductsPet] = useState([])
+  const [productsFood, setProductsFood] = useState([])
+  const [productsClothes, setProductsClothes] = useState([])
+
+
+
+
+
+
   useEffect(() => {
     try {
       const type = ['hygiene', 'pet']
 
       type.map(async (type) => {
         const response = await axios.get(`${apiURL}/products/type/${type}`)
-        console.log(response.data.data)
-        const data = response.data.data
-        data.forEach(item => {
-          console.log(item)
-        });
+      
+
+        if (type == 'hygiene') {
+          setProductsHygiene(response.data.data)
+        }
+        if (type == 'pet') {
+          setProductsPet(response.data.data)
+        }
+        if (type == 'food') {
+          setProductsFood(response.data.data)
+        }
+        if (type == 'clothes') {
+          setProductsClothes(response.data.data)
+        }
+        return response.data.data
       })
     }
     catch (error) {
@@ -28,13 +48,18 @@ export default function Category() {
     }
   }, [])
 
+  console.log(productsPet);
+
+  // console.log("esse é o products");
+  // console.log(products);
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <ScrollView>
           <Text style={styles.titulo}>O que doar?</Text>
 
-          <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesPets`)}>
+          <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesPets`, {productsPet})}>
 
             <View style={styles.cardzin}>
               <Image source={require('../../../assets/pets.jpg')} style={styles.piximg} />
@@ -43,7 +68,7 @@ export default function Category() {
 
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesAlimentos`)}>
+          <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesAlimentos`, {productsFood})}>
 
             <View style={styles.cardzin}>
               <Image source={require('../../../assets/alimento.jpg')} style={styles.piximg} />
@@ -53,7 +78,7 @@ export default function Category() {
 
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesRoupas`)}>
+          <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesRoupas`, {productsClothes})}>
 
             <View style={styles.cardzin}>
               <Image source={require('../../../assets/roupas.jpg')} style={styles.piximg} />
@@ -62,7 +87,7 @@ export default function Category() {
 
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesHigiene`)}>
+          <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesHigiene`, {productsHygiene})}>
 
             <View style={styles.cardzin}>
               <Image source={require('../../../assets/higiene.jpg')} style={styles.piximg} />
