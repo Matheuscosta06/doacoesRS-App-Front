@@ -99,6 +99,46 @@ const PrivateTab = () => {
           }
           }
         />
+        <Tab.Screen name="DetalhesAlimentos" component={DetalhesAlimentos}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="hamburger"
+                size={38}
+                color={focused ? "#4B6584" : "#b9c3cd"} />
+            ),
+            tabBarActiveTintColor: "#4B6584",
+            tabBarInactiveTintColor: "#b9c3cd",
+          }
+          }
+        />
+        <Tab.Screen name="DetalhesRoupas" component={DetalhesRoupas}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="tshirt"
+                size={38}
+                color={focused ? "#4B6584" : "#b9c3cd"} />
+            ),
+            tabBarActiveTintColor: "#4B6584",
+            tabBarInactiveTintColor: "#b9c3cd",
+          }
+          }
+        />
+        <Tab.Screen name="DetalhesHigiene" component={DetalhesHigiene}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="soap"
+                size={38}
+                color={focused ? "#4B6584" : "#b9c3cd"} />
+            ),
+            tabBarActiveTintColor: "#4B6584",
+            tabBarInactiveTintColor: "#b9c3cd",
+          }
+          }
+        />
+        
 
         <Tab.Screen name="Feedback" component={Feedback}
           options={{
