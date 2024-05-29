@@ -184,7 +184,23 @@ const styles = StyleSheet.create({
   },
   attEstatisticas: {
     color: '#bab8b8'
-  }
+  },
+  titlex: {
+    textAlign: 'center',
+    fontFamily: "JosefinSans_700Bold",
+    fontSize: 26,
+    color: '#283444',
+    marginTop: 25,
+
+  },
+  bordex: {
+    width: 181,
+    height: 0,
+    borderWidth: 2,
+    borderColor: '#283444',
+    marginTop: 7,
+    margin: "auto"
+  },
 });
 
 export default styles;
