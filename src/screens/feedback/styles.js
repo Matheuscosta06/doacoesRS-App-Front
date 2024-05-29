@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
   card3: {
     width: 300,
-    height: 200,
+    height: 160,
     backgroundColor: "#ffA41B",
     borderRadius: 10,
     marginTop: 20,
@@ -63,7 +63,8 @@ const styles = StyleSheet.create({
   txt3: {
     color: "#000",
     fontSize: 20,
-    fontFamily: "josefinSans_400Regular",
+    fontFamily: "JosefinSans_500Medium",
+    padding: 5
   },
 
   feed: {
@@ -82,22 +83,25 @@ const styles = StyleSheet.create({
     marginTop: 20,
     padding: 20,
     alignItems: "center",
+    fontFamily: "JosefinSans_500Medium",
+    fontSize: 18,
   },
   txtbtn: {
     color: "#fff",
-    fontSize: 20,
-    fontFamily: "josefinSans_400Regular",
+    fontSize: 23,
+    fontFamily: "josefinSans_700Bold",
     textAlign: "center",
+    margin: "auto"
   },
   txt4: {
     color: "#000",
     fontSize: 20,
-    fontFamily: "josefinSans_400Regular",
+    fontFamily: "josefinSans_700Bold",
   },
   texto: {
     color: "#fff",
     fontSize: 20,
-    fontFamily: "josefinSans_400Regular",
+    fontFamily: "josefinSans_700Bold",
     marginTop: 50,
     textAlign: "center",
   },
@@ -109,6 +113,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginTop: 20,
     padding: 10,
+    marginBottom: 100,
   },
   divpaibtn: {
     alignItems: "center",
