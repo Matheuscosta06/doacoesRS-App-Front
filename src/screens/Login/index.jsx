@@ -20,7 +20,9 @@ export default function Login() {
       if (!validate()) {
         return;
       }
-        await signIn(name, password);
+      await signIn(name, password);
+      setName('');
+      setPassword('');
     } catch (error) {
       if (error.response) {
         setMsgError(error.response.data.message);

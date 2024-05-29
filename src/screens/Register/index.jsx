@@ -66,6 +66,10 @@ export default function Register() {
             });
             console.log(response.data);
             navigation.navigate('Login');
+            setName('');
+            setEmail('');
+            setPassword('');
+            setConfirmedPassword('');
 
         } catch (error) {
             if (error.response) {

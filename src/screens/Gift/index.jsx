@@ -2,11 +2,28 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import { Feather } from '@expo/vector-icons';
 import RNPickerSelect from 'react-native-picker-select';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
+const apiURL = process.env.EXPO_PUBLIC_API_URL;
 
 
 export default function Gift() {
+
+  useEffect(() => {
+    try {
+      const type = ['higiene', 'Roupas', 'Alimentos', 'pet']
+
+      type.map(async (type) => {
+        const response = await axios.get(`${apiURL}/products/type/${type}`)
+        console.log(response.data)
+      })
+    }
+    catch (error) {
+      console.error(error)
+    }
+  }, [])
+
 
   const [local, setLocal] = useState('')
   const local1 = 'Senai Valinhos'
