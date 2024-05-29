@@ -2,10 +2,31 @@ import { View, Text, Image, TouchableOpacity, ScrollView, } from 'react-native';
 import styles from './styles';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { useEffect, useState } from 'react';
+const apiURL = process.env.EXPO_PUBLIC_API_URL;
+import axios from 'axios';
 
 export default function Category() {
 
   const navigation = useNavigation();
+
+  useEffect(() => {
+    try {
+      const type = ['hygiene', 'pet']
+
+      type.map(async (type) => {
+        const response = await axios.get(`${apiURL}/products/type/${type}`)
+        console.log(response.data.data)
+        const data = response.data.data
+        data.forEach(item => {
+          console.log(item)
+        });
+      })
+    }
+    catch (error) {
+      console.error(error)
+    }
+  }, [])
 
   return (
     <View style={styles.container}>
