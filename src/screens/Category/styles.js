@@ -6,6 +6,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#242e46",
     alignItems: "center",
     justifyContent: "center",
+
+  },
+  header: {
+    marginBottom: 110,
   },
   titulo: {
     fontSize: 36,
@@ -48,7 +52,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginRight: 0,
   },
- 
+
 
 
 
