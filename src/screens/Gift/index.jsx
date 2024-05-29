@@ -12,7 +12,7 @@ export default function Gift() {
 
   useEffect(() => {
     try {
-      const type = ['higiene', 'Roupas', 'Alimentos', 'pet']
+      const type = ['hygiene', 'pet']
 
       type.map(async (type) => {
         const response = await axios.get(`${apiURL}/products/type/${type}`)
