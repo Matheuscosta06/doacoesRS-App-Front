@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from 'react';
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
 import axios from 'axios';
+import { ProgressBar } from 'react-native';
 
 
 export default function Home() {
@@ -56,15 +57,26 @@ export default function Home() {
         </View>
 
         <View>
-          <Text>Metas de doações</Text>
+          <Text style={styles.titlex}>Metas de doações</Text>
+          <View style={styles.bordex}>
+
+          </View>
           {
-            goals.map((goal, index) => (
-              <View key={index}>
-                <Text>{goal.type}</Text>
-                <Text>{goal.current_quantity}</Text>
-                <Text>{goal.target_quantity}</Text>
-              </View>
-            ))
+            goals.map((goal, index) => {
+              const percentage = goal.current_quantity / goal.target_quantity;
+
+              return (
+                <View key={index}>
+                  <Text>{goal.type}</Text>
+                  <Text>Progresso atual: {goal.current_quantity}</Text>
+                  <Text>Meta: {goal.target_quantity}</Text>
+                  <View style={{ height: 10, backgroundColor: 'red' }}>
+                    <ProgressBar progress={percentage} color="#0000ff" style={{ height: 10 }} />
+                  </View>
+                  <Text>{(percentage * 100).toFixed(2)}% concluído</Text>
+                </View>
+              );
+            })
           }
         </View>
 
