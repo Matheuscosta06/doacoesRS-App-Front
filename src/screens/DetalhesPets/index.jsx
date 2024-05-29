@@ -1,11 +1,29 @@
-import { useState } from 'react';
 import styles from './styles';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+const apiURL = process.env.EXPO_PUBLIC_API_URL;
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function DetalhesPets() {
     const [quantidade, setQuantidade] = useState(1);
+    const [produtos, setProdutos] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`${apiURL}/products/type/pet`);
+                console.log(response.data.data);
+                setProdutos(response.data.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchData();
+    }, []);
+
+    console.log(produtos);
 
     const incrementarQuantidade = () => {
         setQuantidade(quantidade + 1);
@@ -38,48 +56,29 @@ export default function DetalhesPets() {
 
                 <View style={styles.linhaLaranja2} />
 
-                <View style={styles.containerProdutos}>
-                    <Image source={require('../../../assets/racaoAdulto.png')} style={styles.imagem} />
+                {produtos.map(produto => (
+                    <View key={produto.id} style={styles.containerProdutos}>
+                        <Image source={`${produto.image}`} style={styles.imagem} />
 
-                    <View style={styles.desc}>
-                        <Text style={styles.tituloDesc}>Ração - adulto</Text>
-                        <Text style={styles.preco}>R$56</Text>
-                        <View style={styles.quantidadeProdutos}>
-                            <TouchableOpacity onPress={incrementarQuantidade} style={styles.mais} >
-                                <Text style={styles.maisButton}>+</Text>
-                            </TouchableOpacity>
-                            <Text style={styles.quantidade}>{quantidade}</Text>
-                            <TouchableOpacity onPress={decrementarQuantidade} style={styles.menos}>
-                                <Text style={styles.menosButton}>-</Text>
-                            </TouchableOpacity>
-                        </View>
+                        <View style={styles.desc}>
+                            <Text style={styles.tituloDesc}>{produto.name}</Text>
+                            <Text style={styles.preco}>R${produto.value}</Text>
+                            <View style={styles.quantidadeProdutos}>
+                                <TouchableOpacity onPress={incrementarQuantidade} style={styles.mais} >
+                                    <Text style={styles.maisButton}>+</Text>
+                                </TouchableOpacity>
+                                <Text style={styles.quantidade}>{quantidade}</Text>
+                                <TouchableOpacity onPress={decrementarQuantidade} style={styles.menos}>
+                                    <Text style={styles.menosButton}>-</Text>
+                                </TouchableOpacity>
+                            </View>
 
-                        <View style={styles.addcarrinho}>
-                            <Text style={styles.addcarrinhoText}>Adicionar ao carrinho</Text>
-                        </View>
-                    </View>
-                </View>
-                <View style={styles.containerProdutos}>
-                    <Image source={require('../../../assets/racaoAdulto.png')} style={styles.imagem} />
-
-                    <View style={styles.desc}>
-                        <Text style={styles.tituloDesc}>Ração - filhote </Text>
-                        <Text style={styles.preco}>R$80</Text>
-                        <View style={styles.quantidadeProdutos}>
-                            <TouchableOpacity onPress={incrementarQuantidade} style={styles.mais} >
-                                <Text style={styles.maisButton}>+</Text>
-                            </TouchableOpacity>
-                            <Text style={styles.quantidade}>{quantidade}</Text>
-                            <TouchableOpacity onPress={decrementarQuantidade} style={styles.menos}>
-                                <Text style={styles.menosButton}>-</Text>
-                            </TouchableOpacity>
-                        </View>
-
-                        <View style={styles.addcarrinho}>
-                            <Text style={styles.addcarrinhoText}>Adicionar ao carrinho</Text>
+                            <View style={styles.addcarrinho}>
+                                <Text style={styles.addcarrinhoText}>Adicionar ao carrinho</Text>
+                            </View>
                         </View>
                     </View>
-                </View>
+                ))}
             </LinearGradient>
         </ScrollView>
     );
