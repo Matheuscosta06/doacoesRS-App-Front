@@ -9,6 +9,9 @@ import axios from 'axios';
 export default function Home() {
   const navigation = useNavigation();
 
+  const [metaTotal, setMetaTotal] = useState(100)
+  const [metaAtual, setMetaAtual] = useState(100)
+
 
 
   useEffect(() => {
@@ -17,13 +20,23 @@ export default function Home() {
 
       type.map(async (type) => {
         const response = await axios.get(`${apiURL}/products/type/${type}`)
-        console.log(response.data)
+        console.log(response.data.data)
+        const data = response.data.data
+        data.forEach(item => {
+          console.log(item)
+        });
       })
     }
     catch (error) {
       console.error(error)
     }
   }, [])
+  
+
+  
+  console.log(metaTotal);
+  console.log(metaAtual);
+  
 
 
 
