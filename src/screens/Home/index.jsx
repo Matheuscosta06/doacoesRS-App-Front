@@ -56,7 +56,7 @@ export default function Home() {
         </View>
 
         <View>
-          <Text>Metas:</Text>
+          <Text>Metas de doações</Text>
           {
             goals.map((goal, index) => (
               <View key={index}>
