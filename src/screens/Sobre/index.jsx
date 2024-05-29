@@ -47,7 +47,7 @@ export default function Sobre() {
           <View style={styles.backImg}>
             <Image
               style={styles.fotoMembro}
-              source={require("../../../assets/Enrico.png")}
+              source={require("../../../assets/enrico.jpg")}
             />
           </View>
           <View style={styles.cardDetalhe}>
@@ -63,23 +63,7 @@ export default function Sobre() {
           <View style={styles.backImg}>
             <Image
               style={styles.fotoMembro}
-              source={require("../../../assets/Enrico.png")}
-            />
-          </View>
-          <View style={styles.cardDetalhe}>
-            <Text style={styles.nomeMembro}>Enrico Lona</Text>
-            <Text style={styles.membro}>membro</Text>
-            <Text style={styles.textMembro}>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo.
-            </Text>
-          </View>
-          <View style={styles.backImg}>
-            <Image
-              style={styles.fotoMembro}
-              source={require("../../../assets/Enrico.png")}
+              source={require("../../../assets/fp.jpeg")}
             />
           </View>
           <View style={styles.cardDetalhe}>
@@ -92,6 +76,7 @@ export default function Sobre() {
               dicta sunt explicabo.
             </Text>
           </View>
+          
           <View style={styles.backImg}>
             <Image
               style={styles.fotoMembro}
@@ -111,7 +96,7 @@ export default function Sobre() {
           <View style={styles.backImg}>
             <Image
               style={styles.fotoMembro}
-              source={require("../../../assets/Enrico.png")}
+              source={require("../../../assets/fervas.jpeg")}
             />
           </View>
           <View style={styles.cardDetalhe}>
@@ -127,7 +112,7 @@ export default function Sobre() {
           <View style={styles.backImg}>
             <Image
               style={styles.fotoMembro}
-              source={require("../../../assets/Enrico.png")}
+              source={require("../../../assets/pravel.jpeg")}
             />
           </View>
           <View style={styles.cardDetalhe}>
@@ -146,7 +131,7 @@ export default function Sobre() {
               source={require("../../../assets/Zambon.jpg")}
             />
           </View>
-          <View style={styles.cardDetalhe}>
+          <View style={styles.cardDetalheZ}>
             <Text style={styles.nomeMembro}>Matheus Zambon</Text>
             <Text style={styles.membro}>membro</Text>
             <Text style={styles.textMembro}>
