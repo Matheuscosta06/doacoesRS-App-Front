@@ -2,6 +2,8 @@ import { View, Text, Image, TouchableOpacity, ScrollView, } from 'react-native';
 import styles from './styles';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
+
 
 export default function Category() {
 

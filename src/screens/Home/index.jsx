@@ -7,40 +7,22 @@ import axios from 'axios';
 
 
 export default function Home() {
+  const [goals, setGoals] = useState([]);
   const navigation = useNavigation();
 
-  const [metaTotal, setMetaTotal] = useState(100)
-  const [metaAtual, setMetaAtual] = useState(100)
-
-
-
   useEffect(() => {
+    getMetaProducts();
+  }, []);
+
+  const getMetaProducts = async () => {
     try {
-      const type = ['hygiene', 'pet']
-
-      type.map(async (type) => {
-        const response = await axios.get(`${apiURL}/products/type/${type}`)
-        console.log(response.data.data)
-        const data = response.data.data
-        data.forEach(item => {
-          console.log(item)
-        });
-      })
+      const response = await axios.get(`${apiURL}/products/goals`);
+      setGoals(response.data.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
     }
-    catch (error) {
-      console.error(error)
-    }
-  }, [])
-  
-
-  
-  console.log(metaTotal);
-  console.log(metaAtual);
-  
-
-
-
-
+  }
 
   return (
     <ScrollView style={styles.container}>
@@ -71,6 +53,19 @@ export default function Home() {
         <View style={styles.phrase}>
           <Text style={styles.phrase0}>Seu gesto, nossa força:</Text>
           <Text style={styles.phrase01}>doar hoje, construir amanhã.</Text>
+        </View>
+
+        <View>
+          <Text>Metas de doações</Text>
+          {
+            goals.map((goal, index) => (
+              <View key={index}>
+                <Text>{goal.type}</Text>
+                <Text>{goal.current_quantity}</Text>
+                <Text>{goal.target_quantity}</Text>
+              </View>
+            ))
+          }
         </View>
 
         <View style={styles.btn_doacoes}>
