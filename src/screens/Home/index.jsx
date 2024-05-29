@@ -1,10 +1,13 @@
 import { View, Text, ScrollView, Image, TouchableOpacity, SafeAreaView } from 'react-native'
 import styles from './styles'
 import { useNavigation } from "@react-navigation/native";
+import { useEffect, useState } from 'react';
+const apiURL = process.env.EXPO_PUBLIC_API_URL;
 
 
 export default function Home() {
   const navigation = useNavigation();
+
 
 
   return (
