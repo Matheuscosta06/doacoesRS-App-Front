@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingBottom: 20,
+    paddingBottom: "50%",
     },
   tituloContainer:{
     flexDirection: 'row',
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   },
   containerProdutos:{
       flexDirection: 'row',
-      marginTop: "20%",
+      marginTop: "5%",
       marginLeft: "10%",
       marginRight: "10%", 
       backgroundColor:"#3D0A4A",
