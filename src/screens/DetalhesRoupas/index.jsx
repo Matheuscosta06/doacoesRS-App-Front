@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styles from './styles';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function DetalhesPets() {
+export default function DetalhesRoupas() {
     const [quantidade, setQuantidade] = useState(1);
 
     const incrementarQuantidade = () => {
@@ -17,6 +17,7 @@ export default function DetalhesPets() {
     };
 
     return (
+        <ScrollView>
         <LinearGradient
             colors={['#AD1DC5', '#4A0A3C']}
             style={styles.container}
@@ -77,5 +78,6 @@ export default function DetalhesPets() {
                 </View>
             </View>
         </LinearGradient>
+        </ScrollView>
     );
 }

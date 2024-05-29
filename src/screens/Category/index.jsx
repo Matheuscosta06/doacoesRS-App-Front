@@ -1,14 +1,18 @@
 import { View, Text, Image, TouchableOpacity, ScrollView, } from 'react-native';
 import styles from './styles';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Category() {
+
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <ScrollView>
         <Text style={styles.titulo}>O que doar?</Text>
 
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card}  onPress={() => navigation.navigate(`DetalhesPets`)}>
 
           <View style={styles.cardzin}>
             <Image source={require('../../../assets/pets.jpg')} style={styles.piximg} />
@@ -17,7 +21,7 @@ export default function Category() {
 
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesAlimentos`)}>
 
           <View style={styles.cardzin}>
             <Image source={require('../../../assets/alimento.jpg')} style={styles.piximg} />
@@ -27,7 +31,7 @@ export default function Category() {
 
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesRoupas`)}>
 
           <View style={styles.cardzin}>
             <Image source={require('../../../assets/roupas.jpg')} style={styles.piximg} />
@@ -36,7 +40,7 @@ export default function Category() {
 
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesHigiene`)}>
 
           <View style={styles.cardzin}>
             <Image source={require('../../../assets/higiene.jpg')} style={styles.piximg} />
@@ -45,7 +49,7 @@ export default function Category() {
 
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesDinehiro`)}>
 
           <View style={styles.cardzin}>
             <Image source={require('../../../assets/pix.jpeg')} style={styles.piximg} />
