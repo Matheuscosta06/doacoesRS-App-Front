@@ -133,7 +133,7 @@ const PrivateTab = () => {
           }}
         />
 
-        {/* <Tab.Screen
+        <Tab.Screen
           name="DetalhesPets"
           component={DetalhesPets}
           options={{
@@ -141,13 +141,27 @@ const PrivateTab = () => {
               <FontAwesome5
                 name="dog"
                 size={38}
-                color={focused ? "            tabBarActiveTintColor: "#b9c3cd",
-" : "#4B6584"}
+                color={focused ? "#b9c3cd" : "#4B6584"}
               />
             ),
-            tabBarActiveTintColor: "            tabBarActiveTintColor: "#b9c3cd",
-",
+            tabBarItemStyle: {
+              display: "none",
+            },
+            tabBarStyle: {
+              position: "absolute",
+              bottom: 10,
+              left: 20,
+              right: 20,
+              elevation: 0,
+              backgroundColor: "#FFA41B",
+              borderRadius: 15,
+              height: 90,
+              borderColor: "transparent",
+            },
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: "#b9c3cd",
             tabBarInactiveTintColor: "#4B6584",
+          
           }}
         />
         <Tab.Screen name="DetalhesAlimentos" component={DetalhesAlimentos}
@@ -158,10 +172,24 @@ const PrivateTab = () => {
                 size={38}
                 color={focused ? "#4B6584" : "#b9c3cd"} />
             ),
-            tabBarActiveTintColor: "#4B6584",
-            tabBarInactiveTintColor: "#b9c3cd",
-          }
-          }
+            tabBarItemStyle: {
+              display: "none",
+            },
+            tabBarStyle: {
+              position: "absolute",
+              bottom: 10,
+              left: 20,
+              right: 20,
+              elevation: 0,
+              backgroundColor: "#FFA41B",
+              borderRadius: 15,
+              height: 90,
+              borderColor: "transparent",
+            },
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: "#b9c3cd",
+            tabBarInactiveTintColor: "#4B6584",
+          }}
         />
         <Tab.Screen name="DetalhesRoupas" component={DetalhesRoupas}
           options={{
@@ -171,10 +199,24 @@ const PrivateTab = () => {
                 size={38}
                 color={focused ? "#4B6584" : "#b9c3cd"} />
             ),
-            tabBarActiveTintColor: "#4B6584",
-            tabBarInactiveTintColor: "#b9c3cd",
-          }
-          }
+            tabBarItemStyle: {
+              display: "none",
+            },
+            tabBarStyle: {
+              position: "absolute",
+              bottom: 10,
+              left: 20,
+              right: 20,
+              elevation: 0,
+              backgroundColor: "#FFA41B",
+              borderRadius: 15,
+              height: 90,
+              borderColor: "transparent",
+            },
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: "#b9c3cd",
+            tabBarInactiveTintColor: "#4B6584",
+          }}
         />
         <Tab.Screen name="DetalhesHigiene" component={DetalhesHigiene}
           options={{
@@ -184,12 +226,26 @@ const PrivateTab = () => {
                 size={38}
                 color={focused ? "#4B6584" : "#b9c3cd"} />
             ),
-            tabBarActiveTintColor: "#4B6584",
-            tabBarInactiveTintColor: "#b9c3cd",
-          }
-          }
+            tabBarItemStyle: {
+              display: "none",
+            },
+            tabBarStyle: {
+              position: "absolute",
+              bottom: 10,
+              left: 20,
+              right: 20,
+              elevation: 0,
+              backgroundColor: "#FFA41B",
+              borderRadius: 15,
+              height: 90,
+              borderColor: "transparent",
+            },
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: "#b9c3cd",
+            tabBarInactiveTintColor: "#4B6584",
+          }}
         />
-        
+
 
         <Tab.Screen
           name="Feedback"
@@ -199,15 +255,25 @@ const PrivateTab = () => {
               <Feather
                 name="message-square"
                 size={24}
-                color={focused ? "            tabBarActiveTintColor: "#b9c3cd",
-" : "#4B6584"}
-              />
+                color={focused ? "#4B6584" : "#b9c3cd"} />
+
             ),
-            tabBarActiveTintColor: "            tabBarActiveTintColor: "#b9c3cd",
-",
+            tabBarStyle: {
+              position: "absolute",
+              bottom: 10,
+              left: 20,
+              right: 20,
+              elevation: 0,
+              backgroundColor: "#FFA41B",
+              borderRadius: 15,
+              height: 90,
+              borderColor: "transparent",
+            },
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: "#b9c3cd",
             tabBarInactiveTintColor: "#4B6584",
           }}
-        /> */}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
