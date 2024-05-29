@@ -12,7 +12,7 @@ export default function Category() {
       <ScrollView>
         <Text style={styles.titulo}>O que doar?</Text>
 
-        <TouchableOpacity style={styles.card}  onPress={() => navigation.navigate(`DetalhesPets`)}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesPets`)}>
 
           <View style={styles.cardzin}>
             <Image source={require('../../../assets/pets.jpg')} style={styles.piximg} />
@@ -49,7 +49,7 @@ export default function Category() {
 
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesDinehiro`)}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesPix`)}>
 
           <View style={styles.cardzin}>
             <Image source={require('../../../assets/pix.jpeg')} style={styles.piximg} />
