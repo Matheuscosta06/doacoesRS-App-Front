@@ -12,6 +12,7 @@ import DetalhesPets from "../screens/DetalhesPets";
 import DetalhesAlimentos from "../screens/DetalhesAlimentos";
 import DetalhesRoupas from "../screens/DetalhesRoupas";
 import DetalhesHigiene from "../screens/DetalhesHigiene";
+import DetalhesPix from "../screens/DetalhesPix";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
@@ -161,7 +162,7 @@ const PrivateTab = () => {
             tabBarShowLabel: false,
             tabBarActiveTintColor: "#b9c3cd",
             tabBarInactiveTintColor: "#4B6584",
-          
+
           }}
         />
         <Tab.Screen name="DetalhesAlimentos" component={DetalhesAlimentos}
@@ -245,6 +246,35 @@ const PrivateTab = () => {
             tabBarInactiveTintColor: "#4B6584",
           }}
         />
+        <Tab.Screen name="DetalhesPix" component={DetalhesPix}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="pix"
+                size={38}
+                color={focused ? "#4B6584" : "#b9c3cd"} />
+            ),
+            tabBarItemStyle: {
+              display: "none",
+            },
+            tabBarStyle: {
+              position: "absolute",
+              bottom: 10,
+              left: 20,
+              right: 20,
+              elevation: 0,
+              backgroundColor: "#FFA41B",
+              borderRadius: 15,
+              height: 90,
+              borderColor: "transparent",
+            },
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: "#b9c3cd",
+            tabBarInactiveTintColor: "#4B6584",
+          }}
+        />
+
+
 
 
         <Tab.Screen
@@ -274,6 +304,7 @@ const PrivateTab = () => {
             tabBarInactiveTintColor: "#4B6584",
           }}
         />
+
       </Tab.Navigator>
     </NavigationContainer>
   );
