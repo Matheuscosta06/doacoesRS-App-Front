@@ -11,15 +11,19 @@ const styles = StyleSheet.create({
     display: 'flex',
     height: 430,
     borderBottomStartRadius: 50,
-    borderBottomEndRadius: 50
+    borderBottomEndRadius: 50,
   },
+  header: {
+    marginBottom: 110,
+  },
+  
   imgHeader: {
-    width:350,
+    width: 350,
     height: 330,
     marginTop: -55,
     marginLeft: 210
   },
-  titleHeader:{
+  titleHeader: {
     marginLeft: 20,
     marginTop: -50
   },
@@ -29,7 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  title01:{
+  title01: {
     color: '#FFA41B',
     fontSize: 40
   },
@@ -61,19 +65,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 40
   },
-  phrase0:{
+  phrase0: {
     color: '#283444',
     fontSize: 26
   },
-  phrase01:{
+  phrase01: {
     color: '#283444',
     fontSize: 26
   },
-  btn_doacoes:{
+  btn_doacoes: {
     marginTop: 40,
     alignItems: 'center'
   },
-  button_doar:{
+  button_doar: {
     backgroundColor: '#fff',
     width: 400,
     height: 200,
@@ -92,7 +96,7 @@ const styles = StyleSheet.create({
     fontSize: 21,
     color: '#faab14',
   },
-  button_doar1:{
+  button_doar1: {
     marginTop: 20,
     backgroundColor: '#fff',
     width: 400,
@@ -103,7 +107,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  titleHome:{
+  titleHome: {
     alignItems: 'center',
   },
   titleName: {
@@ -114,7 +118,7 @@ const styles = StyleSheet.create({
   },
   estatisticas: {
     marginTop: 15,
-    alignItems:  'center',
+    alignItems: 'center',
   },
   estatistica1: {
     backgroundColor: '#fff',
@@ -156,15 +160,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  infoCidade1:{
+  infoCidade1: {
     color: '#283444',
     fontSize: 32,
   },
-  infoCidade2:{
+  infoCidade2: {
     color: '#283444',
     fontSize: 32,
   },
-  infoCidade3:{
+  infoCidade3: {
     color: '#283444',
     fontSize: 32,
     marginBottom: 5
