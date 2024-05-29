@@ -284,26 +284,26 @@ const PrivateTab = () => {
             tabBarIcon: ({ focused }) => (
               <Feather
                 name="message-square"
-                size={24}
-                color={focused ? "#4B6584" : "#b9c3cd"} />
-
-            ),
-            tabBarStyle: {
-              position: "absolute",
-              bottom: 10,
-              left: 20,
-              right: 20,
-              elevation: 0,
-              backgroundColor: "#FFA41B",
-              borderRadius: 15,
-              height: 90,
-              borderColor: "transparent",
-            },
-            tabBarShowLabel: false,
-            tabBarActiveTintColor: "#b9c3cd",
-            tabBarInactiveTintColor: "#4B6584",
-          }}
-        />
+                size={38}
+                color={focused ? "#b9c3cd" : "#4B6584"}
+                />
+              ),
+              tabBarStyle: {
+                position: "absolute",
+                bottom: 10,
+                left: 20,
+                right: 20,
+                elevation: 0,
+                backgroundColor: "#FFA41B",
+                borderRadius: 15,
+                height: 90,
+                borderColor: "transparent",
+              },
+              tabBarShowLabel: false,
+              tabBarActiveTintColor: "#b9c3cd",
+              tabBarInactiveTintColor: "#4B6584",
+            }}
+          />
 
       </Tab.Navigator>
     </NavigationContainer>
