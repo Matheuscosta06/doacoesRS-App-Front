@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './styles';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function DetalhesPets() {
@@ -17,6 +17,7 @@ export default function DetalhesPets() {
     };
 
     return (
+        <ScrollView>
         <LinearGradient
             colors={['#FF0000', '#400A0A']}
             style={styles.container}
@@ -77,5 +78,6 @@ export default function DetalhesPets() {
                 </View>
             </View>
         </LinearGradient>
+        </ScrollView>
     );
 }
