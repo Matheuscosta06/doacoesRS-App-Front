@@ -13,7 +13,7 @@ export default function DetalhesPets() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${apiURL}/products/type/food`);
+                const response = await axios.get(`${apiURL}/products/type/pet`);
                 console.log(response.data.data);
                 setProdutos(response.data.data);
             } catch (error) {
