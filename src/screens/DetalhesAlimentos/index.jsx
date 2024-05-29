@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './styles';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useNavigation } from '@react-navigation/native';
 
 export default function DetalhesPets() {
     const [quantidade, setQuantidade] = useState(1);
@@ -16,6 +17,8 @@ export default function DetalhesPets() {
         }
     };
 
+    const navigation = useNavigation();
+    
     return (
         <ScrollView>
         <LinearGradient
