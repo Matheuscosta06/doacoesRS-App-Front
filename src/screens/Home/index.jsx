@@ -59,7 +59,6 @@ export default function Home() {
         <View style={styles.donatesGraphic} >
           <Text style={styles.titlex}>Metas de doações</Text>
           <View style={styles.blueLine} />
-
           {
             goals.map((goal, index) => {
               const percentage = goal.current_quantity / goal.target_quantity;
@@ -69,8 +68,9 @@ export default function Home() {
                   <Text>{goal.type}</Text>
                   <Text>Progresso atual: {goal.current_quantity}</Text>
                   <Text>Meta: {goal.target_quantity}</Text>
-                  <View style={styles.ContainerPercentage}>
-                    <ProgressBar progress={percentage} color="#000f18"style={styles.percentage} />
+                  <View style={[styles.totalProgressBar, styles[goal.type]]}>
+                    <View style={{ ...styles.completedProgressBar, width: `${percentage * 100}%` }} />
+                    <Text style={styles.progressBarText}>{goal.type}</Text>
                   </View>
                   <Text>{(percentage * 100).toFixed(2)}% concluído</Text>
                 </View>
@@ -79,7 +79,7 @@ export default function Home() {
           }
         </View>
 
-{/* hygiene: #11D1C6
+        {/* hygiene: #11D1C6
 pets : #008B6B
 roupas: #620A71
 alimentpos: #C70808 */}

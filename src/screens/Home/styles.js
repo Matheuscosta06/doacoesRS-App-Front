@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   header: {
     marginBottom: 110,
   },
-  
+
   imgHeader: {
     width: 350,
     height: 330,
@@ -193,10 +193,10 @@ const styles = StyleSheet.create({
     marginTop: 25,
 
   },
-  donatesGraphic:{
-    alignItems:'center'
+  donatesGraphic: {
+    alignItems: 'center'
   },
-  grafico:{
+  grafico: {
     width: '70%',
     backgroundColor: '#fff',
     borderTopWidth: 2,
@@ -204,14 +204,35 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   percentage: {
-    height: 10,
     borderWidth: 2,
+    transform: [{ scaleX: 1.0 }, { scaleY: 2.0 }],
     width: '50%'
   },
-  ContainerPercentage: {
-    height: 10,
+  totalProgressBar: {
+    height: 20,
+    width: '100%',
+    backgroundColor: '#eee',
+    borderRadius: 5,
+  },
+  teste: {
+    backgroundColor: 'rgba(0, 0, 255, 0.5)'
+  },
+  completedProgressBar: {
+    height: '100%',
+    borderRadius: 5,
+    backgroundColor: '#FFA41B',
+  },
+  progressBarText: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: 'center',
     alignItems: 'center',
-    width: '100%'
+    textAlign: 'center',
+    fontFamily: "JosefinSans_700Bold",
+    fontSize: 20
   }
 });
 
