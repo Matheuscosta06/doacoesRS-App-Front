@@ -51,7 +51,7 @@ export default function Gift() {
           { label: "higiene", value: produto1 },
           { label: "Roupas", value: produto2 },
           { label: "Alimentos", value: produto3 },
-          { label: "pets", value: produto4 }
+          { label: "pets", value: produto4, style: { color: 'red'.inputWeb}}
 
         ]}
 
