@@ -3,12 +3,19 @@ import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
+import { CartContext } from '../../contexts/CartContext';
 
 export default function DetalhesPets() {
     const [quantidade, setQuantidade] = useState(1);
     const [produtos, setProdutos] = useState([]);
+
+    const {
+        productsCart,
+        addProduct,
+        removeProduct,
+    } = useContext(CartContext);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -22,16 +29,6 @@ export default function DetalhesPets() {
         };
         fetchData();
     }, []);
-
-    const incrementarQuantidade = () => {
-        setQuantidade(quantidade + 1);
-    };
-
-    const decrementarQuantidade = () => {
-        if (quantidade > 1) {
-            setQuantidade(quantidade - 1);
-        }
-    };
 
     const navigation = useNavigation();
     
@@ -54,6 +51,8 @@ export default function DetalhesPets() {
 
             <View style={styles.linhaLaranja2} />
 
+            <Text>{JSON.stringify(productsCart)}</Text>
+
             {produtos.map(produto => (
                     <View key={produto.id} style={styles.containerProdutos}>
                         <Image source={`${produto.image}`} style={styles.imagem} />
@@ -62,11 +61,11 @@ export default function DetalhesPets() {
                             <Text style={styles.tituloDesc}>{produto.name}</Text>
                             <Text style={styles.preco}>R${produto.value}</Text>
                             <View style={styles.quantidadeProdutos}>
-                                <TouchableOpacity onPress={incrementarQuantidade} style={styles.mais} >
+                                <TouchableOpacity onPress={() => addProduct(produto.id)} style={styles.mais} >
                                     <Text style={styles.maisButton}>+</Text>
                                 </TouchableOpacity>
                                 <Text style={styles.quantidade}>{quantidade}</Text>
-                                <TouchableOpacity onPress={decrementarQuantidade} style={styles.menos}>
+                                <TouchableOpacity onPress={() => removeProduct(produto.id)} style={styles.menos}>
                                     <Text style={styles.menosButton}>-</Text>
                                 </TouchableOpacity>
                             </View>
