@@ -1,5 +1,6 @@
-import { View, Text, ScrollView, Image, TouchableOpacity, SafeAreaView } from 'react-native'
-import styles from './styles'
+import { View, Text, ScrollView, Image, TouchableOpacity, SafeAreaView } from 'react-native';
+import ProgressBar from 'react-native-progress/Bar';
+import styles from './styles';
 import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from 'react';
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
@@ -7,40 +8,22 @@ import axios from 'axios';
 
 
 export default function Home() {
+  const [goals, setGoals] = useState([]);
   const navigation = useNavigation();
 
-  const [metaTotal, setMetaTotal] = useState(100)
-  const [metaAtual, setMetaAtual] = useState(100)
-
-
-
   useEffect(() => {
+    getMetaProducts();
+  }, []);
+
+  const getMetaProducts = async () => {
     try {
-      const type = ['hygiene', 'pet']
-
-      type.map(async (type) => {
-        const response = await axios.get(`${apiURL}/products/type/${type}`)
-        console.log(response.data.data)
-        const data = response.data.data
-        data.forEach(item => {
-          console.log(item)
-        });
-      })
+      const response = await axios.get(`${apiURL}/products/goals`);
+      setGoals(response.data.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
     }
-    catch (error) {
-      console.error(error)
-    }
-  }, [])
-  
-
-  
-  console.log(metaTotal);
-  console.log(metaAtual);
-  
-
-
-
-
+  }
 
   return (
     <ScrollView style={styles.container}>
@@ -71,6 +54,30 @@ export default function Home() {
         <View style={styles.phrase}>
           <Text style={styles.phrase0}>Seu gesto, nossa força:</Text>
           <Text style={styles.phrase01}>doar hoje, construir amanhã.</Text>
+        </View>
+
+        <View>
+          <Text style={styles.titlex}>Metas de doações</Text>
+          <View style={styles.bordex}>
+
+          </View>
+          {
+            goals.map((goal, index) => {
+              const percentage = goal.current_quantity / goal.target_quantity;
+
+              return (
+                <View key={index}>
+                  <Text>{goal.type}</Text>
+                  <Text>Progresso atual: {goal.current_quantity}</Text>
+                  <Text>Meta: {goal.target_quantity}</Text>
+                  <View style={{ height: 10, backgroundColor: 'red' }}>
+                    <ProgressBar progress={percentage} color="#0000ff" style={{ height: 10 }} />
+                  </View>
+                  <Text>{(percentage * 100).toFixed(2)}% concluído</Text>
+                </View>
+              );
+            })
+          }
         </View>
 
         <View style={styles.btn_doacoes}>

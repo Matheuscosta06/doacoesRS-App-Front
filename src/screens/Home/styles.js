@@ -30,10 +30,12 @@ const styles = StyleSheet.create({
   title0: {
     color: '#fff',
     fontSize: 50,
+    fontFamily: "JosefinSans_500Medium",
     justifyContent: 'center',
     alignItems: 'center',
   },
   title01: {
+    fontFamily: "JosefinSans_500Medium",
     color: '#FFA41B',
     fontSize: 40
   },
@@ -57,7 +59,8 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   buttonText: {
-    color: '#fff'
+    color: '#fff',
+    fontFamily: "JosefinSans_500Medium"
   },
   phrase: {
     display: 'flex',
@@ -67,11 +70,13 @@ const styles = StyleSheet.create({
   },
   phrase0: {
     color: '#283444',
-    fontSize: 26
+    fontSize: 26,
+    fontFamily: "JosefinSans_700Bold"
   },
   phrase01: {
     color: '#283444',
-    fontSize: 26
+    fontSize: 26,
+    fontFamily: "JosefinSans_700Bold"
   },
   btn_doacoes: {
     marginTop: 40,
@@ -179,7 +184,23 @@ const styles = StyleSheet.create({
   },
   attEstatisticas: {
     color: '#bab8b8'
-  }
+  },
+  titlex: {
+    textAlign: 'center',
+    fontFamily: "JosefinSans_700Bold",
+    fontSize: 26,
+    color: '#283444',
+    marginTop: 25,
+
+  },
+  bordex: {
+    width: 181,
+    height: 0,
+    borderWidth: 2,
+    borderColor: '#283444',
+    marginTop: 7,
+    margin: "auto"
+  },
 });
 
 export default styles;

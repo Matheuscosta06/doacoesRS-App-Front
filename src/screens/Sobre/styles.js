@@ -126,6 +126,17 @@ const styles = StyleSheet.create({
     textAlign: "center",
     margin: 30,
   },
+  cardDetalheZ: {
+    width: 340,
+    height: 280,
+    backgroundColor: "#D9D9D9",
+    borderWidth: 5,
+    borderColor: "#FFA41B",
+    borderRadius: 25,
+    textAlign: "center",
+    margin: 30,
+    marginBottom: 110,
+  },
   nomeMembro: {
     textAlign: "center",
     marginTop: 100,

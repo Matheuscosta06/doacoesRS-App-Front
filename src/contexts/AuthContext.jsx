@@ -19,7 +19,7 @@ const AuthProvider = ({ children }) => {
       if (storageToken) {
         try {
           const isLogged = await axios.post(`${apiURL}/users/refresh`, {
-            refreshToken: JSON.parse(storageToken)
+            refreshToken: storageToken
           });
           if (isLogged) {
             const userById = await axios.get(`${apiURL}/users/${isLogged.data.refreshToken.user_id}`, {
@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
               }
             });
             setAcessToken(isLogged.data.token);
-            const { password, ...userWithoutPassword } = userById.data.user;
+            const { password, ...userWithoutPassword } = userById.data;
             setUser(userWithoutPassword);
           }
         } catch (error) {
@@ -53,7 +53,7 @@ const AuthProvider = ({ children }) => {
       setAcessToken(isLogged.data.token);
       const { password, ...userWithoutPassword } = isLogged.data.user;
       setUser(userWithoutPassword);
-      await AsyncStorage.setItem('@asyncStorage:refreshToken', JSON.stringify(isLogged.data.refreshToken.token));
+      await AsyncStorage.setItem('@asyncStorage:refreshToken', isLogged.data.refreshToken.token);
     }
   }
 
@@ -76,7 +76,7 @@ const AuthProvider = ({ children }) => {
 
 
   return (
-    <AuthContext.Provider value={{ setUser, signIn, getUsers, globalLoading, popUpMessage, user}}>
+    <AuthContext.Provider value={{ setUser, signIn, getUsers, globalLoading, popUpMessage, user }}>
       {children}
     </AuthContext.Provider>
   );
