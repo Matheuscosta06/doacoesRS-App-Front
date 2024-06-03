@@ -56,22 +56,21 @@ export default function Home() {
           <Text style={styles.phrase01}>doar hoje, construir amanhã.</Text>
         </View>
 
-        <View>
+        <View style={styles.donatesGraphic} >
           <Text style={styles.titlex}>Metas de doações</Text>
-          <View style={styles.bordex}>
+          <View style={styles.blueLine} />
 
-          </View>
           {
             goals.map((goal, index) => {
               const percentage = goal.current_quantity / goal.target_quantity;
 
               return (
-                <View key={index}>
+                <View key={index} style={styles.grafico}>
                   <Text>{goal.type}</Text>
                   <Text>Progresso atual: {goal.current_quantity}</Text>
                   <Text>Meta: {goal.target_quantity}</Text>
-                  <View style={{ height: 10, backgroundColor: 'red' }}>
-                    <ProgressBar progress={percentage} color="#0000ff" style={{ height: 10 }} />
+                  <View style={styles.ContainerPercentage}>
+                    <ProgressBar progress={percentage} color="#000f18"style={styles.percentage} />
                   </View>
                   <Text>{(percentage * 100).toFixed(2)}% concluído</Text>
                 </View>
@@ -79,6 +78,11 @@ export default function Home() {
             })
           }
         </View>
+
+{/* hygiene: #11D1C6
+pets : #008B6B
+roupas: #620A71
+alimentpos: #C70808 */}
 
         <View style={styles.btn_doacoes}>
           <TouchableOpacity

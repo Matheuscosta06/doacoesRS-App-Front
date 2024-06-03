@@ -193,14 +193,26 @@ const styles = StyleSheet.create({
     marginTop: 25,
 
   },
-  bordex: {
-    width: 181,
-    height: 0,
-    borderWidth: 2,
-    borderColor: '#283444',
-    marginTop: 7,
-    margin: "auto"
+  donatesGraphic:{
+    alignItems:'center'
   },
+  grafico:{
+    width: '70%',
+    backgroundColor: '#fff',
+    borderTopWidth: 2,
+    borderBottomWidth: 2,
+    alignItems: 'center'
+  },
+  percentage: {
+    height: 10,
+    borderWidth: 2,
+    width: '50%'
+  },
+  ContainerPercentage: {
+    height: 10,
+    alignItems: 'center',
+    width: '100%'
+  }
 });
 
 export default styles;
