@@ -61,11 +61,11 @@ export default function DetalhesPets() {
                             <Text style={styles.tituloDesc}>{produto.name}</Text>
                             <Text style={styles.preco}>R${produto.value}</Text>
                             <View style={styles.quantidadeProdutos}>
-                                <TouchableOpacity onPress={() => addProduct(produto.id)} style={styles.mais} >
+                                <TouchableOpacity onPress={() => addProduct(produto)} style={styles.mais} >
                                     <Text style={styles.maisButton}>+</Text>
                                 </TouchableOpacity>
                                 <Text style={styles.quantidade}>{quantidade}</Text>
-                                <TouchableOpacity onPress={() => removeProduct(produto.id)} style={styles.menos}>
+                                <TouchableOpacity onPress={() => removeProduct(produto)} style={styles.menos}>
                                     <Text style={styles.menosButton}>-</Text>
                                 </TouchableOpacity>
                             </View>
