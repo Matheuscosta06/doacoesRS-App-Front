@@ -7,16 +7,15 @@ export default function CartProvider({ children }) {
 
     const [productsCart, setProductsCart] = useState([]);
 
-    const addProduct = (productID) => {
+    const addProduct = (productID, quantity) => {
         const newProductsCart = [...productsCart];
-
+    
         const item = newProductsCart.find((item) => item.id === productID);
-
+    
         if (!item) {
-            newProductsCart.push({ id: productID, qtd: 1 });
-            setProductsCart(newProductsCart);
+            newProductsCart.push({ id: productID, qtd: quantity });
         } else {
-            item.qtd++;
+            item.qtd += quantity;
         }
         setProductsCart(newProductsCart);
     };
