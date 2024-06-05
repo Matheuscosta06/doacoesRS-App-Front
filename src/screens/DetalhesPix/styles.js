@@ -13,7 +13,8 @@ export default StyleSheet.create({
         borderRadius: 20,
         justifyContent: 'center',
         margin: "auto",
-        marginTop: 40,
+        marginTop: 20,
+        marginBottom: 140,
 
     },
     title: {

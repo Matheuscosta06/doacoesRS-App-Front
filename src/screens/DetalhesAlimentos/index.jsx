@@ -91,8 +91,6 @@ export default function DetalhesPets() {
                     <View style={styles.linhaLaranja2} />
 
                     <Text>{JSON.stringify(productsCart)}</Text>
-
-
                     {produtos.map(produto => (
                         !cardPopup[produto.id] ? (
                             <TouchableOpacity onPress={() => popUp(produto.id)} key={produto.id} style={styles.containerProdutos}>
