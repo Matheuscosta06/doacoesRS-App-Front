@@ -81,36 +81,7 @@ const styles = StyleSheet.create({
   btn_doacoes: {
     alignItems: 'center'
   },
-  button_doar: {
-    backgroundColor: '#fff',
-    width: 400,
-    height: 200,
-    borderWidth: 8,
-    borderColor: "#faab14",
-    borderRadius: 25,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  buttonText_doar: {
-    fontSize: 21,
-    color: '#283444',
 
-  },
-  buttonText_doar1: {
-    fontSize: 21,
-    color: '#faab14',
-  },
-  button_doar1: {
-    marginTop: 20,
-    backgroundColor: '#fff',
-    width: 400,
-    height: 200,
-    borderWidth: 8,
-    borderColor: "#283444",
-    borderRadius: 25,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
   titleHome: {
     alignItems: 'center',
   },
@@ -120,70 +91,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     alignItems: 'center'
   },
-  estatisticas: {
-    marginTop: 15,
-    alignItems: 'center',
-  },
-  estatistica1: {
-    backgroundColor: '#fff',
-    width: 400,
-    height: 250,
-    borderWidth: 8,
-    borderColor: "#faab14",
-    borderRadius: 25,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  info1: {
-    color: '#283444',
-    fontSize: 42,
-  },
-  estatistica2: {
-    marginTop: 15,
-    backgroundColor: '#fff',
-    width: 400,
-    height: 250,
-    borderWidth: 8,
-    borderColor: "#faab14",
-    borderRadius: 25,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  info2: {
-    color: '#283444',
-    fontSize: 42,
-  },
-  estatistica3: {
-    marginTop: 15,
-    backgroundColor: '#fff',
-    width: 400,
-    height: 250,
-    borderWidth: 8,
-    borderColor: "#faab14",
-    borderRadius: 25,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  infoCidade1: {
-    color: '#283444',
-    fontSize: 32,
-  },
-  infoCidade2: {
-    color: '#283444',
-    fontSize: 32,
-  },
-  infoCidade3: {
-    color: '#283444',
-    fontSize: 32,
-    marginBottom: 5
-  },
-  titleInfo: {
-    color: '#faab14',
-    fontSize: 32
-  },
-  attEstatisticas: {
-    color: '#bab8b8'
-  },
+  
   titlex: {
     textAlign: 'center',
     fontFamily: "JosefinSans_700Bold",
@@ -289,6 +197,37 @@ const styles = StyleSheet.create({
     fontFamily: "JosefinSans_500Medium",
     fontSize: 20,
   },
+  btn_comprar:{
+    width: 270,
+    height: 120,
+    borderWidth: 4,
+    borderRadius: 20,
+    borderColor: '#ffab14',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  btn_comprar2:{
+    marginTop: 10,
+    width: 270,
+    height: 120,
+    borderWidth: 4,
+    borderRadius: 20,
+    borderColor: '#ffab14',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  img01:{
+    marginLeft: 20
+  },
+  textDiv:{
+    marginLeft: 20
+  },
+  btnText_comprar: {
+    textAlign: 'center',
+    fontFamily: "JosefinSans_500Medium",
+  }
 });
 
 export default styles;

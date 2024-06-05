@@ -101,19 +101,30 @@ alimentpos: #C70808 */}
           <View style={styles.blueLine} />
 
         <View style={styles.btn_doacoes}>
-          <TouchableOpacity
+        <TouchableOpacity
             onPress={() => navigation.navigate("Home")}
-            style={styles.button_doar}
+            style={styles.btn_comprar}
           >
-            <Text style={styles.buttonText_doar}>Cadastre sua doação</Text>
-            <Text style={styles.buttonText_doar1}>Aqui</Text>
+
+            <Image source={require('../../../assets/iconCompra.png')} style={styles.img01}/>
+            <View style={styles.textDiv}>
+            <Text style={styles.btnText_comprar}>Compre sua doação</Text>
+            <Text style={styles.btnText_comprar}>Aqui</Text>
+            </View>
+           
           </TouchableOpacity>
+
           <TouchableOpacity
             onPress={() => navigation.navigate("Home")}
-            style={styles.button_doar1}
+            style={styles.btn_comprar2}
           >
-            <Text style={styles.buttonText_doar}>Cadastre sua doação</Text>
-            <Text style={styles.buttonText_doar1}>Aqui</Text>
+
+            <Image source={require('../../../assets/iconDoar.png')} style={styles.img01}/>
+            <View style={styles.textDiv}>
+            <Text style={styles.btnText_comprar}>Compre sua doação</Text>
+            <Text style={styles.btnText_comprar}>Aqui</Text>
+            </View>
+           
           </TouchableOpacity>
         </View>
 
