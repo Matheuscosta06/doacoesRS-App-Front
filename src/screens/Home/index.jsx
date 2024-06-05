@@ -41,7 +41,7 @@ export default function Home() {
 
           <View style={styles.btnHeader}>
             <TouchableOpacity
-              onPress={() => navigation.navigate("Home")}
+              onPress={() => navigation.navigate("Category")}
               style={styles.button}
             >
               <Text style={styles.buttonText}>Doe Agora</Text>
@@ -97,54 +97,62 @@ pets : #008B6B
 roupas: #620A71
 alimentpos: #C70808 */}
 
-        <View style={styles.btn_doacoes}>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Home")}
-            style={styles.button_doar}
-          >
-            <Text style={styles.buttonText_doar}>Cadastre sua doação</Text>
-            <Text style={styles.buttonText_doar1}>Aqui</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Home")}
-            style={styles.button_doar1}
-          >
-            <Text style={styles.buttonText_doar}>Cadastre sua doação</Text>
-            <Text style={styles.buttonText_doar1}>Aqui</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.titleHome}>
-          <Text style={styles.titleName}>Estatísticas do RS</Text>
+          <Text style={styles.titlex}>Doe Agora</Text>
           <View style={styles.blueLine} />
-        </View>
 
-        <View style={styles.estatisticas}>
-          <View style={styles.estatistica1}>
-            <Text style={styles.info1}>4,65m</Text>
-            <Text style={styles.titleInfo}>Nível da água</Text>
-          </View>
-          <View style={styles.estatistica2}>
-            <Text style={styles.info2}>43 mil</Text>
-            <Text style={styles.titleInfo}>Desabrigados</Text>
-          </View>
-          <View style={styles.estatistica3}>
-            <Text style={styles.infoCidade1}>Roca Sales</Text>
-            <Text style={styles.infoCidade2}>Cruzeiro do Sul</Text>
-            <Text style={styles.infoCidade3}>Arroio do Meio</Text>
-            <Text style={styles.titleInfo}>Cidades + afetadas</Text>
-          </View>
-          <Text style={styles.attEstatisticas}>*Atualizado diariamente</Text>
-        </View>
-
+        <View style={styles.btn_doacoes}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("News01")}
-          style={styles.button}
-        >
-          <Text style={styles.buttonText}>Noticias</Text>
-        </TouchableOpacity>
+            onPress={() => navigation.navigate("Category")}
+            style={styles.btn_comprar}
+          >
 
+            <Image source={require('../../../assets/iconCompra.png')} style={styles.img01}/>
+            <View style={styles.textDiv}>
+            <Text style={styles.btnText_comprar}>Compre sua doação</Text>
+            <Text style={styles.btnText_comprar}>Aqui</Text>
+            </View>
+           
+          </TouchableOpacity>
 
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Gift")}
+            style={styles.btn_comprar2}
+          >
+
+            <Image source={require('../../../assets/iconDoar.png')} style={styles.img01}/>
+            <View style={styles.textDiv}>
+            <Text style={styles.btnText_comprar}>Cadastre sua doação</Text>
+            <Text style={styles.btnText_comprar}>Aqui</Text>
+            </View>
+           
+          </TouchableOpacity>
+        </View>
+        <View style={styles.estatisticas}>
+        <View style={styles.blueLine1} />
+          <Text style={styles.estatisticasTitle}>Estatísticas do RS</Text>
+          <View style={styles.blueLine2} />
+
+          <View style={styles.cards}>
+            <View style={styles.card1}>
+              <Text style={styles.IncidentesNumber}>3,3m</Text>
+              <Text style={styles.IncidenteName}>Nível da água</Text>
+            </View>
+            <View style={styles.card2}>
+              <Text style={styles.IncidentesNumber}>30.414</Text>
+              <Text style={styles.IncidenteName}>Desabrigados</Text>
+            </View>
+            <View style={styles.card3}>
+              <Text style={styles.IncidentesCity}>
+              Roca Sales 
+              Cruzeiro do Sul 
+              Arroio do Meio</Text>
+              <Text style={styles.IncidenteName}>Cidades + afetadas</Text>
+            </View>
+            <Text style={styles.aviso}>*Atualizado diariamente</Text>
+          </View>
+        </View>
+
+       
 
       </View>
     </ScrollView>
