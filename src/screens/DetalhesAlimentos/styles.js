@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     zIndex: 1,
-    padding: 10,
     width: '80%',
     height: '80%',
     borderWidth: 5,
@@ -35,13 +34,17 @@ const styles = StyleSheet.create({
     
 
   },
+  descContainer: {
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 5,
+
+  },
   exit: {
-    backgroundColor: 'red',
-    borderRadius: 10,
     marginTop: 10,
-    padding: 10,
-    margin: 10,
-    
+    marginLeft: 10,
+    position: 'absolute',
+
   },
   fecharText: {
     color: 'white',
@@ -51,10 +54,9 @@ const styles = StyleSheet.create({
   },
   addcarrinho: {
     backgroundColor: 'green',
-    borderRadius: 10,
+    borderRadius: 5,
     marginTop: 10,
     padding: 10,
-    margin: 10,
   },
     addcarrinhoText: {
     color: 'white',
@@ -70,32 +72,67 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     },
 
-    menos: {
-    backgroundColor: 'red',
-    borderRadius: 10,
-    padding: 10,
-    margin: 10,
-    },
     menosButton: {
-    color: 'white',
+    color: '#FFA41B',
     fontWeight: 'bold',
     fontSize: 20,
     textAlign: 'center',
     },
     mais: {
-    backgroundColor: 'green',
-    borderRadius: 10,
-    padding: 10,
     margin: 10,
     },
+
+
+    multipleButtonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    },
+
+    multipleButtons:{
+      borderColor: 'black',
+      borderWidth: 1,
+      borderRadius: 5,
+      marginTop: 10,
+      width: '30%',
+    },
+    
+    menos: {  
+      margin: 10,
+      },
     maisButton: {
-    color: 'white',
+    color: '#FFA41B',
     fontWeight: 'bold',
     fontSize: 20,
 
     textAlign: 'center',
 
     },
+
+    quantidadeProdutos: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderBlockColor: 'black',
+    borderWidth: 1,
+    borderRadius: 5,
+    },
+    imgContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#e4e4e4',
+    width: '100%',
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5, 
+    },
+
+    nameCard: {
+    fontSize: 20,
+    color: 'black',
+    fontWeight: 'bold',
+    },
+
+
 
 
   titulo1:{
@@ -160,16 +197,6 @@ const styles = StyleSheet.create({
       paddingTop: 10,
       color: 'lightgreen',
       fontWeight: 'bold',
-  },
-  quantidadeProdutos:{
-      borderColor: 'red',
-      borderWidth: 3,
-      flexDirection: 'row',
-      marginTop: "20%",
-      color: 'white',
-      marginRight: "35%",
-      fontWeight: 'bold',
-      borderRadius: 10,
   },
 
 

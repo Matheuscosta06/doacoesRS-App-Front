@@ -6,10 +6,12 @@ const apiURL = process.env.EXPO_PUBLIC_API_URL;
 import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { CartContext } from '../../contexts/CartContext';
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function DetalhesPets() {
     const [produtos, setProdutos] = useState([]);
     const [quantities, setQuantities] = useState({});
+    const [showPopup, setShowPopup] = useState(false);
     const [cardPopup, setCardPopup] = useState({});
 
     const {
@@ -39,6 +41,14 @@ export default function DetalhesPets() {
         setQuantities({
             ...quantities,
             [id]: (quantities[id] || 0) + 1,
+        });
+    };
+
+    const addMultiple = (id, amount) => {
+        setShowPopup(true);
+        setQuantities({
+            ...quantities,
+            [id]: (quantities[id] || 0) + amount,
         });
     };
 
@@ -91,30 +101,50 @@ export default function DetalhesPets() {
                         </TouchableOpacity>
                     ) :
                         <View key={produto.id} style={styles.cardInfo}>
-                            <Image source={`${produto.image}`} style={styles.imagem} />
-
-                            <View style={styles.desc}>
-                                <Text style={styles.tituloDesc}>{produto.name}</Text>
-                                <Text style={styles.preco}>R${produto.value}</Text>
+                            <View style={styles.imgContainer}>
+                                <Image source={`${produto.image}`} style={styles.imagem} />
                             </View>
 
+                            <View style={styles.descContainer}>
+                                <View style={styles.desc}>
+                                    <Text style={styles.nameCard}>{produto.name}</Text>
+                                    <Text style={styles.preco}>R${produto.value}</Text>
+                                </View>
 
-                            <View style={styles.quantidadeProdutos}>
-                                <TouchableOpacity onPress={() => add(produto.id)} style={styles.mais} >
-                                    <Text style={styles.maisButton}>+</Text>
+
+                                {
+                                    showPopup && (
+                                        <View style={styles.quantidadeProdutos}>
+                                            <TouchableOpacity onPress={() => add(produto.id)} style={styles.mais} >
+                                                <Text style={styles.maisButton}>+</Text>
+                                            </TouchableOpacity>
+                                            <Text style={styles.quantidade}>{quantities[produto.id] || 0}</Text>
+                                            <TouchableOpacity onPress={() => remove(produto.id)} style={styles.menos}>
+                                                <Text style={styles.menosButton}>-</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    )
+                                }
+                                <View style={styles.multipleButtonsContainer}>
+                                    <TouchableOpacity onPress={() => addMultiple(produto.id, 2)} style={styles.multipleButtons} >
+                                        <Text style={styles.maisButton}>+2</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity onPress={() => addMultiple(produto.id, 6)} style={styles.multipleButtons} >
+                                        <Text style={styles.maisButton}>+6</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity onPress={() => addMultiple(produto.id, 12)} style={styles.multipleButtons} >
+                                        <Text style={styles.maisButton}>+12</Text>
+                                    </TouchableOpacity>
+                                </View>
+
+                                <TouchableOpacity onPress={() => addProduct(produto.id, quantities[produto.id] || 0) || setQuantities({})} style={styles.addcarrinho}>
+                                    <Text style={styles.addcarrinhoText}>Adicionar ao carrinho</Text>
                                 </TouchableOpacity>
-                                <Text style={styles.quantidade}>{quantities[produto.id] || 0}</Text>
-                                <TouchableOpacity onPress={() => remove(produto.id)} style={styles.menos}>
-                                    <Text style={styles.menosButton}>-</Text>
-                                </TouchableOpacity>
+
                             </View>
 
-                            <TouchableOpacity onPress={() => addProduct(produto.id, quantities[produto.id] || 0) || setQuantities({})} style={styles.addcarrinho}>
-                                <Text style={styles.addcarrinhoText}>Adicionar ao carrinho</Text>
-                            </TouchableOpacity>
-
-                            <TouchableOpacity onPress={() => popUp(produto.id)} style={styles.exit}>
-                                <Text style={styles.fecharText}>Fechar</Text>
+                            <TouchableOpacity onPress={() => { popUp(produto.id); setShowPopup(false); }} style={styles.exit}>
+                                <AntDesign name="left" size={24} color="red" />
                             </TouchableOpacity>
 
                         </View>
