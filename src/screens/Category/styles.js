@@ -3,58 +3,114 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#242e46",
-    alignItems: "center",
-    justifyContent: "center",
 
   },
-  header: {
-    marginBottom: 110,
-  },
-  titulo: {
-    fontSize: 36,
-    color: "#fff",
-    fontWeight: "bold",
-    textAlign: "center",
-    marginTop: 50,
-    marginBottom: 30,
-    fontFamily: 'JosefinSans_700Bold',
-  },
-  card: {
-    marginVertical: 20,
-    borderRadius: 10,
-    overflow: 'hidden',
-    alignSelf: 'center',
-    width: "100%",
-
-  },
-
-  cardzin: {
-    backgroundColor: '#FFA41B',
-    justifyContent: "space-between",
+  imgBg: {
+    flex: 1,
     alignItems: 'center',
-    paddingVertical: 20,
-    paddingHorizontal: 50,
-    display: 'flex',
-    flexDirection: 'row',
-
-
+    width: '100%',
+    height: '100%'
   },
-  cardText: {
-    color: '#000',
-    fontSize: 24,
-    marginRight: 10,
-    fontFamily: 'JosefinSans_700Bold',
-  },
-  piximg: {
-    width: 60,
-    height: 60,
-    borderRadius: 50,
-    marginRight: 0,
-  },
+    titulo: {
+      fontSize: 60,
+      color: "#fff",
+      fontWeight: "bold",
+      textAlign: "center",
+      marginTop: 50,
+      fontFamily: 'JosefinSans_700Bold',
+    },
 
+    icones1: {
+      display: 'flex',
+      flexDirection: 'row',
+    },
+    icones2: {
+      display: 'flex',
+      flexDirection: 'row',
+    },
+    card: {
+      marginTop: 30,
+      backgroundColor: '#ffa41b',
+      width: 160,
+      height: 180,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 15,
+      borderWidth: 4,
+      borderColor: '#fff'
+    },
 
+    card2: {
+      marginTop: 30,
+      backgroundColor: '#ffa41b',
+      width: 160,
+      height: 180,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 15,
+      borderWidth: 4,
+      borderColor: '#fff',
+      marginLeft: 34
+    },
 
+    cardInside:{
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+
+    cardText: {
+      fontFamily: 'JosefinSans_700Bold',
+      color: '#fff',
+      marginTop: 20,
+      fontSize: 24
+    },
+
+    cardTextFood: {
+      marginLeft: 25,
+      fontFamily: 'JosefinSans_700Bold',
+      color: '#fff',
+      marginTop: 15,
+      fontSize: 20
+    },
+
+    txt0: {
+      fontSize: 16,
+      color: "#fff",
+      fontWeight: "bold",
+      textAlign: "center",
+      marginTop: 50,
+      fontFamily: 'JosefinSans_700Bold',
+    },
+
+    icones3: {
+      marginTop: 50,
+      alignItems: 'center'
+    },
+
+    cardPix:{
+      width: 270,
+      height: 100,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#ffa41b',
+      borderRadius: 15,
+      borderWidth: 4,
+      borderColor: '#fff'
+    },
+
+    cardInsidePix:{
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center'
+    },
+
+    cardTextPix: {
+      marginLeft: 20,
+      fontFamily: 'JosefinSans_700Bold',
+      color: '#fff',
+      fontSize: 18,
+      marginTop: 20
+    },
 
 });
 
