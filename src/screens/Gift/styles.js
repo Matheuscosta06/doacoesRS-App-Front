@@ -3,11 +3,12 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     height: "100%",
-    paddingTop: 150,
+    paddingTop: 80,
     backgroundColor: "#24396e",
     alignItems: "center",
     justifyContent: "center",
     paddingBottom: 150,
+    width: '100%'
   },
   txt1: {
     color: "#fff",
@@ -58,6 +59,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
+    height: '100%'
    },
   cardText: {
     fontFamily: 'JosefinSans_700Bold',
@@ -66,6 +68,7 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   cardcontainer: {
+    height: '100%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -86,7 +89,7 @@ const styles = StyleSheet.create({
   },
 
   cardTextFood: {
-    marginLeft: 25,
+    marginLeft: 10,
     fontFamily: 'JosefinSans_700Bold',
     color: '#fff',
     marginTop: 15,
@@ -98,7 +101,8 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 20,
     fontFamily: "JosefinSans_500Medium",
-
+    marginBottom: 450,
+    marginTop: 100
   },
   Inputcontainer1: {
     flexDirection: "row",
@@ -141,6 +145,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: "JosefinSans_500Medium",
   },
+  icones3:{
+    alignItems: 'center',
+    justifyContent: 'center'
+
+  }
 
 });
 
