@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     height: "100%",
+    paddingTop: 150,
     backgroundColor: "#24396e",
     alignItems: "center",
     justifyContent: "center",
@@ -26,6 +27,7 @@ const styles = StyleSheet.create({
   image: {
     width: 130,
     height: 100,
+    
   },
   card: {
     marginTop: 30,
