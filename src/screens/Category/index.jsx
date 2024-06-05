@@ -57,7 +57,7 @@ export default function Category() {
 
           </View>
 
-          <Text style={styles.txt0}>ou</Text>
+         
 
           <View style={styles.icones3}>
             <TouchableOpacity style={styles.cardPix} onPress={() => navigation.navigate(`DetalhesPix`)}>
