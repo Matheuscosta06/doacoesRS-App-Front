@@ -146,8 +146,7 @@ export default function DetalhesPets() {
                             <TouchableOpacity onPress={() => { popUp(produto.id); setShowPopup(false); }} style={styles.exit}>
                                 <AntDesign name="left" size={24} color="red" />
                             </TouchableOpacity>
-
-                        </View>
+                    </View>
                 ))}
             </LinearGradient>
         </ScrollView>
