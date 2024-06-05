@@ -70,7 +70,7 @@ export default function Login() {
             <Text style={styles.txt}>Senha:</Text>
             <View style={styles.inputContainer}>
               <AntDesign name="lock" size={24} color="#fff" />
-              <TextInput onChangeText={setPassword} placeholderTextColor={"#fff"} placeholder='Escreva sua senha' style={styles.input} />
+              <TextInput onChangeText={setPassword} secureTextEntry={true} placeholderTextColor={"#fff"} placeholder='Escreva sua senha' style={styles.input} />
             </View>
           </View>
           <TouchableOpacity style={styles.button} onPress={handleLogin}>

@@ -17,6 +17,87 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       marginBottom: -8,
   },
+  cardInfo: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    position: 'absolute',
+    margin: 'auto',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 1,
+    padding: 10,
+    width: '80%',
+    height: '80%',
+    borderWidth: 5,
+    borderColor: "#FFA41B",
+    
+
+  },
+  exit: {
+    backgroundColor: 'red',
+    borderRadius: 10,
+    marginTop: 10,
+    padding: 10,
+    margin: 10,
+    
+  },
+  fecharText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+    textAlign: 'center',
+  },
+  addcarrinho: {
+    backgroundColor: 'green',
+    borderRadius: 10,
+    marginTop: 10,
+    padding: 10,
+    margin: 10,
+  },
+    addcarrinhoText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+    textAlign: 'center',
+    },
+
+    quantidade: {
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: 20,
+    textAlign: 'center',
+    },
+
+    menos: {
+    backgroundColor: 'red',
+    borderRadius: 10,
+    padding: 10,
+    margin: 10,
+    },
+    menosButton: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+    textAlign: 'center',
+    },
+    mais: {
+    backgroundColor: 'green',
+    borderRadius: 10,
+    padding: 10,
+    margin: 10,
+    },
+    maisButton: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+
+    textAlign: 'center',
+
+    },
+
+
   titulo1:{
       fontSize: 40,
       color: '#283444',
@@ -90,50 +171,7 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       borderRadius: 10,
   },
-    mais:{
-        height: 30,
-        width: 30,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    menos:{
-        height: 30,
-        width: 30,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    maisButton:{
-        fontSize: 23,
-        color: 'white',
-        fontWeight: 'bold',
-    },
-    menosButton:{
-        fontSize: 23,
-        color: 'white',
-        fontWeight: 'bold',
-    },
-    quantidade:{
-        fontSize: 23,
-        color: 'white',
-        fontWeight: 'bold',
-        paddingLeft: 5,
-        paddingRight: 5,
-    },
-    addcarrinho:{
-        borderColor: 'red',
-        borderWidth: 3,
-        flexDirection: 'row',
-        marginTop: "10%",
-        color: 'white',
-        fontWeight: 'bold',
-        borderRadius: 10,
-    },
-    addcarrinhoText:{
-        fontSize: 15,
-        color: 'white',
-        marginTop: "5%",
-        marginBottom: "5%",
-    },
+
 
 
 });
