@@ -59,24 +59,37 @@ export default function Home() {
         <View style={styles.donatesGraphic} >
           <Text style={styles.titlex}>Metas de doações</Text>
           <View style={styles.blueLine} />
-          {
-            goals.map((goal, index) => {
-              const percentage = goal.current_quantity / goal.target_quantity;
+          <View style={styles.containerPorcetage}>
+            <Text style={styles.txtPctg}>0%</Text>
+            <Text style={styles.txtPctg}>50%</Text>
+            <Text style={styles.txtPctg}>100%</Text>
+          </View>
+          <View style={styles.containerGrafico}>
 
-              return (
-                <View key={index} style={styles.grafico}>
-                  <Text>{goal.type}</Text>
-                  <Text>Progresso atual: {goal.current_quantity}</Text>
-                  <Text>Meta: {goal.target_quantity}</Text>
-                  <View style={[styles.totalProgressBar, styles[goal.type]]}>
-                    <View style={{ ...styles.completedProgressBar, width: `${percentage * 100}%` }} />
-                    <Text style={styles.progressBarText}>{goal.type}</Text>
+            {
+              goals.map((goal, index) => {
+                const percentage = goal.current_quantity / goal.target_quantity;
+
+                return (
+                  <View key={index} style={styles.grafico}>
+                    <View style={[styles.totalProgressBar, styles[goal.type]]}>
+                      {
+                        percentage >= 1 ? (
+                          <>
+                            <Text style={styles.completedText}>Meta atingida!</Text>
+                            <View style={{ ...styles.completedProgressBar, ...styles[`progress_${goal.type}`], width: '100%' }} />
+                          </>
+                        ) : (
+                          <View style={{ ...styles.completedProgressBar, ...styles[`progress_${goal.type}`], width: `${percentage * 100}%` }} />
+                        )
+                      }
+                      <Text style={styles.progressBarText}>{goal.type}</Text>
+                    </View>
                   </View>
-                  <Text>{(percentage * 100).toFixed(2)}% concluído</Text>
-                </View>
-              );
-            })
-          }
+                );
+              })
+            }
+          </View>
         </View>
 
         {/* hygiene: #11D1C6
