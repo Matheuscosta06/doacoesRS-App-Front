@@ -13,62 +13,62 @@ export default function Category() {
     <View style={styles.container}>
       <ImageBackground source={require('../../../assets/wlppRS.png')} style={styles.imgBg}>
         <View style={styles.divMain}>
-        <Text style={styles.titulo}>O que doar?</Text>
+          <Text style={styles.titulo}>O que doar?</Text>
 
-        <View style={styles.icones1}>
-        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesPets`)}>
+          <View style={styles.icones1}>
+            <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesPets`)}>
 
-        <View style={styles.cardInside}>
-           <Image source={require('../../../assets/iconPets.png')} style={styles.picimg} />
-           <Text style={styles.cardText}>Pets</Text>
-        </View>
+              <View style={styles.cardInside}>
+                <Image source={require('../../../assets/iconPets.png')} style={styles.picimg} />
+                <Text style={styles.cardText}>Pets</Text>
+              </View>
 
-      </TouchableOpacity>
+            </TouchableOpacity>
 
-      <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate(`DetalhesAlimentos`)}>
+            <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate(`DetalhesAlimentos`)}>
 
-  <View style={styles.cardInside}>
-   <Image source={require('../../../assets/iconFood.png')} style={styles.picimg} />
-   <Text style={styles.cardTextFood}>Alimentos/Água</Text>
-</View>
+              <View style={styles.cardInside}>
+                <Image source={require('../../../assets/iconFood.png')} style={styles.picimg} />
+                <Text style={styles.cardTextFood}>Alimentos/Água</Text>
+              </View>
 
-</TouchableOpacity>
-          
-        </View>
+            </TouchableOpacity>
 
-        <View style={styles.icones2}>
-        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesRoupas`)}>
+          </View>
 
-        <View style={styles.cardInside}>
-           <Image source={require('../../../assets/iconCabide.png')} style={styles.picimg} />
-           <Text style={styles.cardText}>Roupas</Text>
-        </View>
+          <View style={styles.icones2}>
+            <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesRoupas`)}>
 
-      </TouchableOpacity>
+              <View style={styles.cardInside}>
+                <Image source={require('../../../assets/iconCabide.png')} style={styles.picimg} />
+                <Text style={styles.cardText}>Roupas</Text>
+              </View>
 
-      <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate(`DetalhesHigiene`)}>
+            </TouchableOpacity>
 
-  <View style={styles.cardInside}>
-   <Image source={require('../../../assets/iconHigiene.png')} style={styles.picimg} />
-   <Text style={styles.cardText}>Higiene</Text>
-</View>
+            <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate(`DetalhesHigiene`)}>
 
-</TouchableOpacity>
-          
-        </View>
+              <View style={styles.cardInside}>
+                <Image source={require('../../../assets/iconHigiene.png')} style={styles.picimg} />
+                <Text style={styles.cardText}>Higiene</Text>
+              </View>
 
-        <Text style={styles.txt0}>ou</Text>
+            </TouchableOpacity>
 
-        <View style={styles.icones3}>
-        <TouchableOpacity style={styles.cardPix} onPress={() => navigation.navigate(`DetalhesPix`)}>
+          </View>
 
-<View style={styles.cardInsidePix}>
-   <Image source={require('../../../assets/iconPix.png')} style={styles.picimgPix} />
-   <Text style={styles.cardTextPix}>Ajude pelo Pix</Text>
-</View>
+          <Text style={styles.txt0}>ou</Text>
 
-</TouchableOpacity>
-        </View>
+          <View style={styles.icones3}>
+            <TouchableOpacity style={styles.cardPix} onPress={() => navigation.navigate(`DetalhesPix`)}>
+
+              <View style={styles.cardInsidePix}>
+                <Image source={require('../../../assets/iconPix.png')} style={styles.picimgPix} />
+                <Text style={styles.cardTextPix}>Ajude pelo Pix</Text>
+              </View>
+
+            </TouchableOpacity>
+          </View>
 
         </View>
       </ImageBackground>
