@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Image, ScrollView,   TouchableOpacity } from 'react-native';
 import styles from './styles';
 import { Feather } from '@expo/vector-icons';
 import axios from 'axios';
@@ -39,64 +39,73 @@ export default function Gift() {
   };
 
   return (
+    <ScrollView>
     <View style={styles.container}>
       <Text style={styles.txt1}>Traga sua doação!</Text>
       <Text style={styles.txt1}>O que você irá nos trazer?</Text>
 
 
       {selectedCategory ? (
-        <View>
+        <View >
           {selectedCategory === 'pet' && (
             <View>
               <Text style={styles.txt2}>Pets</Text>
               <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>fechar</TouchableOpacity>
-
+            <View style={styles.cardcontainer}>
               {productsPets.map((product) => (
                 console.log(product),
                 <View style={styles.card}>
-                  <Image source={{ uri: product.image }} style={styles.picimg} />
+                  <Image source={`${product.image}`}style={styles.image} />
                   <Text style={styles.cardText}>{product.name}</Text>
                 </View>
               ))}
+            </View>
             </View>
           )}
           {selectedCategory === 'food' && (
             <View>
               <Text style={styles.txt2}>Alimentos/Água</Text>
               <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>fechar</TouchableOpacity>
+              <View style={styles.cardcontainer}>
 
               {productsFood.map((product) => (
                 <View style={styles.card}>
-                  <Image source={{ uri: product.image }} style={styles.picimg} />
+                  <Image source={`${product.image}`}style={styles.image} />
                   <Text style={styles.cardText}>{product.name}</Text>
                 </View>
               ))}
+            </View>
             </View>
           )}
           {selectedCategory === 'clothes' && (
             <View>
               <Text style={styles.txt2}>Roupas</Text>
               <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>fechar</TouchableOpacity>
+              <View style={styles.cardcontainer}>
 
               {productsClothes.map((product) => (
                 <View style={styles.card}>
-                  <Image source={{ uri: product.image }} style={styles.picimg} />
+                  <Image source={`${product.image}`} style={styles.image} />
                   <Text style={styles.cardText}>{product.name}</Text>
                 </View>
               ))}
             </View>
+            </View>
+
           )}
           {selectedCategory === 'hygiene' && (
-            <View>
+            <View >
               <Text style={styles.txt2}>Higiene</Text>
               <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>fechar</TouchableOpacity>
+              <View style={styles.cardcontainer}>
 
               {productsHygiene.map((product) => (
                 <View style={styles.card}>
-                  <Image source={{ uri: product.image }} style={styles.picimg} />
+                  <Image source={`${product.image}`}style={styles.image} />
                   <Text style={styles.cardText}>{product.name}</Text>
                 </View>
               ))}
+            </View>
             </View>
           )}
         </View>
@@ -143,5 +152,6 @@ export default function Gift() {
         </View>
       )}
     </View>
+    </ScrollView>
   );
 }

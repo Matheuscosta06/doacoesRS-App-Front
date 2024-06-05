@@ -2,15 +2,15 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingTop: 50,
+    height: "100%",
     backgroundColor: "#24396e",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    paddingBottom: 150,
   },
   txt1: {
     color: "#fff",
-    fontSize: 40,
+      fontSize: 40,
     textAlign: "center",
     fontFamily: "JosefinSans_700Bold",
   },
@@ -23,31 +23,48 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
   },
-
+  image: {
+    width: 130,
+    height: 100,
+    borderRadius: 50,
+  },
   card: {
     marginTop: 30,
     backgroundColor: '#ffa41b',
     width: 160,
     height: 180,
     alignItems: 'center',
-    justifyContent: 'center',
     borderRadius: 15,
     borderWidth: 4,
-    borderColor: '#fff'
+    borderColor: '#fff',
+  
   },
   
   cardInside:{
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    padding: 20
+  },
+  btn: {
+    backgroundColor: "#FFA41B",
+    alignItems: "center",
+    marginBottom: 20,
+    marginTop: 20,
   },
   
   cardText: {
     fontFamily: 'JosefinSans_700Bold',
     color: '#fff',
     marginTop: 20,
-    fontSize: 24
+    fontSize: 18
   },
-
+  cardcontainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    gap: 30,
+  },
   card2: {
     marginTop: 30,
     backgroundColor: '#ffa41b',
