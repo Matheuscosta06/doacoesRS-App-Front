@@ -104,12 +104,12 @@ export default function Register() {
                 <Text style={styles.subTitle}>Senhas:</Text>
                 <View style={styles.inputContainer}>
                     <AntDesign name="lock" size={24} color="#fff" />
-                    <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva sua senha" value={password} onChangeText={setPassword} />
+                    <TextInput secureTextEntry={true} style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva sua senha" value={password} onChangeText={setPassword} />
                 </View>
 
                 <View style={styles.inputContainer}>
                     <AntDesign name="unlock" size={24} color="#fff" />
-                    <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Confirme sua senha" value={confirmedPassword} onChangeText={setConfirmedPassword} />
+                    <TextInput secureTextEntry={true} style={styles.input} placeholderTextColor={"#fff"} placeholder="Confirme sua senha" value={confirmedPassword} onChangeText={setConfirmedPassword} />
                 </View>
 
                 <TouchableOpacity style={styles.button} onPress={handleRegister}>
