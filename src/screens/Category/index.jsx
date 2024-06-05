@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity, ScrollView, } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, ImageBackground } from 'react-native';
 import styles from './styles';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
@@ -11,57 +11,120 @@ export default function Category() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <ScrollView>
-          <Text style={styles.titulo}>O que doar?</Text>
+      <ImageBackground source={require('../../../assets/wlppRS.png')} style={styles.imgBg}>
+        <View style={styles.divMain}>
+        <Text style={styles.titulo}>O que doar?</Text>
 
-          <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesPets`)}>
+        <View style={styles.icones1}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesPets`)}>
 
-            <View style={styles.cardzin}>
-              <Image source={require('../../../assets/pets.jpg')} style={styles.piximg} />
-              <Text style={styles.cardText}>PET's</Text>
-            </View>
+        <View style={styles.cardInside}>
+           <Image source={require('../../../assets/iconPets.png')} style={styles.picimg} />
+           <Text style={styles.cardText}>Pets</Text>
+        </View>
 
-          </TouchableOpacity>
+      </TouchableOpacity>
 
-          <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesAlimentos`)}>
+      <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate(`DetalhesAlimentos`)}>
 
-            <View style={styles.cardzin}>
-              <Image source={require('../../../assets/alimento.jpg')} style={styles.piximg} />
+  <View style={styles.cardInside}>
+   <Image source={require('../../../assets/iconFood.png')} style={styles.picimg} />
+   <Text style={styles.cardTextFood}>Alimentos/Água</Text>
+</View>
 
-              <Text style={styles.cardText}>Alimentos/Água</Text>
-            </View>
+</TouchableOpacity>
+          
+        </View>
 
-          </TouchableOpacity>
+        <View style={styles.icones2}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesRoupas`)}>
 
-          <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesRoupas`)}>
+        <View style={styles.cardInside}>
+           <Image source={require('../../../assets/iconCabide.png')} style={styles.picimg} />
+           <Text style={styles.cardText}>Roupas</Text>
+        </View>
 
-            <View style={styles.cardzin}>
-              <Image source={require('../../../assets/roupas.jpg')} style={styles.piximg} />
-              <Text style={styles.cardText}>Roupas</Text>
-            </View>
+      </TouchableOpacity>
 
-          </TouchableOpacity>
+      <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate(`DetalhesHigiene`)}>
 
-          <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesHigiene`)}>
+  <View style={styles.cardInside}>
+   <Image source={require('../../../assets/iconHigiene.png')} style={styles.picimg} />
+   <Text style={styles.cardText}>Higiene</Text>
+</View>
 
-            <View style={styles.cardzin}>
-              <Image source={require('../../../assets/higiene.jpg')} style={styles.piximg} />
-              <Text style={styles.cardText}>Higiene</Text>
-            </View>
+</TouchableOpacity>
+          
+        </View>
 
-          </TouchableOpacity>
+        <Text style={styles.txt0}>ou</Text>
 
-          <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesPix`)}>
+        <View style={styles.icones3}>
+        <TouchableOpacity style={styles.cardPix} onPress={() => navigation.navigate(`DetalhesPix`)}>
 
-            <View style={styles.cardzin}>
-              <Image source={require('../../../assets/pix.jpeg')} style={styles.piximg} />
-              <Text style={styles.cardText}>Dinheiro</Text>
-            </View>
+<View style={styles.cardInsidePix}>
+   <Image source={require('../../../assets/iconPix.png')} style={styles.picimgPix} />
+   <Text style={styles.cardTextPix}>Ajude pelo Pix</Text>
+</View>
 
-          </TouchableOpacity>
-        </ScrollView>
-      </View>
+</TouchableOpacity>
+        </View>
+
+        </View>
+      </ImageBackground>
     </View>
+    // <View style={styles.container}>
+    //   <View style={styles.header}>
+    //     <ScrollView>
+    //       <Text style={styles.titulo}>O que doar?</Text>
+
+    //       <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesPets`)}>
+
+    //         <View style={styles.cardzin}>
+    //           <Image source={require('../../../assets/pets.jpg')} style={styles.piximg} />
+    //           <Text style={styles.cardText}>PET's</Text>
+    //         </View>
+
+    //       </TouchableOpacity>
+
+    //       <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesAlimentos`)}>
+
+    //         <View style={styles.cardzin}>
+    //           <Image source={require('../../../assets/alimento.jpg')} style={styles.piximg} />
+
+    //           <Text style={styles.cardText}>Alimentos/Água</Text>
+    //         </View>
+
+    //       </TouchableOpacity>
+
+    //       <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesRoupas`)}>
+
+    //         <View style={styles.cardzin}>
+    //           <Image source={require('../../../assets/roupas.jpg')} style={styles.piximg} />
+    //           <Text style={styles.cardText}>Roupas</Text>
+    //         </View>
+
+    //       </TouchableOpacity>
+
+    //       <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesHigiene`)}>
+
+    //         <View style={styles.cardzin}>
+    //           <Image source={require('../../../assets/higiene.jpg')} style={styles.piximg} />
+    //           <Text style={styles.cardText}>Higiene</Text>
+    //         </View>
+
+    //       </TouchableOpacity>
+
+    //       <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesPix`)}>
+
+    //         <View style={styles.cardzin}>
+    //           <Image source={require('../../../assets/pix.jpeg')} style={styles.piximg} />
+    //           <Text style={styles.cardText}>Dinheiro</Text>
+    //         </View>
+
+    //       </TouchableOpacity>
+    //     </ScrollView>
+    //   </View>
+    // </View>
   );
 }
