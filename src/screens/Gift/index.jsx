@@ -127,6 +127,7 @@ export default function Gift() {
               <TouchableOpacity style={styles.card} onPress={() => handleCardPress('pet')}>
                 <View style={styles.cardInside}>
                   <Image source={require('../../../assets/iconPets.png')} style={styles.picimg} />
+                  <Text style={styles.cardText}>Pets</Text>
                 </View>
               </TouchableOpacity>
 
@@ -153,14 +154,14 @@ export default function Gift() {
                 </View>
               </TouchableOpacity>
             </View>
-
+            <View style={styles.icones3}>
             <TouchableOpacity style={styles.card} onPress={() => handleCardPress('Outros')}>
               <View style={styles.cardInside}>
                 <Image source={require('../../../assets/outrosIcon.png')} style={styles.picimg} />
                 <Text style={styles.cardText}>Outros</Text>
               </View>
             </TouchableOpacity>
-
+            </View>
           </View>
         )}
       </View>
