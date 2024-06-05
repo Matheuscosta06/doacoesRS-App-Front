@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#d9d9d9"
+    backgroundColor: "#fff"
   },
   head: {
     backgroundColor: '#283444',
@@ -79,39 +79,9 @@ const styles = StyleSheet.create({
     fontFamily: "JosefinSans_700Bold"
   },
   btn_doacoes: {
-    marginTop: 40,
     alignItems: 'center'
   },
-  button_doar: {
-    backgroundColor: '#fff',
-    width: 400,
-    height: 200,
-    borderWidth: 8,
-    borderColor: "#faab14",
-    borderRadius: 25,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  buttonText_doar: {
-    fontSize: 21,
-    color: '#283444',
 
-  },
-  buttonText_doar1: {
-    fontSize: 21,
-    color: '#faab14',
-  },
-  button_doar1: {
-    marginTop: 20,
-    backgroundColor: '#fff',
-    width: 400,
-    height: 200,
-    borderWidth: 8,
-    borderColor: "#283444",
-    borderRadius: 25,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
   titleHome: {
     alignItems: 'center',
   },
@@ -121,76 +91,13 @@ const styles = StyleSheet.create({
     fontSize: 32,
     alignItems: 'center'
   },
-  estatisticas: {
-    marginTop: 15,
-    alignItems: 'center',
-  },
-  estatistica1: {
-    backgroundColor: '#fff',
-    width: 400,
-    height: 250,
-    borderWidth: 8,
-    borderColor: "#faab14",
-    borderRadius: 25,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  info1: {
-    color: '#283444',
-    fontSize: 42,
-  },
-  estatistica2: {
-    marginTop: 15,
-    backgroundColor: '#fff',
-    width: 400,
-    height: 250,
-    borderWidth: 8,
-    borderColor: "#faab14",
-    borderRadius: 25,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  info2: {
-    color: '#283444',
-    fontSize: 42,
-  },
-  estatistica3: {
-    marginTop: 15,
-    backgroundColor: '#fff',
-    width: 400,
-    height: 250,
-    borderWidth: 8,
-    borderColor: "#faab14",
-    borderRadius: 25,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  infoCidade1: {
-    color: '#283444',
-    fontSize: 32,
-  },
-  infoCidade2: {
-    color: '#283444',
-    fontSize: 32,
-  },
-  infoCidade3: {
-    color: '#283444',
-    fontSize: 32,
-    marginBottom: 5
-  },
-  titleInfo: {
-    color: '#faab14',
-    fontSize: 32
-  },
-  attEstatisticas: {
-    color: '#bab8b8'
-  },
+  
   titlex: {
     textAlign: 'center',
     fontFamily: "JosefinSans_700Bold",
     fontSize: 26,
     color: '#283444',
-    marginTop: 25,
+    marginTop: 50,
 
   },
   donatesGraphic: {
@@ -201,17 +108,27 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '80%',
     padding: 4,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    borderLeftWidth:4,
+    borderRightWidth: 4,
+    borderTopWidth: 4,
+    borderColor: '#ffa41b'
   },
   txtPctg: {
-    color: '#FFA41B',
-    fontSize: 20,
+    color: '#fff',
+    fontSize: 16,
     fontFamily: "JosefinSans_700Bold",
   },
   containerGrafico: {
     width: '80%',
     backgroundColor: "#fff",
-    paddingTop: 20
+    paddingTop: 20,
+    borderLeftWidth:4,
+    borderRightWidth: 4,
+    borderBottomWidth: 4,
+    borderColor: '#ffa41b'
 
   },
   grafico: {
@@ -280,6 +197,126 @@ const styles = StyleSheet.create({
     fontFamily: "JosefinSans_500Medium",
     fontSize: 20,
   },
+  btn_comprar:{
+    width: 270,
+    height: 120,
+    borderWidth: 4,
+    borderRadius: 20,
+    borderColor: '#ffab14',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  btn_comprar2:{
+    marginTop: 10,
+    width: 270,
+    height: 120,
+    borderWidth: 4,
+    borderRadius: 20,
+    borderColor: '#ffab14',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  img01:{
+    marginLeft: 20
+  },
+  textDiv:{
+    marginLeft: 20
+  },
+  btnText_comprar: {
+    textAlign: 'center',
+    fontFamily: "JosefinSans_500Medium",
+  },
+  estatisticas:{
+    width: '100%',
+    backgroundColor: '#ffab14',
+    alignItems: 'center',
+    height: '40%',
+    marginTop: 80
+  },
+
+  estatisticasTitle:{
+    fontFamily: "JosefinSans_700Bold",
+    color: '#fff',
+    fontSize: 26
+  },
+  blueLine2: {
+    backgroundColor: "#283444",
+    height: 3.5,
+    width: "60%",
+    marginVertical: 10,
+    alignSelf: "center",
+  },
+  blueLine1: {
+    backgroundColor: "#283444",
+    height: 3.5,
+    width: "60%",
+    alignSelf: "center",
+
+  },
+  cards:{
+    alignItems: 'center',
+    marginTop: 30
+  },
+  card1: {
+    marginTop: 30,
+    alignItems: 'center',
+    width: 280,
+    height: 150,
+    borderColor: '#fff',
+    borderTopLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    borderWidth: 4,
+    justifyContent: 'center'
+  },
+  card2: {
+    marginTop: 30,
+    alignItems: 'center',
+    width: 280,
+    height: 150,
+    borderColor: '#fff',
+    borderTopLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    borderWidth: 4,
+    justifyContent: 'center'
+  },
+  card3: {
+    marginTop: 30,
+    alignItems: 'center',
+    width: 280,
+    height: 150,
+    borderColor: '#fff',
+    borderTopLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    borderWidth: 4,
+    justifyContent: 'center'
+  },
+  IncidentesNumber:{
+    fontSize: 36,
+    fontFamily: "JosefinSans_700Bold",
+    color: '#fff'
+  },
+  IncidenteName:{
+    fontFamily: "JosefinSans_700Bold",
+    color: '#fff',
+    fontSize: 18,
+    marginTop: 10
+  },
+  IncidentesCity:{
+    fontSize: 30,
+    fontFamily: "JosefinSans_700Bold",
+    color: '#fff',
+    alignItems: 'baseline',
+    textAlign: 'center'
+  },
+  aviso: {
+    color: '#fff',
+    fontFamily: "JosefinSans_700Bold",
+    fontSize: 16,
+    marginTop: 10
+  }
+
 });
 
 export default styles;
