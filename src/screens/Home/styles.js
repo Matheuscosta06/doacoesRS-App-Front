@@ -237,6 +237,7 @@ const styles = StyleSheet.create({
   },
 
   estatisticasTitle:{
+    marginTop: 10,
     fontFamily: "JosefinSans_700Bold",
     color: '#fff',
     fontSize: 26
