@@ -97,6 +97,9 @@ pets : #008B6B
 roupas: #620A71
 alimentpos: #C70808 */}
 
+          <Text style={styles.titlex}>Doe Agora</Text>
+          <View style={styles.blueLine} />
+
         <View style={styles.btn_doacoes}>
           <TouchableOpacity
             onPress={() => navigation.navigate("Home")}

@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
     fontFamily: "JosefinSans_700Bold"
   },
   btn_doacoes: {
-    marginTop: 40,
     alignItems: 'center'
   },
   button_doar: {
@@ -190,7 +189,7 @@ const styles = StyleSheet.create({
     fontFamily: "JosefinSans_700Bold",
     fontSize: 26,
     color: '#283444',
-    marginTop: 25,
+    marginTop: 50,
 
   },
   donatesGraphic: {
