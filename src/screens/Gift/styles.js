@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 50,
     backgroundColor: "#24396e",
     alignItems: "center",
     justifyContent: "center"
@@ -12,8 +13,62 @@ const styles = StyleSheet.create({
     fontSize: 40,
     textAlign: "center",
     fontFamily: "JosefinSans_700Bold",
-    marginBottom: 100,
   },
+  
+  icones1: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  icones2: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+
+  card: {
+    marginTop: 30,
+    backgroundColor: '#ffa41b',
+    width: 160,
+    height: 180,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 15,
+    borderWidth: 4,
+    borderColor: '#fff'
+  },
+  
+  cardInside:{
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  
+  cardText: {
+    fontFamily: 'JosefinSans_700Bold',
+    color: '#fff',
+    marginTop: 20,
+    fontSize: 24
+  },
+
+  card2: {
+    marginTop: 30,
+    backgroundColor: '#ffa41b',
+    width: 160,
+    height: 180,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 15,
+    borderWidth: 4,
+    borderColor: '#fff',
+    marginLeft: 34
+  },
+
+  cardTextFood: {
+    marginLeft: 25,
+    fontFamily: 'JosefinSans_700Bold',
+    color: '#fff',
+    marginTop: 15,
+    fontSize: 20
+  },
+
   input: {
     marginLeft: 10,
     color: "#fff",

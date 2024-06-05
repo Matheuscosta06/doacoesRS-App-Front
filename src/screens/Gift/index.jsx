@@ -1,93 +1,147 @@
-import { View, Text, TextInput, TouchableOpacity } from 'react-native'
-import styles from './styles'
+import React, { useState, useEffect } from 'react';
+import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
+import styles from './styles';
 import { Feather } from '@expo/vector-icons';
-import RNPickerSelect from 'react-native-picker-select';
-import { useState, useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
+
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
 
-
 export default function Gift() {
+  const [productsHygiene, setProductsHygiene] = useState([]);
+  const [productsClothes, setProductsClothes] = useState([]);
+  const [productsFood, setProductsFood] = useState([]);
+  const [productsPets, setProductsPets] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   useEffect(() => {
-    try {
-      const type = ['hygiene', 'pet']
+    const fetchData = async () => {
+      try {
+        const responseHygiene = await axios.get(`${apiURL}/products/type/hygiene`);
+        const responseClothes = await axios.get(`${apiURL}/products/type/clothes`);
+        const responseFood = await axios.get(`${apiURL}/products/type/food`);
+        const responsePets = await axios.get(`${apiURL}/products/type/pet`);
 
-      type.map(async (type) => {
-        const response = await axios.get(`${apiURL}/products/type/${type}`)
-        console.log(response.data)
-      })
-    }
-    catch (error) {
-      console.error(error)
-    }
-  }, [])
+        setProductsHygiene(responseHygiene.data.data);
+        setProductsClothes(responseClothes.data.data);
+        setProductsFood(responseFood.data.data);
+        setProductsPets(responsePets.data.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
 
-
-  const [local, setLocal] = useState('')
-  const local1 = 'Senai Valinhos'
-  const local2 = 'Prefeitura de Valinhos'
-
-
-  const [produto, setProduto] = useState('')
-  const produto1 = 'higiene'
-  const produto2 = 'Roupas'
-  const produto3 = 'Alimentos'
-  const produto4 = 'pets'
-
-
-  const navigation = useNavigation();
+  const handleCardPress = (category) => {
+    setSelectedCategory(category);
+    console.log(category);
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.txt1}>O que você deseja doar?</Text>
-
-      <RNPickerSelect
-        placeholder={{ label: 'Categoria da doação', value: null }}
-        value={produto}
-        onValueChange={(value) => setProduto(value)}
-        items={[
-          { label: "higiene", value: produto1 },
-          { label: "Roupas", value: produto2 },
-          { label: "Alimentos", value: produto3 },
-          { label: "pets", value: produto4 }
-
-        ]}
-
-        width={200}
-
-      />
-
-      <View style={styles.Inputcontainer1}>
-        <Feather name="shopping-bag" size={24} color="#fff" />
-        <TextInput placeholderTextColor={"#fff"} placeholder='Nome do Produto' style={styles.input} />
-      </View>
+      <Text style={styles.txt1}>Traga sua doação!</Text>
+      <Text style={styles.txt1}>O que você irá nos trazer?</Text>
 
 
-      <View style={styles.Inputcontainer2}>
-        <Feather name="bar-chart" size={24} color="#fff" />
-        <TextInput placeholderTextColor={"#fff"} placeholder='Quantidade da doação' style={styles.input} />
-      </View>
+      {selectedCategory ? (
+        <View>
+          {selectedCategory === 'pet' && (
+            <View>
+              <Text style={styles.txt2}>Pets</Text>
+              <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>fechar</TouchableOpacity>
 
-      <RNPickerSelect
-        value={local}
-        placeholder={{ label: 'Locais para o recolhimento', value: null }}
-        onValueChange={(value) => setLocal(value)}
-        items={[
-          { label: "Senai Valinhos", value: local1 },
-          { label: "Prefeitura de Valinhos", value: local2 },
+              {productsPets.map((product) => (
+                console.log(product),
+                <View style={styles.card}>
+                  <Image source={{ uri: product.image }} style={styles.picimg} />
+                  <Text style={styles.cardText}>{product.name}</Text>
+                </View>
+              ))}
+            </View>
+          )}
+          {selectedCategory === 'food' && (
+            <View>
+              <Text style={styles.txt2}>Alimentos/Água</Text>
+              <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>fechar</TouchableOpacity>
 
-        ]}
-        width={200}
+              {productsFood.map((product) => (
+                <View style={styles.card}>
+                  <Image source={{ uri: product.image }} style={styles.picimg} />
+                  <Text style={styles.cardText}>{product.name}</Text>
+                </View>
+              ))}
+            </View>
+          )}
+          {selectedCategory === 'clothes' && (
+            <View>
+              <Text style={styles.txt2}>Roupas</Text>
+              <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>fechar</TouchableOpacity>
 
-      />
+              {productsClothes.map((product) => (
+                <View style={styles.card}>
+                  <Image source={{ uri: product.image }} style={styles.picimg} />
+                  <Text style={styles.cardText}>{product.name}</Text>
+                </View>
+              ))}
+            </View>
+          )}
+          {selectedCategory === 'hygiene' && (
+            <View>
+              <Text style={styles.txt2}>Higiene</Text>
+              <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>fechar</TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Home")} >
-        <Text style={styles.txtbtn}>Doar</Text>
-      </TouchableOpacity>
+              {productsHygiene.map((product) => (
+                <View style={styles.card}>
+                  <Image source={{ uri: product.image }} style={styles.picimg} />
+                  <Text style={styles.cardText}>{product.name}</Text>
+                </View>
+              ))}
+            </View>
+          )}
+        </View>
+      ) : (
+        <View>
+          <View style={styles.icones1}>
+            <TouchableOpacity style={styles.card} onPress={() => handleCardPress('pet')}>
+              <View style={styles.cardInside}>
+                <Image source={require('../../../assets/iconPets.png')} style={styles.picimg} />
+                <Text style={styles.cardText}>Pets</Text>
+              </View>
+            </TouchableOpacity>
 
+            <TouchableOpacity style={styles.card2} onPress={() => handleCardPress('food')}>
+              <View style={styles.cardInside}>
+                <Image source={require('../../../assets/iconFood.png')} style={styles.picimg} />
+                <Text style={styles.cardTextFood}>Alimentos/Água</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
 
+          <View style={styles.icones2}>
+            <TouchableOpacity style={styles.card} onPress={() => handleCardPress('clothes')}>
+              <View style={styles.cardInside}>
+                <Image source={require('../../../assets/iconCabide.png')} style={styles.picimg} />
+                <Text style={styles.cardText}>Roupas</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.card2} onPress={() => handleCardPress('hygiene')}>
+              <View style={styles.cardInside}>
+                <Image source={require('../../../assets/iconHigiene.png')} style={styles.picimg} />
+                <Text style={styles.cardText}>Higiene</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          
+          <TouchableOpacity style={styles.card} onPress={() => handleCardPress('Outros')}>
+            <View style={styles.cardInside}>
+              <Image source={require('../../../assets/outrosIcon.png')} style={styles.picimg} />
+              <Text style={styles.cardText}>Outros</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
-  )
+  );
 }
