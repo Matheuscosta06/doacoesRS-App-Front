@@ -100,6 +100,8 @@ export default function DetalhesPets() {
                             </View>
                         </TouchableOpacity>
                     ) :
+                    <View style={styles.screen}>
+
                         <View key={produto.id} style={styles.cardInfo}>
                             <View style={styles.imgContainer}>
                                 <Image source={`${produto.image}`} style={styles.imagem} />
@@ -148,6 +150,7 @@ export default function DetalhesPets() {
                             </TouchableOpacity>
 
                         </View>
+                    </View>
                 ))}
             </LinearGradient>
         </ScrollView>
