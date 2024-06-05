@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#d9d9d9"
+    backgroundColor: "#fff"
   },
   head: {
     backgroundColor: '#283444',
@@ -201,17 +201,27 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '80%',
     padding: 4,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    borderLeftWidth:4,
+    borderRightWidth: 4,
+    borderTopWidth: 4,
+    borderColor: '#ffa41b'
   },
   txtPctg: {
-    color: '#FFA41B',
-    fontSize: 20,
+    color: '#fff',
+    fontSize: 16,
     fontFamily: "JosefinSans_700Bold",
   },
   containerGrafico: {
     width: '80%',
     backgroundColor: "#fff",
-    paddingTop: 20
+    paddingTop: 20,
+    borderLeftWidth:4,
+    borderRightWidth: 4,
+    borderBottomWidth: 4,
+    borderColor: '#ffa41b'
 
   },
   grafico: {
