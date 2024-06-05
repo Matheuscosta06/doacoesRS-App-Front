@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
   image: {
     width: 130,
     height: 100,
-    borderRadius: 50,
   },
   card: {
     marginTop: 30,
@@ -48,10 +47,16 @@ const styles = StyleSheet.create({
   btn: {
     backgroundColor: "#FFA41B",
     alignItems: "center",
-    marginBottom: 20,
+    padding: 10,
+    borderRadius: 10,
+    marginTop: 10,
+    width: 100,
+   },
+   containerbtn: {
+    alignItems: 'center',
+    justifyContent: 'center',
     marginTop: 20,
-  },
-  
+   },
   cardText: {
     fontFamily: 'JosefinSans_700Bold',
     color: '#fff',
