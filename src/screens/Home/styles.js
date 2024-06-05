@@ -227,7 +227,96 @@ const styles = StyleSheet.create({
   btnText_comprar: {
     textAlign: 'center',
     fontFamily: "JosefinSans_500Medium",
+  },
+  estatisticas:{
+    width: '100%',
+    backgroundColor: '#ffab14',
+    alignItems: 'center',
+    height: '40%',
+    marginTop: 80
+  },
+
+  estatisticasTitle:{
+    fontFamily: "JosefinSans_700Bold",
+    color: '#fff',
+    fontSize: 26
+  },
+  blueLine2: {
+    backgroundColor: "#283444",
+    height: 3.5,
+    width: "60%",
+    marginVertical: 10,
+    alignSelf: "center",
+  },
+  blueLine1: {
+    backgroundColor: "#283444",
+    height: 3.5,
+    width: "60%",
+    alignSelf: "center",
+
+  },
+  cards:{
+    alignItems: 'center',
+    marginTop: 30
+  },
+  card1: {
+    marginTop: 30,
+    alignItems: 'center',
+    width: 280,
+    height: 150,
+    borderColor: '#fff',
+    borderTopLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    borderWidth: 4,
+    justifyContent: 'center'
+  },
+  card2: {
+    marginTop: 30,
+    alignItems: 'center',
+    width: 280,
+    height: 150,
+    borderColor: '#fff',
+    borderTopLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    borderWidth: 4,
+    justifyContent: 'center'
+  },
+  card3: {
+    marginTop: 30,
+    alignItems: 'center',
+    width: 280,
+    height: 150,
+    borderColor: '#fff',
+    borderTopLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    borderWidth: 4,
+    justifyContent: 'center'
+  },
+  IncidentesNumber:{
+    fontSize: 36,
+    fontFamily: "JosefinSans_700Bold",
+    color: '#fff'
+  },
+  IncidenteName:{
+    fontFamily: "JosefinSans_700Bold",
+    color: '#fff',
+    fontSize: 18,
+    marginTop: 10
+  },
+  IncidentesCity:{
+    fontSize: 30,
+    fontFamily: "JosefinSans_700Bold",
+    color: '#fff',
+    alignItems: 'baseline',
+    textAlign: 'center'
+  },
+  aviso: {
+    color: '#fff',
+    fontFamily: "JosefinSans_700Bold",
+    fontSize: 16,
+    marginTop: 10
   }
+
 });
 
 export default styles;
