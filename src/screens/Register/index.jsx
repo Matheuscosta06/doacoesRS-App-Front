@@ -17,7 +17,7 @@ export default function Register() {
     const [msgError, setMsgError] = useState('');
     const [emailVerification, setEmailVerification] = useState('');
 
-    const errorArry = [];
+    const errorArray = [];
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -29,24 +29,24 @@ export default function Register() {
 
     const validate = () => {
         if (!name) {
-            errorArry.push('*Preencha o campo nome')
+            errorArray.push('*Preencha o campo nome')
         }
         if (!email) {
-            errorArry.push('*Preencha o campo email')
+            errorArray.push('*Preencha o campo email')
         } else if (!email.includes('@')) {
-            errorArry.push('*Email invalido')
+            errorArray.push('*Email inválido')
         }
         if (!password) {
-            errorArry.push('*Preencha o campo senha')
+            errorArray.push('*Preencha o campo senha')
         } else if (password.length < 7) {
-            errorArry.push('*A senha deve ter no minimo 7 caracteres')
+            errorArray.push('*A senha deve ter no mínimo 7 caracteres')
         } else if (!confirmedPassword) {
-            errorArry.push('*Preencha o campo confirmar senha')
+            errorArray.push('*Preencha o campo confirmar senha')
         } else if (confirmedPassword !== password) {
-            errorArry.push('*As senhas não conferem')
+            errorArray.push('*As senhas não conferem')
         }
-        if (errorArry.length > 0) {
-            setMsgError(errorArry.join('\n'))
+        if (errorArray.length > 0) {
+            setMsgError(errorArray.join('\n'))
             return false;
         }
 
@@ -81,7 +81,6 @@ export default function Register() {
         }
     }
 
-
     return (
         <View style={styles.mainContainer}>
             {
@@ -90,10 +89,10 @@ export default function Register() {
             <View style={styles.container}>
                 <Text style={styles.title}>Cadastrar</Text>
 
-                <Text style={styles.subTitle}>Usuario:</Text>
+                <Text style={styles.subTitle}>Usuário:</Text>
                 <View style={styles.inputContainer}>
                     <AntDesign name="user" size={24} color="#fff" />
-                    <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva seu nome de usuario" value={name} onChangeText={setName} />
+                    <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva seu nome de usuário" value={name} onChangeText={setName} />
                 </View>
 
                 <View style={styles.inputContainer}>
@@ -104,12 +103,12 @@ export default function Register() {
                 <Text style={styles.subTitle}>Senhas:</Text>
                 <View style={styles.inputContainer}>
                     <AntDesign name="lock" size={24} color="#fff" />
-                    <TextInput secureTextEntry={true} style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva sua senha" value={password} onChangeText={setPassword} />
+                    <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Escreva sua senha" value={password} onChangeText={setPassword} secureTextEntry />
                 </View>
 
                 <View style={styles.inputContainer}>
                     <AntDesign name="unlock" size={24} color="#fff" />
-                    <TextInput secureTextEntry={true} style={styles.input} placeholderTextColor={"#fff"} placeholder="Confirme sua senha" value={confirmedPassword} onChangeText={setConfirmedPassword} />
+                    <TextInput style={styles.input} placeholderTextColor={"#fff"} placeholder="Confirme sua senha" value={confirmedPassword} onChangeText={setConfirmedPassword} secureTextEntry />
                 </View>
 
                 <TouchableOpacity style={styles.button} onPress={handleRegister}>
@@ -117,13 +116,11 @@ export default function Register() {
                 </TouchableOpacity>
                 <View style={styles.containerInfo}>
                     <Text style={styles.txtNeedAcc}>Já tem uma conta? </Text>
-                    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate(`Login`)}>
+                    <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('Login')}>
                         <Text style={styles.yellow}>Entre!</Text>
                     </TouchableOpacity>
                 </View>
             </View>
-
-
         </View>
     )
 }
