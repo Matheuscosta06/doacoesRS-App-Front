@@ -196,12 +196,28 @@ const styles = StyleSheet.create({
   donatesGraphic: {
     alignItems: 'center'
   },
+  containerPorcetage: {
+    backgroundColor: '#283444',
+    flexDirection: 'row',
+    width: '80%',
+    padding: 4,
+    justifyContent: 'space-between'
+  },
+  txtPctg: {
+    color: '#FFA41B',
+    fontSize: 20,
+    fontFamily: "JosefinSans_700Bold",
+  },
+  containerGrafico: {
+    width: '80%',
+    backgroundColor: "#fff",
+    paddingTop: 20
+
+  },
   grafico: {
-    width: '70%',
-    backgroundColor: '#fff',
-    borderTopWidth: 2,
-    borderBottomWidth: 2,
-    alignItems: 'center'
+    width: 'auto',
+    alignItems: 'center',
+    marginBottom: 20
   },
   percentage: {
     borderWidth: 2,
@@ -209,13 +225,34 @@ const styles = StyleSheet.create({
     width: '50%'
   },
   totalProgressBar: {
-    height: 20,
+    height: 50,
     width: '100%',
     backgroundColor: '#eee',
-    borderRadius: 5,
   },
-  teste: {
-    backgroundColor: 'rgba(0, 0, 255, 0.5)'
+  pet: {
+    backgroundColor: 'rgba(12, 236, 184, 0.5)'
+  },
+  progress_pet: {
+    backgroundColor: '#008B6B'
+  },
+  hygiene: {
+    backgroundColor: '#65FBF2'
+  },
+  progress_hygiene: {
+    backgroundColor: '#11D1C6'
+
+  },
+  clothes: {
+    backgroundColor: '#AD1DC5'
+  },
+  progress_clothes: {
+    backgroundColor: '#620A71'
+  },
+  food: {
+    backgroundColor: '#FB6565'
+  },
+  progress_food: {
+    backgroundColor: '#C70808'
   },
   completedProgressBar: {
     height: '100%',
@@ -224,16 +261,25 @@ const styles = StyleSheet.create({
   },
   progressBarText: {
     position: 'absolute',
-    top: 0,
-    left: 0,
+    top: "50%",
+    transform: [{ translateY: -10 }],
+    left: 10,
     right: 0,
     bottom: 0,
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
-    fontFamily: "JosefinSans_700Bold",
+    fontFamily: "JosefinSans_500Medium",
     fontSize: 20
-  }
+  },
+  completedText: {
+    position: 'absolute',
+    top: "50%",
+    transform: [{ translateY: -10 }],
+    zIndex: 7,
+    left: "auto",
+    right: 0,
+    bottom: 0,
+    fontFamily: "JosefinSans_500Medium",
+    fontSize: 20,
+  },
 });
 
 export default styles;
