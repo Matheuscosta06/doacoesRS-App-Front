@@ -1,9 +1,17 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  screen: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
   container: {
     flex: 1,
-    paddingBottom: "70%",
+    paddingBottom: "0",
     },
   tituloContainer:{
     flexDirection: 'row',
@@ -20,7 +28,7 @@ const styles = StyleSheet.create({
   cardInfo: {
     backgroundColor: 'white',
     borderRadius: 10,
-    position: 'absolute',
+    position: 'fixed',
     margin: 'auto',
     top: 0,
     left: 0,
@@ -28,10 +36,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     zIndex: 1,
     width: '80%',
-    height: '80%',
+    height: 400,
     borderWidth: 5,
     borderColor: "#FFA41B",
-    
 
   },
   descContainer: {
