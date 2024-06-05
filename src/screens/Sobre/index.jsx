@@ -53,11 +53,13 @@ export default function Sobre() {
           <View style={styles.cardDetalhe}>
             <Text style={styles.nomeMembro}>Enrico Lona</Text>
             <Text style={styles.membro}>membro</Text>
-            <Text style={styles.textMembro}>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo.
+            <Text style={styles.textMembro}>Um membro essencial da nossa equipe, Enrico é Comunicativo e dedicado, ele cursa Desenvolvimento de Sistemas no Senai e está no 3° ano do Ensino Médio no Sesi. Trazendo energia e dinamismo para nosso time.
+
+
+
+
+
+
             </Text>
           </View>
           <View style={styles.backImg}>
@@ -70,13 +72,10 @@ export default function Sobre() {
             <Text style={styles.nomeMembro}>Felipe Pedro</Text>
             <Text style={styles.membro}>membro</Text>
             <Text style={styles.textMembro}>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo.
+             Felipe é um membro com uma personalidade forte e um espírito de liderança marcante, ele se destaca em qualquer desafio que enfrenta. Fazendo dele uma peça chave para o nosso sucesso coletivo.
             </Text>
           </View>
-          
+
           <View style={styles.backImg}>
             <Image
               style={styles.fotoMembro}
@@ -87,10 +86,7 @@ export default function Sobre() {
             <Text style={styles.nomeMembro}>João Victor</Text>
             <Text style={styles.membro}>membro</Text>
             <Text style={styles.textMembro}>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo.
+            João é um dos membros mais criativos e dedicados da nossa equipe. Com uma mente inovadora e um comprometimento exemplar, João traz ideias frescas e soluções eficazes. Sua dedicação incansável é uma inspiração para todos nós.
             </Text>
           </View>
           <View style={styles.backImg}>
@@ -103,10 +99,13 @@ export default function Sobre() {
             <Text style={styles.nomeMembro}>Matheus Carvalho</Text>
             <Text style={styles.membro}>membro</Text>
             <Text style={styles.textMembro}>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo.
+            Matheus Carvalho é o mestre da lógica na nossa equipe. Com um conhecimento profundo em diversas tecnologias, ele é a referência na resolução de problemas complexos. Sua expertise técnica é indispensável para o nosso sucesso.
+
+
+
+
+
+
             </Text>
           </View>
           <View style={styles.backImg}>
@@ -119,10 +118,7 @@ export default function Sobre() {
             <Text style={styles.nomeMembro}>Matheus Gomes</Text>
             <Text style={styles.membro}>membro</Text>
             <Text style={styles.textMembro}>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo.
+            Matheus Gomes é  um verdadeiro gênio em programação. Com um talento excepcional para desenvolver soluções, ele combina brilhantismo técnico com uma abordagem colaborativa que enriquece todo o time.
             </Text>
           </View>
           <View style={styles.backImg}>
@@ -135,10 +131,7 @@ export default function Sobre() {
             <Text style={styles.nomeMembro}>Matheus Zambon</Text>
             <Text style={styles.membro}>membro</Text>
             <Text style={styles.textMembro}>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo.
+            Matheus Zambon é o membro mais animado e o melhor em trabalho em equipe. Sua energia contagiante e habilidade para colaborar eficazmente com todos tornam ele um elemento essencial para o nosso sucesso coletivo.
             </Text>
           </View>
         </View>
