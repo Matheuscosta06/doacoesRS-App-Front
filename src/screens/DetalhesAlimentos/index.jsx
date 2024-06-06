@@ -10,10 +10,10 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import Cart from '../../components/Cart';
 
 export default function DetalhesPets() {
-    const [produtos, setProdutos] = useState([]);
+    const [products, setProducts] = useState([]);
     const [quantities, setQuantities] = useState({});
     const [showPopup, setShowPopup] = useState(false);
-    const [cardPopup, setCardPopup] = useState({});
+    const [cardPopup, setCardPopup] = useState(false);
 
     const {
         productsCart,
@@ -26,7 +26,7 @@ export default function DetalhesPets() {
             try {
                 const response = await axios.get(`${apiURL}/products/type/food`);
                 console.log(response.data.data);
-                setProdutos(response.data.data);
+                setProducts(response.data.data);
             } catch (error) {
                 console.error(error);
             }
@@ -62,101 +62,92 @@ export default function DetalhesPets() {
         }
     }
 
-    const popUp = (id) => {
-        setCardPopup(prevState => ({ ...prevState, [id]: !prevState[id] }));
+    const popShow = (id) => {
+        setCardPopup(cardPopup ? false : true);
+        console.log(cardPopup);
+        console.log(id);
     }
 
-    const navigation = useNavigation();
+
+
 
     return (
         <View style={{ flex: 1 }}>
             <Cart />
-
-            <LinearGradient
-                colors={['#FF0000', '#400A0A']}
-                style={styles.container}
-            >
-                <ScrollView>
-                    <View style={styles.tituloContainer}>
-                        <Text style={styles.primeiraLetra}>A</Text>
-                        <Text style={styles.titulo1}>LIMENTOS</Text>
-                    </View>
-
-                    <View style={styles.linhaLaranja} />
-
-                    <View style={styles.subtitulocontainer}>
-                        <Text style={styles.subtitulo}>DOAÇÕES</Text>
-                    </View>
-
-                    <View style={styles.linhaLaranja2} />
+            <ScrollView>
+                <LinearGradient
+                    colors={['#FF0000', '#400A0A']}
+                    style={styles.container}
+                >
 
                     <Text>{JSON.stringify(productsCart)}</Text>
-                    {produtos.map(produto => (
-                        !cardPopup[produto.id] ? (
-                            <TouchableOpacity onPress={() => popUp(produto.id)} key={produto.id} style={styles.containerProdutos}>
-                                <Image source={`${produto.image}`} style={styles.imagem} />
 
-                                <View style={styles.desc}>
-                                    <Text style={styles.tituloDesc}>{produto.name}</Text>
-                                    <Text style={styles.preco}>R${produto.value}</Text>
-                                </View>
-                            </TouchableOpacity>
-                        ) :
+                    <View style={styles.productList}>
+                        {
+                            products ? (
+                                products.map((product) => (
 
-                        
-                            <View key={produto.id} style={styles.cardInfo}>
-                                <View style={styles.imgContainer}>
-                                    <Image source={`${produto.image}`} style={styles.imagem} />
-                                </View>
+                                    <TouchableOpacity onPress={() => popShow(product.id)} key={product.id}>
+                                        <Image source={`${product.image}`} style={styles.img} />
 
-                                <View style={styles.descContainer}>
-                                    <View style={styles.desc}>
-                                        <Text style={styles.nameCard}>{produto.name}</Text>
-                                        <Text style={styles.preco}>R${produto.value}</Text>
-                                    </View>
-
-
-                                    {
-                                        showPopup && (
-                                            <View style={styles.quantidadeProdutos}>
-                                                <TouchableOpacity onPress={() => add(produto.id)} style={styles.mais} >
-                                                    <Text style={styles.maisButton}>+</Text>
-                                                </TouchableOpacity>
-                                                <Text style={styles.quantidade}>{quantities[produto.id] || 0}</Text>
-                                                <TouchableOpacity onPress={() => remove(produto.id)} style={styles.menos}>
-                                                    <Text style={styles.menosButton}>-</Text>
-                                                </TouchableOpacity>
-                                            </View>
-                                        )
-                                    }
-                                    <View style={styles.multipleButtonsContainer}>
-                                        <TouchableOpacity onPress={() => addMultiple(produto.id, 2)} style={styles.multipleButtons} >
-                                            <Text style={styles.maisButton}>+2</Text>
-                                        </TouchableOpacity>
-                                        <TouchableOpacity onPress={() => addMultiple(produto.id, 6)} style={styles.multipleButtons} >
-                                            <Text style={styles.maisButton}>+6</Text>
-                                        </TouchableOpacity>
-                                        <TouchableOpacity onPress={() => addMultiple(produto.id, 12)} style={styles.multipleButtons} >
-                                            <Text style={styles.maisButton}>+12</Text>
-                                        </TouchableOpacity>
-                                    </View>
-
-                                    <TouchableOpacity onPress={() => addProduct(produto.id, quantities[produto.id] || 0) || setQuantities({})} style={styles.addcarrinho}>
-                                        <Text style={styles.addcarrinhoText}>Adicionar ao carrinho</Text>
+                                        <View style={styles.desc}>
+                                            <Text style={styles.title}>{product.name}</Text>
+                                            <Text style={styles.price}>R${product.value}</Text>
+                                        </View>
                                     </TouchableOpacity>
 
-                                </View>
+                                    
 
-                                <TouchableOpacity onPress={() => { popUp(produto.id); setShowPopup(false); }} style={styles.exit}>
-                                    <AntDesign name="left" size={24} color="red" />
-                                </TouchableOpacity>
-                            </View>
-                    ))}
-                    <Text style={{marginBottom: 90}}>A</Text>
-                </ScrollView>
-            </LinearGradient>
 
+                                       
+
+
+
+
+                                ))
+                            ) : (
+                        <Text>Carregando...</Text>
+                        )
+                        }
+                    </View>
+
+
+                </LinearGradient>
+            </ScrollView>
         </View>
 
     );
 }
+
+ {/* {
+                                            showPopup && (
+                                                <View style={styles.qtdProductsContainer}>
+                                                    <TouchableOpacity onPress={() => add(product.id)} style={styles.buttons} >
+                                                        <Text style={styles.textButton}>+</Text>
+                                                    </TouchableOpacity>
+                                                    <Text style={styles.qtd}>{quantities[product.id] || 0}</Text>
+                                                    <TouchableOpacity onPress={() => remove(product.id)} style={styles.buttons}>
+                                                        <Text style={styles.textButton}>-</Text>
+                                                    </TouchableOpacity>
+                                                </View>
+                                            )
+                                        }
+
+
+
+                                        <View style={styles.multipleButtonsContainer}>
+                                            <TouchableOpacity onPress={() => addMultiple(product.id, 2)} style={styles.multipleButtons} >
+                                                <Text style={styles.textButton}>+2</Text>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => addMultiple(product.id, 6)} style={styles.multipleButtons} >
+                                                <Text style={styles.textButton}>+6</Text>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => addMultiple(product.id, 12)} style={styles.multipleButtons} >
+                                                <Text style={styles.textButton}>+12</Text>
+                                            </TouchableOpacity>
+                                        </View>
+
+                                        <TouchableOpacity onPress={() => addProduct(product.id, quantities[product.id] || 0) || setQuantities({})} style={styles.addCart}>
+                                            <Text style={styles.addCartText}>Adicionar ao carrinho</Text>
+                                        </TouchableOpacity>
+ */}
