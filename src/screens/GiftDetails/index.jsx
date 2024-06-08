@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles';
-import { View, Text, TouchableOpacity, ScrollView, Image, TextInput } from 'react-native-web'
+import { View, Text, TouchableOpacity, ScrollView, Image, TextInput } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { useState, useEffect } from 'react';
 
