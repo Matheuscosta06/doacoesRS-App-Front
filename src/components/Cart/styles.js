@@ -16,9 +16,23 @@ const styles = StyleSheet.create({
         margin: 20,
         marginBottom: 100,
     },
-    cartContainer: {
-
-      },
+    cartText: {
+        position: "absolute",
+        right: 0,
+        top: 0,
+        width: 30,
+        height: 30,
+        borderRadius: 50,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#FF0000",
+        color: "#fff",
+        fontSize: 16,
+        fontWeight: "bold",
+        zIndex: 10,
+        alignContent: "center",
+        textAlign: "center",
+    },
 
 });
 
