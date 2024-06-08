@@ -162,36 +162,3 @@ export default function DetalhesPets() {
 
     );
 }
-
-{/* {
-                                            showPopup && (
-                                                <View style={styles.qtdProductsContainer}>
-                                                    <TouchableOpacity onPress={() => add(product.id)} style={styles.buttons} >
-                                                        <Text style={styles.textButton}>+</Text>
-                                                    </TouchableOpacity>
-                                                    <Text style={styles.qtd}>{quantities[product.id] || 0}</Text>
-                                                    <TouchableOpacity onPress={() => remove(product.id)} style={styles.buttons}>
-                                                        <Text style={styles.textButton}>-</Text>
-                                                    </TouchableOpacity>
-                                                </View>
-                                            )
-                                        }
-
-
-
-                                        <View style={styles.multipleButtonsContainer}>
-                                            <TouchableOpacity onPress={() => addMultiple(product.id, 2)} style={styles.multipleButtons} >
-                                                <Text style={styles.textButton}>+2</Text>
-                                            </TouchableOpacity>
-                                            <TouchableOpacity onPress={() => addMultiple(product.id, 6)} style={styles.multipleButtons} >
-                                                <Text style={styles.textButton}>+6</Text>
-                                            </TouchableOpacity>
-                                            <TouchableOpacity onPress={() => addMultiple(product.id, 12)} style={styles.multipleButtons} >
-                                                <Text style={styles.textButton}>+12</Text>
-                                            </TouchableOpacity>
-                                        </View>
-
-                                        <TouchableOpacity onPress={() => addProduct(product.id, quantities[product.id] || 0) || setQuantities({})} style={styles.addCart}>
-                                            <Text style={styles.addCartText}>Adicionar ao carrinho</Text>
-                                        </TouchableOpacity>
- */}
