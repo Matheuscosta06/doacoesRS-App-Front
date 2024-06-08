@@ -67,6 +67,7 @@ export default function Gift() {
           {selectedCategory ? (
             <View >
               {selectedCategory === 'pet' && (
+
                 <View style={styles.containerbtn}>
                   <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
                     <Feather name="x" size={24} color="black" />
@@ -74,16 +75,25 @@ export default function Gift() {
                   <View style={styles.cardcontainer}>
 
                     {productsPets.map((product) => (
-                      <View style={styles.card} key={product.id}>
-                        <Image source={`${product.image}`} style={styles.image} />
-                        <Text style={styles.cardText}>{product.name}</Text>
-                      </View>
+                      cardPopup === product.id ? (
+                        <View style={styles.cardPopup} key={product.id}>
+                          <Image source={`${product.image}`} style={styles.image} />
+                          <Text style={styles.cardText}>{product.name}</Text>
+                          <Text style={styles.cardText}>{product.description}</Text>
+                        </View>
+                      ) : (
+                        <TouchableOpacity onPress={() => popShow(product.id)} style={styles.card} key={product.id}>
+                          <Image source={`${product.image}`} style={styles.image} />
+                          <Text style={styles.cardText}>{product.name}</Text>
+                        </TouchableOpacity>
+                      )
                     ))}
 
                   </View>
                 </View>
               )}
               {selectedCategory === 'food' && (
+
                 <View style={styles.containerbtn}>
                   <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
                     <Feather name="x" size={24} color="black" />
@@ -91,15 +101,24 @@ export default function Gift() {
                   <View style={styles.cardcontainer}>
 
                     {productsFood.map((product) => (
-                      <View style={styles.card} key={product.id}>
-                        <Image source={`${product.image}`} style={styles.image} />
-                        <Text style={styles.cardText}>{product.name}</Text>
-                      </View>
+                      cardPopup === product.id ? (
+                        <View style={styles.cardPopup} key={product.id}>
+                          <Image source={`${product.image}`} style={styles.image} />
+                          <Text style={styles.cardText}>{product.name}</Text>
+                          <Text style={styles.cardText}>{product.description}</Text>
+                        </View>
+                      ) : (
+                        <TouchableOpacity onPress={() => popShow(product.id)} style={styles.card} key={product.id}>
+                          <Image source={`${product.image}`} style={styles.image} />
+                          <Text style={styles.cardText}>{product.name}</Text>
+                        </TouchableOpacity>
+                      )
                     ))}
                   </View>
                 </View>
               )}
               {selectedCategory === 'clothes' && (
+
                 <View style={styles.containerbtn}>
                   <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
                     <Feather name="x" size={24} color="black" />
@@ -107,16 +126,25 @@ export default function Gift() {
                   <View style={styles.cardcontainer}>
 
                     {productsClothes.map((product) => (
-                      <View style={styles.card} key={product.id}>
-                        <Image source={`${product.image}`} style={styles.image} />
-                        <Text style={styles.cardText}>{product.name}</Text>
-                      </View>
+                      cardPopup === product.id ? (
+                        <View style={styles.cardPopup} key={product.id}>
+                          <Image source={`${product.image}`} style={styles.image} />
+                          <Text style={styles.cardText}>{product.name}</Text>
+                          <Text style={styles.cardText}>{product.description}</Text>
+                        </View>
+                      ) : (
+                        <TouchableOpacity onPress={() => popShow(product.id)} style={styles.card} key={product.id}>
+                          <Image source={`${product.image}`} style={styles.image} />
+                          <Text style={styles.cardText}>{product.name}</Text>
+                        </TouchableOpacity>
+                      )
                     ))}
                   </View>
                 </View>
 
               )}
               {selectedCategory === 'hygiene' && (
+
                 <View style={styles.containerbtn}>
                   <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
                     <Feather name="x" size={24} color="black" />
@@ -124,10 +152,18 @@ export default function Gift() {
                   <View style={styles.cardcontainer}>
 
                     {productsHygiene.map((product) => (
-                      <View style={styles.card} key={product.id}>
-                        <Image source={`${product.image}`} style={styles.image} />
-                        <Text style={styles.cardText}>{product.name}</Text>
-                      </View>
+                      cardPopup === product.id ? (
+                        <View style={styles.cardPopup} key={product.id}>
+                          <Image source={`${product.image}`} style={styles.image} />
+                          <Text style={styles.cardText}>{product.name}</Text>
+                          <Text style={styles.cardText}>{product.description}</Text>
+                        </View>
+                      ) : (
+                        <TouchableOpacity onPress={() => popShow(product.id)} style={styles.card} key={product.id}>
+                          <Image source={`${product.image}`} style={styles.image} />
+                          <Text style={styles.cardText}>{product.name}</Text>
+                        </TouchableOpacity>
+                      )
                     ))}
                   </View>
                 </View>

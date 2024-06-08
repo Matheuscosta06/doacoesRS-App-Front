@@ -3,6 +3,7 @@ import styles from './styles';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
+import Cart from '../../components/Cart';
 
 
 export default function Category() {
@@ -11,6 +12,7 @@ export default function Category() {
 
   return (
     <View style={styles.container}>
+      <Cart />
       <ScrollView>
         <ImageBackground source={require('../../../assets/wlppRS.png')} style={styles.imgBg}>
           <View style={styles.divMain}>
