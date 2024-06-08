@@ -5,6 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import styles from './styles';
+import Cart from '../../components/Cart';
+
 
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -67,6 +69,7 @@ export default function DetalhesPets() {
     return (
         
             <LinearGradient colors={['#36C5D8', '#093338']} style={styles.container}>
+                <Cart />
                 <ScrollView>
                     <View style={styles.tituloContainer}>
                         <Text style={styles.primeiraLetra}>R</Text>
