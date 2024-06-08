@@ -74,14 +74,14 @@ export default function DetalhesHigiene() {
         }
     };
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1,}}>
             <Cart />
             <LinearGradient colors={['#36C5D8', '#093338']} style={styles.container}>
                 <ScrollView>
                     <Text>{JSON.stringify(productsCart)}</Text>
                     <View style={styles.tituloContainer}>
                         <Text style={styles.primeiraLetra}>H</Text>
-                        <Text style={styles.titulo1}>IGIENE</Text>
+                        <Text style={styles.titulo1}>IGÊNE</Text>
                     </View>
 
                     <View style={styles.linhaLaranja} />
