@@ -15,6 +15,8 @@ export default function Gift() {
   const [productsPets, setProductsPets] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [otherDonation, setOtherDonation] = useState('');
+  const [cardPopup, setCardPopup] = useState(null);
+  const [scroll, setScroll] = useState(true);
 
 
   useEffect(() => {
@@ -39,6 +41,18 @@ export default function Gift() {
   const handleCardPress = (category) => {
     setSelectedCategory(category);
     console.log(category);
+  };
+
+  const popShow = (id) => {
+    if (cardPopup === id) {
+      setCardPopup(null);
+      setScroll(true);
+      console.log(cardPopup);
+    } else {
+      setCardPopup(id);
+      setScroll(false);
+      console.log(cardPopup);
+    }
   };
 
   return (
