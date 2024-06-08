@@ -107,14 +107,18 @@ export default function Gift() {
               </View>
             )}
             {selectedCategory === 'Outros' && (
-              <View style={styles.containerbtn}>
-                <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>fechar</TouchableOpacity>
-                <TextInput
-                  style={styles.input}
-                  placeholder="Descreva sua doação"
-                  value={otherDonation}
-                  onChangeText={setOtherDonation}
-                />
+              <View style={styles.containerbtnOutros}>
+                <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>VOLTAR</TouchableOpacity>
+                <View style={styles.inputcontainer}>
+                  <Text style={styles.TextInput}>Descreva aqui sua doação</Text>
+                  <TextInput
+                    style={styles.input}
+                    value={otherDonation}
+                    onChangeText={setOtherDonation}
+                    placeholder='Ex: 1kg de arroz, 1 shampoo, 1 cobertor...'
+                  />
+                </View>
+                <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>ENVIAR</TouchableOpacity>
               </View>
             )}
           </View>
@@ -155,12 +159,12 @@ export default function Gift() {
               </TouchableOpacity>
             </View>
             <View style={styles.icones3}>
-            <TouchableOpacity style={styles.card} onPress={() => handleCardPress('Outros')}>
-              <View style={styles.cardInside}>
-                <Image source={require('../../../assets/outrosIcon.png')} style={styles.picimg} />
-                <Text style={styles.cardText}>Outros</Text>
-              </View>
-            </TouchableOpacity>
+              <TouchableOpacity style={styles.card} onPress={() => handleCardPress('Outros')}>
+                <View style={styles.cardInside}>
+                  <Image source={require('../../../assets/outrosIcon.png')} style={styles.picimg} />
+                  <Text style={styles.cardText}>Outros</Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </View>
         )}

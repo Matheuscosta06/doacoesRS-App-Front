@@ -7,16 +7,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#24396e",
     alignItems: "center",
     justifyContent: "center",
-    paddingBottom: 150,
-    width: '100%'
+    paddingBottom: "100%",
+    width: '100%',
   },
   txt1: {
     color: "#fff",
-      fontSize: 40,
+    fontSize: 40,
     textAlign: "center",
     fontFamily: "JosefinSans_700Bold",
   },
-  
+
   icones1: {
     display: 'flex',
     flexDirection: 'row',
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   image: {
     width: 130,
     height: 100,
-    
+
   },
   card: {
     marginTop: 30,
@@ -39,10 +39,10 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderWidth: 4,
     borderColor: '#fff',
-  
+
   },
-  
-  cardInside:{
+
+  cardInside: {
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20
@@ -52,15 +52,28 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     borderRadius: 10,
-    marginTop: 10,
     width: 100,
-   },
-   containerbtn: {
+    fontSize: 17,
+    fontFamily: "JosefinSans_700Bold",
+  },
+  containerbtn: {
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    height: '100%'
-   },
+    height: '100%',
+    paddingBottom: "30%"
+  },
+  containerbtnOutros: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
+    height: '120%',
+    paddingHorizontal: 20,
+    backgroundColor: '#395291',
+    borderRadius: 20,
+  },
+
+
   cardText: {
     fontFamily: 'JosefinSans_700Bold',
     color: '#fff',
@@ -96,13 +109,31 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
 
+
+  inputcontainer: {
+    alignItems: 'center',
+    paddingTop: 10,
+    paddingBottom: 5,
+    borderBottomColor: "#FFA41B",
+    borderBottomWidth: 2,
+    color: "#fff",
+    fontFamily: "JosefinSans_500Medium",
+    paddingHorizontal: 40,
+    marginBottom: 100,
+  },
   input: {
-    marginLeft: 10,
+    color: "lightgray",
+    fontSize: 20,
+    fontFamily: "JosefinSans_500Medium",
+
+  },
+  TextInput: {
     color: "#fff",
     fontSize: 20,
     fontFamily: "JosefinSans_500Medium",
-    marginBottom: 450,
-    marginTop: 100
+    marginTop: 10,
+    marginBottom: 40,
+    width: '100%'
   },
   Inputcontainer1: {
     flexDirection: "row",
@@ -145,7 +176,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: "JosefinSans_500Medium",
   },
-  icones3:{
+  icones3: {
     alignItems: 'center',
     justifyContent: 'center'
 
