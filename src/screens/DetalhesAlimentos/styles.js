@@ -21,9 +21,20 @@ const styles = StyleSheet.create({
     width: "100%",
     marginBottom: 120,
   },
+  productImageContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#d5d5d5",
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
+    width: '100%',
+    padding: 20,
+  },
+
   productCard: {
     backgroundColor: "#710202",
-    width: '80%',
+    width: '90%',
     margin: 10,
     borderRadius: 10,
     display: "flex",
@@ -53,16 +64,27 @@ const styles = StyleSheet.create({
     height: 128,
   },
 
-
+  qtdProductsContainer: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 10,
+    borderColor: "black",
+    borderWidth: 1,
+    borderRadius: 5,
+    gap: 10,
+    width: '90%',
+    marginTop: 10,
+  },
  
   buttons: {
-    backgroundColor: "black",
     padding: 10,
     borderRadius: 5,
   },
   textButton: {
-    color: "white",
-    fontSize: 20,
+    color: "#ffa41b",
+    fontSize: 22,
   },
   qtd: {
     fontSize: 20,
@@ -77,20 +99,29 @@ const styles = StyleSheet.create({
   multipleButtonsContainer: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
+    width: '90%',
+    margin: 10,
+
+
   },
 
   multipleButtons: {
-    backgroundColor: "black",
+    justifyContent: "center",
+    alignItems: "center",
+    borderColor: "black",
     padding: 10,
+    width: '30%',
+    borderWidth: 1,
     borderRadius: 5,
-    margin: 10,
+    borderRadius: 5,
   },
 
   addCart: {
-    backgroundColor: "black",
-    padding: 10,
+    backgroundColor: "green",
+    padding: 20,
     borderRadius: 5,
+    width: '90%',
     marginTop: 10,
   },
 
@@ -111,20 +142,16 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     backgroundColor: "white",
-    width: '80%',
+    width: '90%',
     margin: 10,
     borderRadius: 10,
-    height: 400,
+    height: 500,
+    borderColor: "#ffa41b",
+    borderWidth: 6,
 
   },
 
-  qtdProductsContainer: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 10,
-  },
+
 
 });
 

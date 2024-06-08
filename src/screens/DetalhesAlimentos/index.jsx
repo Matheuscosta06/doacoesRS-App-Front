@@ -96,8 +96,9 @@ export default function DetalhesPets() {
                                     cardPopup == product.id ? (
                                         <View style={styles.viewCardContainer} key={product.id}>
 
-
-
+                                            <View style={styles.productImageContainer}>
+                                                <Image source={`${product.image}`} width={128} height={128} style={styles.img} />
+                                            </View>
 
                                             {
                                                 showPopup && (
