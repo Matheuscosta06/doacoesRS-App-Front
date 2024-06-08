@@ -150,19 +150,3 @@ export default function DetalhesHigiene() {
 }
 
 
-{/* <LinearGradient
-colors={['#36C5D8', '#093338']}
-style={styles.container}
->
-<View style={styles.tituloContainer}>
-    <Text style={styles.primeiraLetra}>R</Text>
-    <Text style={styles.titulo1}>OUPAS</Text>
-</View>
-
-<View style={styles.linhaLaranja} />
-
-<View style={styles.subtitulocontainer}>
-    <Text style={styles.subtitulo}>DOAÇÕES</Text>
-</View>
-
-<View style={styles.linhaLaranja2} /> */}

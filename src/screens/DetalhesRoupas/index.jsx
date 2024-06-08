@@ -1,21 +1,23 @@
-import styles from './styles';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-
 import { useNavigation } from '@react-navigation/native';
-const apiURL = process.env.EXPO_PUBLIC_API_URL;
-import { useEffect, useState } from 'react';
 import axios from 'axios';
+import styles from './styles';
+
+const apiURL = process.env.EXPO_PUBLIC_API_URL;
 
 export default function DetalhesRoupas() {
-    const [quantidade, setQuantidade] = useState(1);
     const [produtos, setProdutos] = useState([]);
+    const [quantidades, setQuantidades] = useState({});
+    const [scroll, setScroll] = useState(true);
+
+    const navigation = useNavigation();
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`${apiURL}/products/type/clothes`);
-                console.log(response.data.data);
                 setProdutos(response.data.data);
             } catch (error) {
                 console.error(error);
@@ -24,17 +26,21 @@ export default function DetalhesRoupas() {
         fetchData();
     }, []);
 
-    const incrementarQuantidade = () => {
-        setQuantidade(quantidade + 1);
+    const incrementarQuantidade = (id) => {
+        setQuantidades({
+            ...quantidades,
+            [id]: (quantidades[id] || 0) + 1,
+        });
     };
 
-    const decrementarQuantidade = () => {
-        if (quantidade > 1) {
-            setQuantidade(quantidade - 1);
+    const decrementarQuantidade = (id) => {
+        if (quantidades[id] > 1) {
+            setQuantidades({
+                ...quantidades,
+                [id]: quantities[id] - 1,
+            });
         }
     };
-
-    const navigation = useNavigation();
 
     return (
         <ScrollView>
@@ -55,29 +61,32 @@ export default function DetalhesRoupas() {
 
                 <View style={styles.linhaLaranja2} />
 
-                {produtos.map(produto => (
-                    <View key={produto.id} style={styles.containerProdutos}>
-                        <Image source={`${produto.image}`} style={styles.imagem} />
+                <View style={styles.productList}>
+                    {produtos.map((produto) => (
+                        <View style={styles.viewCardContainer} key={produto.id}>
+                            <Image source={{ uri: produto.image }} style={styles.img} />
 
-                        <View style={styles.desc}>
-                            <Text style={styles.tituloDesc}>{produto.name}</Text>
-                            <Text style={styles.preco}>R${produto.value}</Text>
-                            <View style={styles.quantidadeProdutos}>
-                                <TouchableOpacity onPress={incrementarQuantidade} style={styles.mais} >
-                                    <Text style={styles.maisButton}>+</Text>
-                                </TouchableOpacity>
-                                <Text style={styles.quantidade}>{quantidade}</Text>
-                                <TouchableOpacity onPress={decrementarQuantidade} style={styles.menos}>
-                                    <Text style={styles.menosButton}>-</Text>
-                                </TouchableOpacity>
-                            </View>
+                            <View style={styles.desc}>
+                                <Text style={styles.title}>{produto.name}</Text>
+                                <Text style={styles.price}>R${produto.value}</Text>
 
-                            <View style={styles.addcarrinho}>
-                                <Text style={styles.addcarrinhoText}>Adicionar ao carrinho</Text>
+                                <View style={styles.qtdProductsContainer}>
+                                    <TouchableOpacity onPress={() => incrementarQuantidade(produto.id)} style={styles.buttons}>
+                                        <Text style={styles.textButton}>+</Text>
+                                    </TouchableOpacity>
+                                    <Text style={styles.qtd}>{quantidades[produto.id] || 1}</Text>
+                                    <TouchableOpacity onPress={() => decrementarQuantidade(produto.id)} style={styles.buttons}>
+                                        <Text style={styles.textButton}>-</Text>
+                                    </TouchableOpacity>
+                                </View>
+
+                                <TouchableOpacity style={styles.addCart} onPress={() => navigation.navigate('Carrinho', { produto: produto, quantidade: quantidades[produto.id] || 1 })}>
+                                    <Text style={styles.addCartText}>Adicionar ao carrinho</Text>
+                                </TouchableOpacity>
                             </View>
                         </View>
-                    </View>
-                ))}
+                    ))}
+                </View>
             </LinearGradient>
         </ScrollView>
     );

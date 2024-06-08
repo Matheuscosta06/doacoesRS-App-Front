@@ -15,7 +15,6 @@ export default function DetalhesAlimentos() {
     const [quantities, setQuantities] = useState({});
     const [showPopup, setShowPopup] = useState(false);
     const [cardPopup, setCardPopup] = useState(null);
-    const [scroll, setScroll] = useState(true);
 
     const { productsCart, addProduct, removeProduct } = useContext(CartContext);
     const navigation = useNavigation();
@@ -64,11 +63,9 @@ export default function DetalhesAlimentos() {
     const popShow = (id) => {
         if (cardPopup === id) {
             setCardPopup(null);
-            setScroll(true);
             console.log(cardPopup);
         } else {
             setCardPopup(id);
-            setScroll(false);
             console.log(cardPopup);
         }
     };
@@ -76,16 +73,29 @@ export default function DetalhesAlimentos() {
     return (
         <View style={{ flex: 1 }}>
             <Cart />
-            <ScrollView scrollEnabled={scroll}>
+            <ScrollView >
                 <LinearGradient colors={['#FF0000', '#400A0A']} style={styles.container}>
                     <Text>{JSON.stringify(productsCart)}</Text>
+                    <View style={styles.tituloContainer}>
+                        <Text style={styles.primeiraLetra}>A</Text>
+                        <Text style={styles.titulo1}>LIMENTOS</Text>
+                    </View>
+
+                    <View style={styles.linhaLaranja} />
+
+                    <View style={styles.subtitulocontainer}>
+                        <Text style={styles.subtitulo}>DOAÇÕES</Text>
+                    </View>
+
+                    <View style={styles.linhaLaranja2} />
+
                     <View style={styles.productList}>
-                        {products ? (
+                        {products.length ? (
                             products.map((product) =>
-                                cardPopup == product.id ? (
+                                cardPopup === product.id ? (
                                     <View style={styles.viewCardContainer} key={product.id}>
                                         <View style={styles.productImageContainer}>
-                                            <Image source={`${product.image}`} width={128} height={128} style={styles.img} />
+                                            <Image source={{ uri: product.image }} style={styles.img} />
                                         </View>
                                         {showPopup && (
                                             <View style={styles.qtdProductsContainer}>
@@ -109,7 +119,7 @@ export default function DetalhesAlimentos() {
                                                 <Text style={styles.textButton}>+12</Text>
                                             </TouchableOpacity>
                                         </View>
-                                        <TouchableOpacity onPress={() => addProduct(product.id, quantities[product.id] || 0) || setQuantities({})} style={styles.addCart}>
+                                        <TouchableOpacity style={styles.addCart} onPress={() => addProduct(product.id, quantities[product.id] || 0) || setQuantities({})}>
                                             <Text style={styles.addCartText}>Adicionar ao carrinho</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity style={styles.arrowBack} onPress={() => popShow(product.id)}>
@@ -118,7 +128,7 @@ export default function DetalhesAlimentos() {
                                     </View>
                                 ) : (
                                     <TouchableOpacity style={styles.productCard} onPress={() => popShow(product.id)} key={product.id}>
-                                        <Image source={`${product.image}`} width={128} height={128} style={styles.img} />
+                                        <Image source={{ uri: product.image }} style={styles.img2} />
                                         <View style={styles.desc}>
                                             <Text style={styles.title}>{product.name}</Text>
                                             <Text style={styles.price}>R${product.value}</Text>

@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     },
     multipleButtons: {
         marginRight: 10,
-        paddingHorizontal: 25,
+        paddingHorizontal: 35,
         paddingVertical: 8,
         backgroundColor: '#FF6347',
         borderRadius: 5,
