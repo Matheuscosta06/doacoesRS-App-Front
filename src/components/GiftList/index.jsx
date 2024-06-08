@@ -2,9 +2,10 @@ import { View, Text, Image } from 'react-native'
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
-const giftList = ({ setSelectedCategory, styles, products }) => {
-    console.log(products);
+const giftList = ({ setSelectedCategory, styles, products, }) => {
+    const navigation = useNavigation();
     return (
         <View style={styles.containerbtn}>
             <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>

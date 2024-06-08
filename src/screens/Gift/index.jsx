@@ -3,7 +3,6 @@ import { View, Text, TextInput, Image, ScrollView, TouchableOpacity } from 'reac
 import styles from './styles';
 import { Feather } from '@expo/vector-icons';
 import axios from 'axios';
-import { useNavigation } from '@react-navigation/native';
 import GiftCart from '../../components/GiftCart';
 import GiftList from '../../components/GiftList';
 
@@ -17,7 +16,7 @@ export default function Gift() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [otherDonation, setOtherDonation] = useState('');
 
-  const navigation = useNavigation();
+
 
 
   useEffect(() => {
