@@ -3,8 +3,8 @@ import { View, Text, TextInput, Image, ScrollView, TouchableOpacity } from 'reac
 import styles from './styles';
 import { Feather } from '@expo/vector-icons';
 import axios from 'axios';
-import { useNavigation } from '@react-navigation/native';
 import GiftCart from '../../components/GiftCart';
+import GiftList from '../../components/GiftList';
 
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -15,8 +15,8 @@ export default function Gift() {
   const [productsPets, setProductsPets] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [otherDonation, setOtherDonation] = useState('');
-  const [cardPopup, setCardPopup] = useState(null);
-  const [scroll, setScroll] = useState(true);
+
+
 
 
   useEffect(() => {
@@ -43,17 +43,6 @@ export default function Gift() {
     console.log(category);
   };
 
-  const popShow = (id) => {
-    if (cardPopup === id) {
-      setCardPopup(null);
-      setScroll(true);
-      console.log(cardPopup);
-    } else {
-      setCardPopup(id);
-      setScroll(false);
-      console.log(cardPopup);
-    }
-  };
 
   return (
     <View style={{ flex: 1 }}>
@@ -67,106 +56,16 @@ export default function Gift() {
           {selectedCategory ? (
             <View >
               {selectedCategory === 'pet' && (
-
-                <View style={styles.containerbtn}>
-                  <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
-                    <Feather name="x" size={24} color="black" />
-                  </TouchableOpacity>
-                  <View style={styles.cardcontainer}>
-
-                    {productsPets.map((product) => (
-                      cardPopup === product.id ? (
-                        <View style={styles.cardPopup} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                          <Text style={styles.cardText}>{product.description}</Text>
-                        </View>
-                      ) : (
-                        <TouchableOpacity onPress={() => popShow(product.id)} style={styles.card} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                        </TouchableOpacity>
-                      )
-                    ))}
-
-                  </View>
-                </View>
+                <GiftList setSelectedCategory={setSelectedCategory} styles={styles} products={productsPets} />
               )}
               {selectedCategory === 'food' && (
-
-                <View style={styles.containerbtn}>
-                  <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
-                    <Feather name="x" size={24} color="black" />
-                  </TouchableOpacity>
-                  <View style={styles.cardcontainer}>
-
-                    {productsFood.map((product) => (
-                      cardPopup === product.id ? (
-                        <View style={styles.cardPopup} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                          <Text style={styles.cardText}>{product.description}</Text>
-                        </View>
-                      ) : (
-                        <TouchableOpacity onPress={() => popShow(product.id)} style={styles.card} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                        </TouchableOpacity>
-                      )
-                    ))}
-                  </View>
-                </View>
+                <GiftList setSelectedCategory={setSelectedCategory} styles={styles} products={productsFood} />
               )}
               {selectedCategory === 'clothes' && (
-
-                <View style={styles.containerbtn}>
-                  <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
-                    <Feather name="x" size={24} color="black" />
-                  </TouchableOpacity>
-                  <View style={styles.cardcontainer}>
-
-                    {productsClothes.map((product) => (
-                      cardPopup === product.id ? (
-                        <View style={styles.cardPopup} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                          <Text style={styles.cardText}>{product.description}</Text>
-                        </View>
-                      ) : (
-                        <TouchableOpacity onPress={() => popShow(product.id)} style={styles.card} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                        </TouchableOpacity>
-                      )
-                    ))}
-                  </View>
-                </View>
-
+                <GiftList setSelectedCategory={setSelectedCategory} styles={styles} products={productsClothes} />
               )}
               {selectedCategory === 'hygiene' && (
-
-                <View style={styles.containerbtn}>
-                  <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
-                    <Feather name="x" size={24} color="black" />
-                  </TouchableOpacity>
-                  <View style={styles.cardcontainer}>
-
-                    {productsHygiene.map((product) => (
-                      cardPopup === product.id ? (
-                        <View style={styles.cardPopup} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                          <Text style={styles.cardText}>{product.description}</Text>
-                        </View>
-                      ) : (
-                        <TouchableOpacity onPress={() => popShow(product.id)} style={styles.card} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                        </TouchableOpacity>
-                      )
-                    ))}
-                  </View>
-                </View>
+                <GiftList setSelectedCategory={setSelectedCategory} styles={styles} products={productsHygiene} />
               )}
               {selectedCategory === 'Outros' && (
                 <View style={styles.containerbtnOutros}>
