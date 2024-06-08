@@ -133,10 +133,9 @@ export default function DetalhesPets() {
                                                         </TouchableOpacity>
                                                     </View>
 
-                                                    <TouchableOpacity onPress={() => addProduct(product.id, quantities[product.id] || 0) || setQuantities({})} style={styles.addCart}>
+                                                    <TouchableOpacity onPress={() => addProduct(product, quantities[product.id] || 0)} style={styles.addCart}>
                                                         <Text style={styles.addCartText}>Adicionar ao carrinho</Text>
                                                     </TouchableOpacity>
-
                                                 </View>
                                             )
                                         }
