@@ -32,8 +32,16 @@ export default function CartProvider({ children }) {
         }
         setProductsCart(newProductsCart);
     };
+
+    const cancelProduct = (product) => {
+        const newProductsCart = [...productsCart];
+        const item = newProductsCart.find((item) => item.product.id === product.id);
+
+        newProductsCart.splice(newProductsCart.indexOf(item), 1);
+        setProductsCart(newProductsCart);
+    };
     return (
-        <CartContext.Provider value={{ productsCart, addProduct, removeProduct }}>
+        <CartContext.Provider value={{ productsCart, addProduct, removeProduct, cancelProduct }}>
             {children}
         </CartContext.Provider>
     );

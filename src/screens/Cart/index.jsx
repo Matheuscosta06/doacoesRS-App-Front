@@ -9,7 +9,7 @@ import Entypo from '@expo/vector-icons/Entypo';
 
 export default function Cart() {
   const apiURL = process.env.EXPO_PUBLIC_API_URL;
-  const { productsCart, removeProduct, addProduct } = useContext(CartContext);
+  const { productsCart, removeProduct, addProduct, cancelProduct } = useContext(CartContext);
   const [localProductsCart, setLocalProductsCart] = useState(productsCart);
   const [productDetails, setProductDetails] = useState([]);
 
@@ -28,6 +28,10 @@ export default function Cart() {
     removeProduct(product.product);
   };
 
+  const lastProduct = (product) => {
+    cancelProduct(product.product);
+  };
+
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -44,8 +48,8 @@ export default function Cart() {
         <View style={styles.containerProduct}>
           {localProductsCart.map((productData) => (
             <View style={styles.card} key={productData.product.id}>
-              <TouchableOpacity onPress={() => removeProduct(productData.id)}>
-                <Feather style={styles.x} name="x" size={38} color="#FFA41B" />
+              <TouchableOpacity style={styles.x} onPress={() => lastProduct(productData)}>
+                <Feather name="x" size={38} color="#FFA41B" />
               </TouchableOpacity>
 
               <Image source={{ uri: productData.product.image }} style={styles.image} />
