@@ -13,7 +13,8 @@ export default function DetalhesPets() {
     const [products, setProducts] = useState([]);
     const [quantities, setQuantities] = useState({});
     const [showPopup, setShowPopup] = useState(false);
-    const [cardPopup, setCardPopup] = useState(false);
+    const [cardPopup, setCardPopup] = useState(null);
+    const [scroll, setScroll] = useState(false);
 
     const {
         productsCart,
@@ -63,9 +64,15 @@ export default function DetalhesPets() {
     }
 
     const popShow = (id) => {
-        setCardPopup(cardPopup ? false : true);
-        console.log(cardPopup);
-        console.log(id);
+        if (cardPopup === id) {
+            setCardPopup(null);
+            setScroll(true);
+            console.log(cardPopup);
+        } else {
+            setCardPopup(id);
+            setScroll(false);
+            console.log(cardPopup);
+        }
     }
 
 
@@ -74,7 +81,7 @@ export default function DetalhesPets() {
     return (
         <View style={{ flex: 1 }}>
             <Cart />
-            <ScrollView>
+            <ScrollView scrollEnabled={scroll}>
                 <LinearGradient
                     colors={['#FF0000', '#400A0A']}
                     style={styles.container}
@@ -87,27 +94,64 @@ export default function DetalhesPets() {
                             products ? (
                                 products.map((product) => (
 
-                                    <TouchableOpacity onPress={() => popShow(product.id)} key={product.id}>
-                                        <Image source={`${product.image}`} style={styles.img} />
+                                    <View>
 
-                                        <View style={styles.desc}>
-                                            <Text style={styles.title}>{product.name}</Text>
-                                            <Text style={styles.price}>R${product.value}</Text>
-                                        </View>
-                                    </TouchableOpacity>
+                                        <TouchableOpacity onPress={() => popShow(product.id)} key={product.id}>
+                                            <Image source={`${product.image}`} style={styles.img} />
 
-                                    
+                                            <View style={styles.desc}>
+                                                <Text style={styles.title}>{product.name}</Text>
+                                                <Text style={styles.price}>R${product.value}</Text>
+                                            </View>
+                                        </TouchableOpacity>
+
+                                        {
+                                            cardPopup === product.id && (
+                                                <View style={styles.qtdProductsContainer}>
+                                                    {
+                                                        showPopup && (
+                                                            <View style={styles.qtdProductsContainer}>
+                                                                <TouchableOpacity onPress={() => add(product.id)} style={styles.buttons} >
+                                                                    <Text style={styles.textButton}>+</Text>
+                                                                </TouchableOpacity>
+                                                                <Text style={styles.qtd}>{quantities[product.id] || 0}</Text>
+                                                                <TouchableOpacity onPress={() => remove(product.id)} style={styles.buttons}>
+                                                                    <Text style={styles.textButton}>-</Text>
+                                                                </TouchableOpacity>
+                                                            </View>
+                                                        )
+                                                    }
+
+                                                    <View style={styles.multipleButtonsContainer}>
+                                                        <TouchableOpacity onPress={() => addMultiple(product.id, 2)} style={styles.multipleButtons} >
+                                                            <Text style={styles.textButton}>+2</Text>
+                                                        </TouchableOpacity>
+                                                        <TouchableOpacity onPress={() => addMultiple(product.id, 6)} style={styles.multipleButtons} >
+                                                            <Text style={styles.textButton}>+6</Text>
+                                                        </TouchableOpacity>
+                                                        <TouchableOpacity onPress={() => addMultiple(product.id, 12)} style={styles.multipleButtons} >
+                                                            <Text style={styles.textButton}>+12</Text>
+                                                        </TouchableOpacity>
+                                                    </View>
+
+                                                    <TouchableOpacity onPress={() => addProduct(product.id, quantities[product.id] || 0) || setQuantities({})} style={styles.addCart}>
+                                                        <Text style={styles.addCartText}>Adicionar ao carrinho</Text>
+                                                    </TouchableOpacity>
+
+                                                </View>
+                                            )
+                                        }
 
 
-                                       
 
+                                    </View>
 
 
 
                                 ))
                             ) : (
-                        <Text>Carregando...</Text>
-                        )
+                                <Text>Carregando...</Text>
+                            )
                         }
                     </View>
 
@@ -119,7 +163,7 @@ export default function DetalhesPets() {
     );
 }
 
- {/* {
+{/* {
                                             showPopup && (
                                                 <View style={styles.qtdProductsContainer}>
                                                     <TouchableOpacity onPress={() => add(product.id)} style={styles.buttons} >
