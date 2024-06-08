@@ -32,7 +32,7 @@ export default function giftDetails({ route }) {
                 </TouchableOpacity>
             </View>
             <TouchableOpacity style={styles.arrowBack} onPress={() => navigation.navigate("Gift")}>
-                <AntDesign name="left" size={24} color="#FF6347" />
+                <AntDesign name="left" size={24} color="red" />
             </TouchableOpacity>
         </View>
     )
