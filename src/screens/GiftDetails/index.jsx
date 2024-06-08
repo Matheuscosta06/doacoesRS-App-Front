@@ -8,7 +8,7 @@ export default function giftDetails({ route }) {
     const { product } = route.params
     const navigation = useNavigation();
 
-    const [qtd, setQtd] = useState(null);
+    const [qtd, setQtd] = useState(0);
 
     return (
         <View>
