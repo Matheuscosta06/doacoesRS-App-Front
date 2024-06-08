@@ -5,6 +5,7 @@ import { Feather } from '@expo/vector-icons';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
 import GiftCart from '../../components/GiftCart';
+import GiftList from '../../components/GiftList';
 
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -56,70 +57,16 @@ export default function Gift() {
           {selectedCategory ? (
             <View >
               {selectedCategory === 'pet' && (
-                <View style={styles.containerbtn}>
-                  <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
-                    <Feather name="x" size={24} color="black" />
-                  </TouchableOpacity>
-                  <View style={styles.cardcontainer}>
-
-                    {productsPets.map((product) => (
-                      <TouchableOpacity onPress={() => navigation.navigate("giftDetails", { product })} style={styles.card} key={product.id}>
-                        <Image source={`${product.image}`} style={styles.image} />
-                        <Text style={styles.cardText}>{product.name}</Text>
-                      </TouchableOpacity>
-                    ))}
-
-                  </View>
-                </View>
+                <GiftList setSelectedCategory={setSelectedCategory} styles={styles} products={productsPets} />
               )}
               {selectedCategory === 'food' && (
-                <View style={styles.containerbtn}>
-                  <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
-                    <Feather name="x" size={24} color="black" />
-                  </TouchableOpacity>
-                  <View style={styles.cardcontainer}>
-
-                    {productsFood.map((product) => (
-                      <TouchableOpacity onPress={() => navigation.navigate("giftDetails", { product })} style={styles.card} key={product.id}>
-                        <Image source={`${product.image}`} style={styles.image} />
-                        <Text style={styles.cardText}>{product.name}</Text>
-                      </TouchableOpacity>
-                    ))}
-                  </View>
-                </View>
+                <GiftList setSelectedCategory={setSelectedCategory} styles={styles} products={productsFood} />
               )}
               {selectedCategory === 'clothes' && (
-                <View style={styles.containerbtn}>
-                  <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
-                    <Feather name="x" size={24} color="black" />
-                  </TouchableOpacity>
-                  <View style={styles.cardcontainer}>
-
-                    {productsClothes.map((product) => (
-                      <TouchableOpacity onPress={() => navigation.navigate("giftDetails", { product })} style={styles.card} key={product.id}>
-                        <Image source={`${product.image}`} style={styles.image} />
-                        <Text style={styles.cardText}>{product.name}</Text>
-                      </TouchableOpacity>
-                    ))}
-                  </View>
-                </View>
-
+                <GiftList setSelectedCategory={setSelectedCategory} styles={styles} products={productsClothes} />
               )}
               {selectedCategory === 'hygiene' && (
-                <View style={styles.containerbtn}>
-                  <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
-                    <Feather name="x" size={24} color="black" />
-                  </TouchableOpacity>
-                  <View style={styles.cardcontainer}>
-
-                    {productsHygiene.map((product) => (
-                      <TouchableOpacity onPress={() => navigation.navigate("giftDetails", { product })} style={styles.card} key={product.id}>
-                        <Image source={`${product.image}`} style={styles.image} />
-                        <Text style={styles.cardText}>{product.name}</Text>
-                      </TouchableOpacity>
-                    ))}
-                  </View>
-                </View>
+                <GiftList setSelectedCategory={setSelectedCategory} styles={styles} products={productsHygiene} />
               )}
               {selectedCategory === 'Outros' && (
                 <View style={styles.containerbtnOutros}>
