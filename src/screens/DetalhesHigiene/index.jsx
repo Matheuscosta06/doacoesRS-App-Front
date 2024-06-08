@@ -8,6 +8,8 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import Cart from '../../components/Cart';
 import styles from './styles';
 
+
+
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
 
 export default function DetalhesHigiene() {
@@ -78,8 +80,8 @@ export default function DetalhesHigiene() {
                 <ScrollView>
                     <Text>{JSON.stringify(productsCart)}</Text>
                     <View style={styles.tituloContainer}>
-                        <Text style={styles.primeiraLetra}>R</Text>
-                        <Text style={styles.titulo1}>OUPAS</Text>
+                        <Text style={styles.primeiraLetra}>H</Text>
+                        <Text style={styles.titulo1}>IGIENE</Text>
                     </View>
 
                     <View style={styles.linhaLaranja} />

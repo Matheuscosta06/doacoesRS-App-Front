@@ -10,7 +10,7 @@ import styles from './styles'; // Importando estilos
 
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
 
-export default function DetalhesPets() {
+export default function DetalhesAlimentos() {
     const [products, setProducts] = useState([]);
     const [quantities, setQuantities] = useState({});
     const [showPopup, setShowPopup] = useState(false);
