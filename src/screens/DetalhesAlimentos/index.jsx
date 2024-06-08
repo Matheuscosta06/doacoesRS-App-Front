@@ -94,7 +94,11 @@ export default function DetalhesPets() {
                             products ? (
                                 products.map((product) => (
                                     cardPopup == product.id ? (
-                                        <View style={styles.qtdProductsContainer} key={product.id}>
+                                        <View style={styles.viewCardContainer} key={product.id}>
+
+
+
+
                                             {
                                                 showPopup && (
                                                     <View style={styles.qtdProductsContainer}>
@@ -125,14 +129,14 @@ export default function DetalhesPets() {
                                                 <Text style={styles.addCartText}>Adicionar ao carrinho</Text>
                                             </TouchableOpacity>
 
-                                            <TouchableOpacity onPress={() => popShow(product.id)}>
-                                                <Text style={styles.closePopup}>Voltar</Text>
+                                            <TouchableOpacity style={styles.arrowBack} onPress={() => popShow(product.id)}>
+                                                <AntDesign name="left" size={24} color="red" />
                                             </TouchableOpacity>
 
                                         </View>
                                     ) : (
-                                        <TouchableOpacity onPress={() => popShow(product.id)} key={product.id}>
-                                            <Image source={`${product.image}`} style={styles.img} />
+                                        <TouchableOpacity style={styles.productCard} onPress={() => popShow(product.id)} key={product.id}>
+                                            <Image source={`${product.image}`} width={128} height={128} style={styles.img} />
 
                                             <View style={styles.desc}>
                                                 <Text style={styles.title}>{product.name}</Text>
