@@ -1,158 +1,106 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  image: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-  },
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#fff",
-
-  },
-  productList: {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    width: "100%",
-    marginBottom: 120,
-  },
-  productImageContainer: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#d5d5d5",
-    borderTopLeftRadius: 5,
-    borderTopRightRadius: 5,
-    width: '100%',
-    padding: 20,
-  },
-
-  productCard: {
-    backgroundColor: "#710202",
-    width: '90%',
-    margin: 10,
-    borderRadius: 10,
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  desc: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "left",
-    gap: 17,
-    marginLeft: 10,
-
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "white",
-  },
-  price: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#27a747",
-  },
-  img: {
-    width: 128,
-    height: 128,
-  },
-
-  qtdProductsContainer: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 10,
-    borderColor: "black",
-    borderWidth: 1,
-    borderRadius: 5,
-    gap: 10,
-    width: '90%',
-    marginTop: 10,
-  },
- 
-  buttons: {
-    padding: 10,
-    borderRadius: 5,
-  },
-  textButton: {
-    color: "#ffa41b",
-    fontSize: 22,
-  },
-  qtd: {
-    fontSize: 20,
-  },
-
-  cardImageContainer: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  multipleButtonsContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: '90%',
-    margin: 10,
-
-
-  },
-
-  multipleButtons: {
-    justifyContent: "center",
-    alignItems: "center",
-    borderColor: "black",
-    padding: 10,
-    width: '30%',
-    borderWidth: 1,
-    borderRadius: 5,
-    borderRadius: 5,
-  },
-
-  addCart: {
-    backgroundColor: "green",
-    padding: 20,
-    borderRadius: 5,
-    width: '90%',
-    marginTop: 10,
-  },
-
-
-  addCartText: {
-    color: "white",
-    fontSize: 20,
-  },
-  arrowBack: {
-    position: "absolute",
-    top: 10,
-    left: 10,
-
-  },
-
-  viewCardContainer: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    backgroundColor: "white",
-    width: '90%',
-    margin: 10,
-    borderRadius: 10,
-    height: 500,
-    borderColor: "#ffa41b",
-    borderWidth: 6,
-
-  },
-
-
-
+    container: {
+        flex: 1,
+        backgroundColor: '#f8f8f8',
+    },
+    productList: {
+        paddingHorizontal: 20,
+        paddingTop: 20,
+    },
+    productCard: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 20,
+        backgroundColor: '#FFFFFF',
+        borderRadius: 20,
+        padding: 15,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+    },
+    viewCardContainer: {
+        marginBottom: 20,
+        backgroundColor: '#FFFFFF',
+        borderRadius: 20,
+        padding: 15,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+    },
+    productImageContainer: {
+        marginRight: 15,
+    },
+    img: {
+        width: 100,
+        height: 100,
+        borderRadius: 15,
+    },
+    desc: {
+        flex: 1,
+    },
+    title: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#333',
+    },
+    price: {
+        fontSize: 16,
+        color: '#777',
+    },
+    qtdProductsContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 10,
+    },
+    qtd: {
+        marginHorizontal: 10,
+        fontSize: 16,
+        color: '#555',
+    },
+    multipleButtonsContainer: {
+        flexDirection: 'row',
+        marginBottom: 10,
+    },
+    multipleButtons: {
+        marginRight: 10,
+        paddingHorizontal: 15,
+        paddingVertical: 8,
+        backgroundColor: '#FF6347',
+        borderRadius: 5,
+    },
+    textButton: {
+        color: '#FFF',
+        fontSize: 16,
+    },
+    addCart: {
+        backgroundColor: '#008000',
+        paddingVertical: 12,
+        borderRadius: 10,
+        alignItems: 'center',
+        marginTop: 10,
+    },
+    addCartText: {
+        color: '#FFF',
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+    arrowBack: {
+        position: 'absolute',
+        top: 15,
+        left: 15,
+    },
 });
 
 export default styles;
