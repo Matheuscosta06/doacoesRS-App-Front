@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         height: 5,
         backgroundColor: '#FF7D04',
         marginHorizontal: 30,
-        marginRight: "50%",
+        marginRight: "30%",
         marginTop: -10,
     },
     subtitulocontainer: {
@@ -42,13 +42,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         zIndex: 1,
 
-    },
-    linhaLaranja2: {
-        height: 5,
-        backgroundColor: '#FF7D04',
-        marginHorizontal: 30,
-        marginLeft: "30%",
-        marginTop: -7,
     },
     subtitulocontainer: {
         justifyContent: 'center',
@@ -64,8 +57,8 @@ const styles = StyleSheet.create({
     linhaLaranja2: {
         height: 5,
         backgroundColor: '#FF7D04',
-        marginHorizontal: 30,
-        marginLeft: "30%",
+        marginLeft: "20%",
+        marginRight: "20%",
         marginTop: -7,
         marginBottom: 20,
     },
@@ -73,6 +66,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
     },
     productCard: {
+        borderColor: '#FF7D04',
+        borderWidth: 5,
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 20,
@@ -87,8 +82,11 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
+
     },
     viewCardContainer: {
+        borderColor: '#FF7D04',
+        borderWidth: 5,        
         marginBottom: 20,
         backgroundColor: '#FFFFFF',
         borderRadius: 20,
@@ -126,7 +124,7 @@ const styles = StyleSheet.create({
     },
     price: {
         fontSize: 16,
-        color: '#777',
+        color: 'darkgreen',
     },
     qtdProductsContainer: {
         flexDirection: 'row',
@@ -137,10 +135,11 @@ const styles = StyleSheet.create({
     },
     qtd: {
         marginHorizontal: 10,
-        fontSize: 16,
+        fontSize: 30,
         color: '#555',
     },
     multipleButtonsContainer: {
+        
         flexDirection: 'row',
         marginBottom: 10,
         margin:"auto"
@@ -161,7 +160,7 @@ const styles = StyleSheet.create({
     },
     textButton: {
         color: '#FFF',
-        fontSize: 16,
+        fontSize: 20,
     },
     addCart: {
         backgroundColor: '#008000',

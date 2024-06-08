@@ -81,7 +81,7 @@ export default function DetalhesHigiene() {
                     <Text>{JSON.stringify(productsCart)}</Text>
                     <View style={styles.tituloContainer}>
                         <Text style={styles.primeiraLetra}>H</Text>
-                        <Text style={styles.titulo1}>IGÊNE</Text>
+                        <Text style={styles.titulo1}>IGIÊNE</Text>
                     </View>
 
                     <View style={styles.linhaLaranja} />
