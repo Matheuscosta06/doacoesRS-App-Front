@@ -1,6 +1,7 @@
 import Routes from "./src/routes";
 import AuthProvider from "./src/contexts/AuthContext";
 import CartProvider from "./src/contexts/CartContext";
+import GiftProvider from "./src/contexts/GiftContext";
 import { useFonts, JosefinSans_300Light, JosefinSans_500Medium, JosefinSans_700Bold } from '@expo-google-fonts/josefin-sans';
 
 export default function App() {
@@ -16,7 +17,9 @@ export default function App() {
   return (
     <AuthProvider>
       <CartProvider>
-        <Routes />
+        <GiftProvider>
+          <Routes />
+        </GiftProvider>
       </CartProvider>
     </AuthProvider>
   );

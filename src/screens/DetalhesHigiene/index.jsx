@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
+import { CartContext } from '../../contexts/CartContext';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import Cart from '../../components/Cart';
 import styles from './styles';
 import Cart from '../../components/Cart';
 
 
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
 
-export default function DetalhesPets() {
+export default function DetalhesHigiene() {
     const [products, setProducts] = useState([]);
     const [quantities, setQuantities] = useState({});
     const [showPopup, setShowPopup] = useState(false);
@@ -18,6 +20,7 @@ export default function DetalhesPets() {
     const [scroll, setScroll] = useState(true);
 
     const navigation = useNavigation();
+    const { productsCart, addProduct } = useContext(CartContext);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,6 +33,10 @@ export default function DetalhesPets() {
         };
         fetchData();
     }, []);
+
+    useEffect(() => {
+        console.log(productsCart);
+    }, [productsCart]);
 
     const add = (id) => {
         setQuantities({
@@ -59,31 +66,33 @@ export default function DetalhesPets() {
         if (cardPopup === id) {
             setCardPopup(null);
             setScroll(true);
+            console.log(cardPopup);
         } else {
             setCardPopup(id);
             setScroll(false);
+            console.log(cardPopup);
         }
     };
-
-
     return (
-        
+        <View style={{ flex: 1 }}>
+            <Cart />
             <LinearGradient colors={['#36C5D8', '#093338']} style={styles.container}>
                 <Cart />
                 <ScrollView>
+                    <Text>{JSON.stringify(productsCart)}</Text>
                     <View style={styles.tituloContainer}>
                         <Text style={styles.primeiraLetra}>R</Text>
                         <Text style={styles.titulo1}>OUPAS</Text>
                     </View>
-    
+
                     <View style={styles.linhaLaranja} />
-    
+
                     <View style={styles.subtitulocontainer}>
                         <Text style={styles.subtitulo}>DOAÇÕES</Text>
                     </View>
-    
+
                     <View style={styles.linhaLaranja2} />
-    
+
                     <View style={styles.productList}>
                         {products.length ? (
                             products.map((product) =>
@@ -114,7 +123,7 @@ export default function DetalhesPets() {
                                                 <Text style={styles.textButton}>+12</Text>
                                             </TouchableOpacity>
                                         </View>
-                                        <TouchableOpacity style={styles.addCart}>
+                                        <TouchableOpacity style={styles.addCart} onPress={() => addProduct(product.id, quantities[product.id] || 0) || setQuantities({})}>
                                             <Text style={styles.addCartText}>Adicionar ao carrinho</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity style={styles.arrowBack} onPress={() => popShow(product.id)}>
@@ -137,6 +146,7 @@ export default function DetalhesPets() {
                     </View>
                 </ScrollView>
             </LinearGradient>
+        </View>
     );
 }
 
