@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     height: '100%',
-    paddingBottom:"30%"
   },
   titulo: {
     fontSize: 60,
@@ -77,6 +76,8 @@ const styles = StyleSheet.create({
   icones3: {
     marginTop: 50,
     alignItems: 'center',
+    paddingBottom:"90%"
+
 
   },
 
