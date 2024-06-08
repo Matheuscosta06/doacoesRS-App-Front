@@ -14,7 +14,7 @@ export default function DetalhesPets() {
     const [quantities, setQuantities] = useState({});
     const [showPopup, setShowPopup] = useState(false);
     const [cardPopup, setCardPopup] = useState(null);
-    const [scroll, setScroll] = useState(false);
+    const [scroll, setScroll] = useState(true);
 
     const {
         productsCart,
@@ -94,8 +94,7 @@ export default function DetalhesPets() {
                             products ? (
                                 products.map((product) => (
 
-                                    <View>
-
+                                    <View style={styles.productContainer}>
                                         <TouchableOpacity onPress={() => popShow(product.id)} key={product.id}>
                                             <Image source={`${product.image}`} style={styles.img} />
 
