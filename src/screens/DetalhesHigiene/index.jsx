@@ -131,7 +131,7 @@ export default function DetalhesHigiene() {
                                     </View>
                                 ) : (
                                     <TouchableOpacity style={styles.productCard} onPress={() => popShow(product.id)} key={product.id}>
-                                        <Image source={{ uri: product.image }} style={styles.img} />
+                                        <Image source={{ uri: product.image }} style={styles.img2} />
                                         <View style={styles.desc}>
                                             <Text style={styles.title}>{product.name}</Text>
                                             <Text style={styles.price}>R${product.value}</Text>

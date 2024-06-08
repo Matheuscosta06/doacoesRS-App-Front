@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#f8f8f8',
+        paddingBottom: "20%",
     },
 
     tituloContainer: {
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
         height: 5,
         backgroundColor: '#FF7D04',
         marginHorizontal: 30,
-        marginRight: "40%",
+        marginRight: "50%",
         marginTop: -10,
     },
     subtitulocontainer: {
@@ -103,8 +104,14 @@ const styles = StyleSheet.create({
     },
     productImageContainer: {
         marginRight: 15,
+        alignItems: 'center',
     },
     img: {
+        width: 210,
+        height: 210,
+        borderRadius: 15,
+    },
+    img2: {
         width: 100,
         height: 100,
         borderRadius: 15,
@@ -125,6 +132,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 10,
+        margin:"auto"
+
     },
     qtd: {
         marginHorizontal: 10,
@@ -134,10 +143,18 @@ const styles = StyleSheet.create({
     multipleButtonsContainer: {
         flexDirection: 'row',
         marginBottom: 10,
+        margin:"auto"
+
+    },
+    buttons: {
+        backgroundColor: '#FF6347',
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 5,
     },
     multipleButtons: {
         marginRight: 10,
-        paddingHorizontal: 15,
+        paddingHorizontal: 25,
         paddingVertical: 8,
         backgroundColor: '#FF6347',
         borderRadius: 5,
