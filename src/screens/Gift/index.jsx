@@ -15,8 +15,8 @@ export default function Gift() {
   const [productsPets, setProductsPets] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [otherDonation, setOtherDonation] = useState('');
-  const [cardPopup, setCardPopup] = useState(null);
-  const [scroll, setScroll] = useState(true);
+
+  const navigation = useNavigation();
 
 
   useEffect(() => {
@@ -43,17 +43,6 @@ export default function Gift() {
     console.log(category);
   };
 
-  const popShow = (id) => {
-    if (cardPopup === id) {
-      setCardPopup(null);
-      setScroll(true);
-      console.log(cardPopup);
-    } else {
-      setCardPopup(id);
-      setScroll(false);
-      console.log(cardPopup);
-    }
-  };
 
   return (
     <View style={{ flex: 1 }}>
@@ -67,7 +56,6 @@ export default function Gift() {
           {selectedCategory ? (
             <View >
               {selectedCategory === 'pet' && (
-
                 <View style={styles.containerbtn}>
                   <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
                     <Feather name="x" size={24} color="black" />
@@ -75,25 +63,16 @@ export default function Gift() {
                   <View style={styles.cardcontainer}>
 
                     {productsPets.map((product) => (
-                      cardPopup === product.id ? (
-                        <View style={styles.cardPopup} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                          <Text style={styles.cardText}>{product.description}</Text>
-                        </View>
-                      ) : (
-                        <TouchableOpacity onPress={() => popShow(product.id)} style={styles.card} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                        </TouchableOpacity>
-                      )
+                      <TouchableOpacity onPress={() => navigation.navigate("giftDetails", { product })} style={styles.card} key={product.id}>
+                        <Image source={`${product.image}`} style={styles.image} />
+                        <Text style={styles.cardText}>{product.name}</Text>
+                      </TouchableOpacity>
                     ))}
 
                   </View>
                 </View>
               )}
               {selectedCategory === 'food' && (
-
                 <View style={styles.containerbtn}>
                   <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
                     <Feather name="x" size={24} color="black" />
@@ -101,24 +80,15 @@ export default function Gift() {
                   <View style={styles.cardcontainer}>
 
                     {productsFood.map((product) => (
-                      cardPopup === product.id ? (
-                        <View style={styles.cardPopup} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                          <Text style={styles.cardText}>{product.description}</Text>
-                        </View>
-                      ) : (
-                        <TouchableOpacity onPress={() => popShow(product.id)} style={styles.card} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                        </TouchableOpacity>
-                      )
+                      <TouchableOpacity onPress={() => navigation.navigate("giftDetails", { product })} style={styles.card} key={product.id}>
+                        <Image source={`${product.image}`} style={styles.image} />
+                        <Text style={styles.cardText}>{product.name}</Text>
+                      </TouchableOpacity>
                     ))}
                   </View>
                 </View>
               )}
               {selectedCategory === 'clothes' && (
-
                 <View style={styles.containerbtn}>
                   <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
                     <Feather name="x" size={24} color="black" />
@@ -126,25 +96,16 @@ export default function Gift() {
                   <View style={styles.cardcontainer}>
 
                     {productsClothes.map((product) => (
-                      cardPopup === product.id ? (
-                        <View style={styles.cardPopup} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                          <Text style={styles.cardText}>{product.description}</Text>
-                        </View>
-                      ) : (
-                        <TouchableOpacity onPress={() => popShow(product.id)} style={styles.card} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                        </TouchableOpacity>
-                      )
+                      <TouchableOpacity onPress={() => navigation.navigate("giftDetails", { product })} style={styles.card} key={product.id}>
+                        <Image source={`${product.image}`} style={styles.image} />
+                        <Text style={styles.cardText}>{product.name}</Text>
+                      </TouchableOpacity>
                     ))}
                   </View>
                 </View>
 
               )}
               {selectedCategory === 'hygiene' && (
-
                 <View style={styles.containerbtn}>
                   <TouchableOpacity style={styles.btn} onPress={() => setSelectedCategory(null)}>
                     <Feather name="x" size={24} color="black" />
@@ -152,18 +113,10 @@ export default function Gift() {
                   <View style={styles.cardcontainer}>
 
                     {productsHygiene.map((product) => (
-                      cardPopup === product.id ? (
-                        <View style={styles.cardPopup} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                          <Text style={styles.cardText}>{product.description}</Text>
-                        </View>
-                      ) : (
-                        <TouchableOpacity onPress={() => popShow(product.id)} style={styles.card} key={product.id}>
-                          <Image source={`${product.image}`} style={styles.image} />
-                          <Text style={styles.cardText}>{product.name}</Text>
-                        </TouchableOpacity>
-                      )
+                      <TouchableOpacity onPress={() => navigation.navigate("giftDetails", { product })} style={styles.card} key={product.id}>
+                        <Image source={`${product.image}`} style={styles.image} />
+                        <Text style={styles.cardText}>{product.name}</Text>
+                      </TouchableOpacity>
                     ))}
                   </View>
                 </View>
