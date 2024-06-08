@@ -180,7 +180,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
 
-  }
+  },
+
+
+  cardPopup: {
+    backgroundColor: 'white',
+    width: 300,
+    height: 300,
+    borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 100,
+    borderWidth: 4,
+    borderColor: '#FFA41B',
+
+  },
+  cardTextPopup: {
+    fontFamily: 'JosefinSans_700Bold',
+    color: 'black',
+    marginTop: 20,
+    fontSize: 20
+  },
 
 });
 
