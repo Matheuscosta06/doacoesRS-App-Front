@@ -16,7 +16,7 @@ export default function Category() {
       <ScrollView>
         <ImageBackground source={require('../../../assets/wlppRS.png')} style={styles.imgBg}>
           <View style={styles.divMain}>
-            <Text style={styles.titulo}>compre sua doação</Text>
+            <Text style={styles.titulo}>compre sua doação!!</Text>
 
             <View style={styles.icones1}>
               <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesPets`)}>
