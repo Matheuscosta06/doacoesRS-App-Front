@@ -4,6 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import { Feather } from "@expo/vector-icons";
 import Home from "../screens/Home";
 import Gift from "../screens/Gift";
+import Cart from "../screens/Cart";
 import Category from "../screens/Category";
 import Sobre from "../screens/Sobre";
 import Feedback from "../screens/feedback";
@@ -285,6 +286,33 @@ const PrivateTab = () => {
                 color={focused ? "#fff" : "#366ED8"}
               />
             ),
+            tabBarStyle: {
+              position: "absolute",
+              bottom: 10,
+              left: 20,
+              right: 20,
+              elevation: 0,
+              backgroundColor: "#FFA41B",
+              borderRadius: 15,
+              height: 90,
+              borderColor: "transparent",
+            },
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: "#fff",
+            tabBarInactiveTintColor: "#366ED8",
+          }}
+        />
+        <Tab.Screen name="Cart" component={Cart}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="app-store"
+                size={38}
+                color={focused ? "#366ED8" : "#fff"} />
+            ),
+            tabBarItemStyle: {
+              display: "none",
+            },
             tabBarStyle: {
               position: "absolute",
               bottom: 10,

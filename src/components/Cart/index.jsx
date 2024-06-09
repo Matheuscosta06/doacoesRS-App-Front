@@ -1,17 +1,18 @@
-import { View, Text } from 'react-native';
-import { Feather } from "@expo/vector-icons";
-import styles from './styles';
 import { CartContext } from '../../contexts/CartContext';
 import { useEffect, useState, useContext } from 'react';
+import { Feather } from "@expo/vector-icons";
+import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
+import { View, Text, TouchableOpacity } from 'react-native';
 
 const Cart = () => {
   const [productsLength, setProductsLength] = useState(0);
+  const navigation = useNavigation();
   const {
     productsCart,
   } = useContext(CartContext);
 
   useEffect(() => {
-    console.log(productsCart.length);
     setProductsLength(productsCart.length);
   }, [productsCart]);
   return (
@@ -21,8 +22,9 @@ const Cart = () => {
           <Text style={styles.cartText}>{productsLength}</Text>
         )
       }
+     <TouchableOpacity onPress={() => navigation.navigate('Cart')} style={styles.container} >
       <Feather name="shopping-cart" size={48} color="#fff" style={styles.cartContainer} />
-    </View>
+    </TouchableOpacity>
   )
 }
 

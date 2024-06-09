@@ -7,34 +7,40 @@ export default function CartProvider({ children }) {
 
     const [productsCart, setProductsCart] = useState([]);
 
-    const addProduct = (productID, quantity) => {
+    const addProduct = (productParams, quantity) => {
         const newProductsCart = [...productsCart];
-    
-        const item = newProductsCart.find((item) => item.id === productID);
-    
+
+        const item = newProductsCart.find((item) => item.product.id === productParams.id);
+
         if (!item) {
-            newProductsCart.push({ id: productID, qtd: quantity });
+            newProductsCart.push({ product: productParams, qtd: quantity });
         } else {
             item.qtd += quantity;
         }
         setProductsCart(newProductsCart);
     };
 
-    const removeProduct = (productID) => {
+    const removeProduct = (product) => {
         const newProductsCart = [...productsCart];
-
-        const item = newProductsCart.find((item) => item.id === productID);
+        const item = newProductsCart.find((item) => item.product.id === product.id);
 
         if (item.qtd > 1) {
-            item.qtd--;
-            setProductsCart(newProductsCart);
+            item.qtd -= 1;
         } else {
-            const arryFiltred = newProductsCart.filter((item) => item.id !== productID);
-            setProductsCart([...arryFiltred]);
+            newProductsCart.splice(newProductsCart.indexOf(item), 1);
         }
+        setProductsCart(newProductsCart);
+    };
+
+    const cancelProduct = (product) => {
+        const newProductsCart = [...productsCart];
+        const item = newProductsCart.find((item) => item.product.id === product.id);
+
+        newProductsCart.splice(newProductsCart.indexOf(item), 1);
+        setProductsCart(newProductsCart);
     };
     return (
-        <CartContext.Provider value={{ productsCart, addProduct, removeProduct }}>
+        <CartContext.Provider value={{ productsCart, addProduct, removeProduct, cancelProduct }}>
             {children}
         </CartContext.Provider>
     );
