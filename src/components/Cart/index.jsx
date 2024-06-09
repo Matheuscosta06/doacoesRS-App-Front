@@ -22,7 +22,7 @@ const Cart = () => {
           <Text style={styles.cartText}>{productsLength}</Text>
         )
       }
-      <TouchableOpacity onPress={() => navigation.navigate('Cart')} style={styles.container} >
+      <TouchableOpacity onPress={() => navigation.navigate('Cart')} >
         <Feather name="shopping-cart" size={48} color="#fff" style={styles.cartContainer} />
       </TouchableOpacity>
     </View>
