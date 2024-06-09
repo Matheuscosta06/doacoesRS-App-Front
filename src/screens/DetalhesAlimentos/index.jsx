@@ -73,7 +73,6 @@ export default function DetalhesAlimentos() {
             <Cart />
             <ScrollView >
                 <LinearGradient colors={['#FF0000', '#400A0A']} style={styles.container}>
-                    <Text>{JSON.stringify(productsCart)}</Text>
                     <View style={styles.tituloContainer}>
                         <Text style={styles.primeiraLetra}>A</Text>
                         <Text style={styles.titulo1}>LIMENTOS</Text>

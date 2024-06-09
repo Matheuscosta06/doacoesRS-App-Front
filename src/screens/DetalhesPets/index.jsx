@@ -77,7 +77,6 @@ export default function DetalhesPets() {
             <Cart />
             <LinearGradient colors={['#1DC59C', '#0E415F']} style={styles.container}>
                 <ScrollView>
-                    <Text>{JSON.stringify(productsCart)}</Text>
                     <View style={styles.tituloContainer}>
                         <Text style={styles.primeiraLetra}>P</Text>
                         <Text style={styles.titulo1}>ETS</Text>

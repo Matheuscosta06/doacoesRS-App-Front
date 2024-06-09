@@ -6,6 +6,8 @@ import axios from 'axios';
 import { CartContext } from '../../contexts/CartContext';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import styles from './styles';
+import Cart from '../../components/Cart';
+
 
 
 
@@ -77,7 +79,6 @@ export default function DetalhesHigiene() {
             <Cart />
             <LinearGradient colors={['#36C5D8', '#093338']} style={styles.container}>
                 <ScrollView>
-                    <Text>{JSON.stringify(productsCart)}</Text>
                     <View style={styles.tituloContainer}>
                         <Text style={styles.primeiraLetra}>H</Text>
                         <Text style={styles.titulo1}>IGIÊNE</Text>
