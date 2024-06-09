@@ -43,9 +43,28 @@ const DonationProvider = ({ children }) => {
       }
     }
   };
+  const createGiftItem = async (itemId, donationId, quantity) => {
+    setGlobalLoading(true);
+    try {
+      const response = await axios.post(`${apiURL}/gift_item`, {
+        gift_id: itemId,
+        donation_id: donationId,
+        quantity
+      });
+      setGlobalLoading(false);
+      return response.data;
+    } catch (error) {
+      setGlobalLoading(false);
+      if (error.response) {
+        return error.response.data;
+      } else {
+        return { error: "Erro de conexão" };
+      }
+    }
+  }
 
   return (
-    <DonationContext.Provider value={{ createDonation, createDonationItem }}>
+    <DonationContext.Provider value={{ createDonation, createDonationItem, createGiftItem }}>
       {children}
     </DonationContext.Provider>
   );
