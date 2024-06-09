@@ -28,7 +28,7 @@ export default function giftDetails({ route }) {
                 />
 
                 <TouchableOpacity style={styles.addDonations}>
-                    <Text style={styles.txtDonations}>Adicionar a sua doação!!!</Text>
+                    <Text style={styles.txtDonations}>Adicionar Doação</Text>
                 </TouchableOpacity>
             </View>
             <TouchableOpacity style={styles.arrowBack} onPress={() => navigation.navigate("Gift")}>

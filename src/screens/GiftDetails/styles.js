@@ -55,5 +55,13 @@ const styles = StyleSheet.create({
         top: 15,
         left: 15,
     },
+    addDonations: {
+        backgroundColor: '#fda31b',
+        padding: 15,
+        borderRadius: 10,
+        width: 150,
+        alignItems: 'center',
+        marginTop: 20,
+    },
 });
 export default styles;
