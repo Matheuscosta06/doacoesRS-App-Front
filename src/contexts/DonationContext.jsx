@@ -44,8 +44,20 @@ const DonationProvider = ({ children }) => {
     }
   };
 
+  const getAllDonationsItemsByDonationId = async (donationId) => {
+    setGlobalLoading(true);
+    try {
+      const response = await axios.get(`${apiURL}/donations_items/${donationId}`);
+      setGlobalLoading(false);
+      return response.data.data;
+    } catch (error) {
+      setGlobalLoading(false);
+      return error.response.data;
+    }
+  };
+
   return (
-    <DonationContext.Provider value={{ createDonation, createDonationItem }}>
+    <DonationContext.Provider value={{ createDonation, createDonationItem, getAllDonationsItemsByDonationId }}>
       {children}
     </DonationContext.Provider>
   );

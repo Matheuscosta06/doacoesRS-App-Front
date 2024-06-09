@@ -4,12 +4,13 @@ import { useFocusEffect } from "@react-navigation/native";
 import { DonationContext } from '../../contexts/DonationContext';
 import { CartContext } from '../../contexts/CartContext';
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
 import Feather from '@expo/vector-icons/Feather';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Entypo from '@expo/vector-icons/Entypo';
-import axios from 'axios';
 
 export default function Cart() {
+  const navigation = useNavigation();
   const apiURL = process.env.EXPO_PUBLIC_API_URL;
   const { createDonation, createDonationItem } = useContext(DonationContext);
   const { productsCart, removeProduct, addProduct, cancelProduct, getTotalCartValue } = useContext(CartContext);
@@ -49,6 +50,7 @@ export default function Cart() {
       localProductsCart.map(async (product) => {
         await createDonationItem(donationId, product.product.id, product.qtd);
       });
+      navigation.navigate('OrderPlaced', { donationId });
     }
   }
 
