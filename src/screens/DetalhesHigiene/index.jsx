@@ -5,7 +5,6 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import { CartContext } from '../../contexts/CartContext';
 import AntDesign from '@expo/vector-icons/AntDesign';
-import Cart from '../../components/Cart';
 import styles from './styles';
 
 
