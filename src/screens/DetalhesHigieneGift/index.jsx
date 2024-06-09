@@ -73,8 +73,24 @@ export default function DetalhesHigieneGift() {
             console.log(cardPopup);
         }
     };
+
+    const headleAddGift = async (gift, qtd) => {
+        try {
+            await addGift(gift, qtd);
+            const response = await axios.post(`${apiURL}/gift`, {
+                id: gift.id,
+                type: gift.type,
+                name: gift.name,
+                description: gift.description,
+                image: gift.image
+            });
+            console.log(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
     return (
-        <View style={{ flex: 1,}}>
+        <View style={{ flex: 1, }}>
             <GiftCart />
             <LinearGradient colors={['#36C5D8', '#093338']} style={styles.container}>
                 <ScrollView>
@@ -121,7 +137,7 @@ export default function DetalhesHigieneGift() {
                                                 <Text style={styles.textButton}>+12</Text>
                                             </TouchableOpacity>
                                         </View>
-                                        <TouchableOpacity style={styles.addCart} onPress={() => addGift(product, quantities[product.id] || 0) || setQuantities({})}>
+                                        <TouchableOpacity style={styles.addCart} onPress={() => headleAddGift(product, quantities[product.id] || 0) || setQuantities({})}>
                                             <Text style={styles.addCartText}>Adicionar ao carrinho</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity style={styles.arrowBack} onPress={() => popShow(product.id)}>
