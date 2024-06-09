@@ -11,6 +11,7 @@ export default function OrderPlaced({ route }) {
   const { getAllDonationsItemsByDonationId, getFullPriceByDonationId } = useContext(DonationContext);
   const [products, setProducts] = useState([]);
   const [totalValue, setTotalValue] = useState(null);
+  const [popUpPurchase, setPopUpPurchase] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -54,7 +55,7 @@ export default function OrderPlaced({ route }) {
             <Text style={styles.txtPriceAll}>R${totalValue}</Text>
           </View>
           <View>
-            <TouchableOpacity style={styles.btn}>
+            <TouchableOpacity onPress={() => setPopUpPurchase(true)} style={styles.btn}>
               <Text style={styles.txtBtn}>Fazer pagamento</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.btn}>
@@ -62,7 +63,18 @@ export default function OrderPlaced({ route }) {
             </TouchableOpacity>
           </View>
         </View>
+        {
+          popUpPurchase && (
+            <View style={styles.containerPopUp}>
+              <TouchableOpacity style={styles.x} onPress={() => setPopUpPurchase(false)}>
+                <Feather name="x" size={38} color="#FFA41B" />
+              </TouchableOpacity>
+              <Text style={styles.txtPurchasePix}>Realize o pagamento utilizando o seguinte PIX:</Text>
+              <Image source={require('../../../assets/qr.png')} style={{ width: 200, height: 200 }} />
+            </View>
+          )
+        }
       </View >
-    </ScrollView>
+    </ScrollView >
   );
 }
