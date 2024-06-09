@@ -15,6 +15,7 @@ import DetalhesRoupas from "../screens/DetalhesRoupas";
 import DetalhesHigiene from "../screens/DetalhesHigiene";
 import DetalhesPix from "../screens/DetalhesPix";
 import giftDetails from "../screens/GiftDetails";
+import GiftCart from "../screens/GiftCart";
 import DetalhesHigieneGift from "../screens/DetalhesHigieneGift";
 import DetalhesPetsGift from "../screens/DetalhesPetsGift";
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -396,6 +397,33 @@ const PrivateTab = () => {
         />
 
         <Tab.Screen name="giftDetails" component={giftDetails}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="tshirt"
+                size={38}
+                color={focused ? "#366ED8" : "#fff"} />
+            ),
+            tabBarItemStyle: {
+              display: "none",
+            },
+            tabBarStyle: {
+              position: "absolute",
+              bottom: 10,
+              left: 20,
+              right: 20,
+              elevation: 0,
+              backgroundColor: "#FFA41B",
+              borderRadius: 15,
+              height: 90,
+              borderColor: "transparent",
+            },
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: "#fff",
+            tabBarInactiveTintColor: "#366ED8",
+          }}
+        />
+        <Tab.Screen name="GiftCart" component={GiftCart}
           options={{
             tabBarIcon: ({ focused }) => (
               <FontAwesome5
