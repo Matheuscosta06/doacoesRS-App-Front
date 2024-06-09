@@ -49,8 +49,7 @@ export default function Gift() {
       <GiftCart />
       <ScrollView>
         <View style={styles.container}>
-          <Text style={styles.txt1}>Traga sua doação!</Text>
-          <Text style={styles.txt1}>O que você irá nos trazer?</Text>
+          <Text style={styles.txt2}>Selecione a categoria da sua doação</Text>
 
 
           {selectedCategory ? (

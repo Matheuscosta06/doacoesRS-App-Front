@@ -201,6 +201,12 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontSize: 20
   },
+  txt2:{
+    color: "#fff",
+    fontSize: 40,
+    textAlign: "center",
+    fontFamily: "JosefinSans_700Bold",
+  }
 
 });
 
