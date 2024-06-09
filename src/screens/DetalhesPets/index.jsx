@@ -120,7 +120,7 @@ export default function DetalhesPets() {
                                                 <Text style={styles.textButton}>+12</Text>
                                             </TouchableOpacity>
                                         </View>
-                                        <TouchableOpacity style={styles.addCart} onPress={() => addProduct(product.id, quantities[product.id] || 0) || setQuantities({})}>
+                                        <TouchableOpacity style={styles.addCart} onPress={() => addProduct(product, quantities[product.id] || 0) || setQuantities({})}>
                                             <Text style={styles.addCartText}>Adicionar ao carrinho</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity style={styles.arrowBack} onPress={() => popShow(product.id)}>
