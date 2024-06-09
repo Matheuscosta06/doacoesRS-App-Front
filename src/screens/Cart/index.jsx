@@ -11,7 +11,7 @@ import axios from 'axios';
 
 export default function Cart() {
   const apiURL = process.env.EXPO_PUBLIC_API_URL;
-  const { createDonation } = useContext(DonationContext);
+  const { createDonation, createDonationItem } = useContext(DonationContext);
   const { productsCart, removeProduct, addProduct, cancelProduct } = useContext(CartContext);
   const [localProductsCart, setLocalProductsCart] = useState(productsCart);
   const [productDetails, setProductDetails] = useState([]);
@@ -35,15 +35,16 @@ export default function Cart() {
   };
 
   const sendProducts = async () => {
-    const response = await createDonation();
-    // const donationId = response.id;
-    // localProductsCart.map(async (product) => {
-    //   await axios.post(`${apiURL}/donation_products`, {
-    //     donation_id: donationId,
-    //     product_id: product.product.id,
-    //     quantity: product.qtd,
-    //   });
-    // });
+    if (localProductsCart.length == 0) {
+      alert('Adicione produtos ao carrinho');
+      return;
+    } else {
+      const responseDonation = await createDonation();
+      const donationId = responseDonation.donations.id;
+      localProductsCart.map(async (product) => {
+        await createDonationItem(donationId, product.product.id, product.qtd);
+      });
+    }
   }
 
   return (
