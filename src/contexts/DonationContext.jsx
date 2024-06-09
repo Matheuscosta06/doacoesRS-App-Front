@@ -43,13 +43,14 @@ const DonationProvider = ({ children }) => {
       }
     }
   };
-  const createGiftItem = async (itemId, donationId, quantity) => {
+  const createGiftItem = async (itemId, donationId, quantity, ) => {
     setGlobalLoading(true);
     try {
       const response = await axios.post(`${apiURL}/gift_item`, {
         gift_id: itemId,
         donation_id: donationId,
-        quantity
+        quantity,
+        delivery_place: "Casa",
       });
       setGlobalLoading(false);
       return response.data;
