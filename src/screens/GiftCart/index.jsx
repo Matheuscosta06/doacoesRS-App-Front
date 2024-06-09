@@ -62,7 +62,7 @@ export default function GiftCart() {
 
                 <View style={styles.linhaLaranja2} />
                 <View style={styles.containerProduct}>
-                    {localGifts.map((gift) => (
+                    {/* {localGifts.map((gift) => (
                         <View style={styles.card} key={gift.gift.id}>
                             <Image source={{ uri: `${apiURL}/uploads/${gift.gift.image}` }} style={styles.image} />
                             <Text style={styles.name}>{gift.gift.name}</Text>
@@ -80,7 +80,7 @@ export default function GiftCart() {
                                 <FontAwesome5 name="trash-alt" size={20} color="#283444" />
                             </TouchableOpacity>
                         </View>
-                    ))}
+                    ))} */}
                 </View>
 
                 <TouchableOpacity style={styles.btnDoar} onPress={sendGifts}>
