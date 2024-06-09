@@ -82,8 +82,6 @@ export default function Gift() {
                 </View>
               )}
             </View>
-
-
           ) : (
 
             <View>

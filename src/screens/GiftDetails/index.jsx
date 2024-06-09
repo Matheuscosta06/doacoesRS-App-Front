@@ -4,12 +4,15 @@ import { View, Text, TouchableOpacity, ScrollView, Image, TextInput } from 'reac
 import { useNavigation } from '@react-navigation/native';
 import { useState, useEffect } from 'react';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import { GiftContext } from '../../contexts/GiftContext';
 
 export default function giftDetails({ route }) {
     const { product } = route.params
     const navigation = useNavigation();
 
     const [qtd, setQtd] = useState('');
+
+    const { gifts, addGift } = useContext(GiftContext);
 
     return (
         <View style={styles.mainContainer}>
