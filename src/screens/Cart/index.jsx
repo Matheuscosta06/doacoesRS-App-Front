@@ -1,14 +1,17 @@
 import React, { useContext, useEffect, useState, useCallback } from 'react';
 import { View, Text, TouchableOpacity, Image, TextInput, ScrollView } from 'react-native';
 import { useFocusEffect } from "@react-navigation/native";
+import { DonationContext } from '../../contexts/DonationContext';
 import { CartContext } from '../../contexts/CartContext';
 import styles from './styles';
 import Feather from '@expo/vector-icons/Feather';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Entypo from '@expo/vector-icons/Entypo';
+import axios from 'axios';
 
 export default function Cart() {
   const apiURL = process.env.EXPO_PUBLIC_API_URL;
+  const { createDonation } = useContext(DonationContext);
   const { productsCart, removeProduct, addProduct, cancelProduct } = useContext(CartContext);
   const [localProductsCart, setLocalProductsCart] = useState(productsCart);
   const [productDetails, setProductDetails] = useState([]);
@@ -16,7 +19,6 @@ export default function Cart() {
   useFocusEffect(
     useCallback(() => {
       setLocalProductsCart(productsCart);
-      console.log(localProductsCart);
     }, [productsCart])
   );
 
@@ -31,6 +33,18 @@ export default function Cart() {
   const lastProduct = (product) => {
     cancelProduct(product.product);
   };
+
+  const sendProducts = async () => {
+    const response = await createDonation();
+    // const donationId = response.id;
+    // localProductsCart.map(async (product) => {
+    //   await axios.post(`${apiURL}/donation_products`, {
+    //     donation_id: donationId,
+    //     product_id: product.product.id,
+    //     quantity: product.qtd,
+    //   });
+    // });
+  }
 
   return (
     <View style={styles.container}>
@@ -70,7 +84,7 @@ export default function Cart() {
         <View style={styles.allPrice}>
           <Text style={styles.txtAll}>Total:</Text>
           <Text style={styles.txtAllPrice}>R$100,00</Text>
-          <TouchableOpacity style={styles.btnFinalizar}>
+          <TouchableOpacity onPress={() => sendProducts()} style={styles.btnFinalizar}>
             <Text style={styles.txtFinalizar}>Finalizar</Text>
           </TouchableOpacity>
         </View>

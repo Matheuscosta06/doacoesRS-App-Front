@@ -11,7 +11,6 @@ export default function CartProvider({ children }) {
         const newProductsCart = [...productsCart];
 
         const item = newProductsCart.find((item) => item.product.id === productParams.id);
-        // console.log(item);
 
         if (!item) {
             newProductsCart.push({ product: productParams, qtd: quantity });
