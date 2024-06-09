@@ -56,8 +56,20 @@ const DonationProvider = ({ children }) => {
     }
   };
 
+  const getFullPriceByDonationId = async (donationId) => {
+    setGlobalLoading(true);
+    try {
+      const response = await axios.get(`${apiURL}/donations_items/fullPrice/${donationId}`);
+      setGlobalLoading(false);
+      return response.data.data[0].full_price;
+    } catch (error) {
+      setGlobalLoading(false);
+      return error.response.data;
+    }
+  };
+
   return (
-    <DonationContext.Provider value={{ createDonation, createDonationItem, getAllDonationsItemsByDonationId }}>
+    <DonationContext.Provider value={{ createDonation, createDonationItem, getAllDonationsItemsByDonationId, getFullPriceByDonationId }}>
       {children}
     </DonationContext.Provider>
   );

@@ -49,6 +49,7 @@ const PrivateTab = () => {
               borderRadius: 15,
               height: 90,
               borderColor: "transparent",
+              zIndex: 210, // Added zIndex
             },
             tabBarShowLabel: false,
             tabBarActiveTintColor: "#ffff",
