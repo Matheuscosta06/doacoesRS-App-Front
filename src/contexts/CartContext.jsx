@@ -39,8 +39,16 @@ export default function CartProvider({ children }) {
         newProductsCart.splice(newProductsCart.indexOf(item), 1);
         setProductsCart(newProductsCart);
     };
+
+    const getTotalCartValue = () => {
+        return productsCart.reduce((total, item) => {
+            const allValue = total + (item.product.value * item.qtd);
+            return allValue; // Adiciona esta linha para retornar o valor acumulado
+        }, 0);
+    };
+
     return (
-        <CartContext.Provider value={{ productsCart, addProduct, removeProduct, cancelProduct }}>
+        <CartContext.Provider value={{ productsCart, addProduct, removeProduct, cancelProduct, getTotalCartValue }}>
             {children}
         </CartContext.Provider>
     );

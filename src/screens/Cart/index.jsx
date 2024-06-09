@@ -12,26 +12,31 @@ import axios from 'axios';
 export default function Cart() {
   const apiURL = process.env.EXPO_PUBLIC_API_URL;
   const { createDonation, createDonationItem } = useContext(DonationContext);
-  const { productsCart, removeProduct, addProduct, cancelProduct } = useContext(CartContext);
+  const { productsCart, removeProduct, addProduct, cancelProduct, getTotalCartValue } = useContext(CartContext);
   const [localProductsCart, setLocalProductsCart] = useState(productsCart);
   const [productDetails, setProductDetails] = useState([]);
+  const [allValue, setAllValue] = useState(0);
 
   useFocusEffect(
     useCallback(() => {
       setLocalProductsCart(productsCart);
+      setAllValue(getTotalCartValue());
     }, [productsCart])
   );
 
   const incrementQuantity = (product) => {
     addProduct(product.product, 1);
+    setAllValue(getTotalCartValue());
   };
 
   const decrementQuantity = (product) => {
     removeProduct(product.product);
+    setAllValue(getTotalCartValue());
   };
 
   const lastProduct = (product) => {
     cancelProduct(product.product);
+    setAllValue(getTotalCartValue());
   };
 
   const sendProducts = async () => {
@@ -84,7 +89,7 @@ export default function Cart() {
         </View>
         <View style={styles.allPrice}>
           <Text style={styles.txtAll}>Total:</Text>
-          <Text style={styles.txtAllPrice}>R$100,00</Text>
+          <Text style={styles.txtAllPrice}>R${allValue}</Text>
           <TouchableOpacity onPress={() => sendProducts()} style={styles.btnFinalizar}>
             <Text style={styles.txtFinalizar}>Finalizar</Text>
           </TouchableOpacity>
