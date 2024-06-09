@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   titulo: {
-    fontSize: 40,
+    fontSize: 37,
     color: "#fff",
     fontWeight: "bold",
     textAlign: "center",
