@@ -14,6 +14,7 @@ export default function GiftCart() {
     const { gifts, removeGift, addGift, cancelGift } = useContext(GiftContext);
     const [localGifts, setLocalGifts] = useState(gifts);
     const [giftDetails, setGiftDetails] = useState([]);
+    const [delivery_place, setDeliveryPlace] = useState('');
 
     useFocusEffect(
         useCallback(() => {
@@ -42,7 +43,7 @@ export default function GiftCart() {
             const responseDonation = await createDonation();
             const donationId = responseDonation.donations.id;
             localGifts.map(async (gift) => {
-                await createGiftItem(gift.gift.id, donationId, gift.qtd);
+                await createGiftItem(gift.gift.id, donationId, gift.qtd, delivery_place);
             });
         }
     }
