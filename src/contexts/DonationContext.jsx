@@ -118,11 +118,11 @@ const DonationProvider = ({ children }) => {
     }
   };
 
-  const updateStatusDonation = async (donationId) => {
+  const updateStatusDonation = async (donationId, statusParams) => {
     setGlobalLoading(true);
     try {
       const response = await axios.put(`${apiURL}/donations/${donationId}`, {
-        status: "Aguardando pagamento"
+        status: statusParams
       });
       setGlobalLoading(false);
       return response.data;
