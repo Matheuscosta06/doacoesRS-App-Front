@@ -7,6 +7,7 @@ import styles from './styles';
 import Feather from '@expo/vector-icons/Feather';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Entypo from '@expo/vector-icons/Entypo';
+import PoPError from '../../components/PoPError';
 
 export default function GiftCart() {
     const apiURL = process.env.EXPO_PUBLIC_API_URL;
@@ -14,6 +15,7 @@ export default function GiftCart() {
     const { gifts, removeGift, addGift, cancelGift } = useContext(GiftContext);
     const [localGifts, setLocalGifts] = useState(gifts);
     const [giftDetails, setGiftDetails] = useState([]);
+    const [popUpError, setPopUpError] = useState(null);
 
     useEffect(() => {
         console.log(localGifts);
@@ -41,7 +43,7 @@ export default function GiftCart() {
     const sendGifts = async () => {
         if (localGifts.length == 0) {
             console.log(localGifts);
-            alert('Adicione produtos ao carrinho');
+            setPopUpError('Você não possui itens para doação.');
             return;
         }
         else {
@@ -51,6 +53,7 @@ export default function GiftCart() {
                 console.log(gift.gift);
                 const responseGift = await createGift(gift.gift.type, gift.gift.name, gift.gift.description, gift.gift.image);
                 await createGiftItem(responseGift.gift.id, donationId, gift.qtd);
+                lastGift(gift);
             }
         }
     }
@@ -93,6 +96,7 @@ export default function GiftCart() {
                     <Text style={styles.txtFinalizar}>DOAR</Text>
                 </TouchableOpacity>
             </ScrollView>
+            {popUpError && <PoPError msg={popUpError} setMsgError={setPopUpError} />}
         </View>
 
     );
