@@ -9,8 +9,6 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Entypo from '@expo/vector-icons/Entypo';
 import PoPError from '../../components/PoPError';
 import { Picker } from '@react-native-picker/picker';
-
-// Importe a imagem de sucesso
 import successImage from '../../../assets/success.png';
 
 // Componente para o pop-up de sucesso
