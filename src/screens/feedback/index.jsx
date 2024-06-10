@@ -1,8 +1,17 @@
-import { View, Text, Image, TouchableOpacity, ScrollView, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 import styles from './styles';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Feedback() {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleSend = () => {
+  
+
+    
+    setInputValue('');
+  };
+
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -10,7 +19,6 @@ export default function Feedback() {
         <hr style={styles.linha1}></hr>
         <Text style={styles.txt2}>Dúvidas</Text>
         <hr style={styles.linha2}></hr>
-
 
         <View style={styles.card1}>
           <View style={styles.ask}>
@@ -28,7 +36,6 @@ export default function Feedback() {
             <Text style={styles.txt3}>Temos a intenção de expandir para outros estados e até mesmo para outros países</Text>
           </View>
         </View>
-
         <View style={styles.card3}>
           <View style={styles.ask}>
             <Text style={styles.txt4}>Como posso ajudar?</Text>
@@ -38,16 +45,20 @@ export default function Feedback() {
           </View>
         </View>
 
-
         <Text style={styles.texto}>Deixe sua dúvida ou Feedback</Text>
-        <TextInput placeholderTextColor={"#000"} placeholder='Digite Aqui' style={styles.input} />
+        <TextInput 
+          placeholderTextColor={"#000"} 
+          placeholder='Digite Aqui' 
+          style={styles.input} 
+          value={inputValue} 
+          onChangeText={setInputValue} 
+        />
 
         <View style={styles.divpaibtn}>
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity style={styles.btn} onPress={handleSend}>
             <Text style={styles.txtbtn}>Enviar</Text>
           </TouchableOpacity>
         </View>
-
       </ScrollView>
     </View>
   );
