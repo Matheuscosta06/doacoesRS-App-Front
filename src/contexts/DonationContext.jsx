@@ -51,7 +51,7 @@ const DonationProvider = ({ children }) => {
         gift_id: itemId,
         donation_id: donationId,
         quantity : quantity,
-        delivery_place: "Local"
+        delivery_place: "Senai Valinhos - Rua Prof. Atílio Martini, 160 - Vila Boa Vista, Valinhos - SP, 13270-540"
       });
       setGlobalLoading(false);
       return response.data;
