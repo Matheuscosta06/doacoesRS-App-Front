@@ -40,6 +40,11 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontFamily: "JosefinSans_700Bold",
   },
+  txt2: {
+    color: "#fff",
+    fontSize: 28,
+    fontFamily: "JosefinSans_700Bold",
+  },
   btn: {
     backgroundColor: "#2E5296",
     padding: 10,

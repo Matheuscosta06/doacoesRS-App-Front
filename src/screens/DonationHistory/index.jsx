@@ -26,18 +26,22 @@ export default function DonationHistory() {
       <ScrollView style={{ marginBottom: 100 }}>
         <Text style={styles.title}>Historico de doações</Text>
         <View style={styles.containerDonations}>
-          {donations.map((donation, index) => (
-            <View style={styles.card} key={index}>
-              <Text style={styles.txtStatus}>{donation.donation_status}</Text>
-              <View style={{ alignItems: 'center', marginBottom: 5 }}>
-                <Text style={styles.txt}>Doação</Text>
-                <Text style={styles.txt}>#{donation.donation_id}</Text>
+          {donations ? (
+            donations.map((donation, index) => (
+              <View style={styles.card} key={index}>
+                <Text style={styles.txtStatus}>{donation.donation_status}</Text>
+                <View style={{ alignItems: 'center', marginBottom: 5 }}>
+                  <Text style={styles.txt}>Doação</Text>
+                  <Text style={styles.txt}>#{donation.donation_id}</Text>
+                </View>
+                <TouchableOpacity onPress={() => setPopUp(donation)} style={styles.btn}>
+                  <Text style={styles.txtBtn}>Detalhes</Text>
+                </TouchableOpacity>
               </View>
-              <TouchableOpacity onPress={() => setPopUp(donation)} style={styles.btn}>
-                <Text style={styles.txtBtn}>Detalhes</Text>
-              </TouchableOpacity>
-            </View>
-          ))}
+            ))
+          ) : (
+              <Text style={styles.txt2}>Sem nenhuma doação</Text>
+          )}
         </View>
       </ScrollView>
       {
