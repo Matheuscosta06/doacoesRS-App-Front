@@ -4,6 +4,7 @@ import styles from './styles';
 import Feather from '@expo/vector-icons/Feather';
 import { DonationContext } from '../../contexts/DonationContext';
 import { useNavigation } from '@react-navigation/native';
+import { CartContext } from '../../contexts/CartContext';
 
 export default function OrderPlaced({ route }) {
   const navigation = useNavigation();
@@ -12,6 +13,7 @@ export default function OrderPlaced({ route }) {
   const [products, setProducts] = useState([]);
   const [totalValue, setTotalValue] = useState(null);
   const [popUpPurchase, setPopUpPurchase] = useState(false);
+  const { cancelProduct, productsCart } = useContext(CartContext);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -19,9 +21,18 @@ export default function OrderPlaced({ route }) {
       const total = await getFullPriceByDonationId(donationId);
       setProducts(items);
       setTotalValue(total);
+      console.log(productsCart);
+
     };
     fetchProducts();
   }, [donationId]);
+
+  const handlePurchase = () => {
+    setPopUpPurchase(!popUpPurchase);
+    if (popUpPurchase) {
+      productsCart.map((product) => cancelProduct(product.product));
+    }
+  };
 
   return (
     <ScrollView>
@@ -55,7 +66,7 @@ export default function OrderPlaced({ route }) {
             <Text style={styles.txtPriceAll}>R${totalValue}</Text>
           </View>
           <View>
-            <TouchableOpacity onPress={() => setPopUpPurchase(true)} style={styles.btn}>
+            <TouchableOpacity onPress={() => handlePurchase()} style={styles.btn}>
               <Text style={styles.txtBtn}>Fazer pagamento</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.btn}>
@@ -66,7 +77,7 @@ export default function OrderPlaced({ route }) {
         {
           popUpPurchase && (
             <View style={styles.containerPopUp}>
-              <TouchableOpacity style={styles.x} onPress={() => setPopUpPurchase(false)}>
+              <TouchableOpacity style={styles.x} onPress={() => handlePurchase()}>
                 <Feather name="x" size={38} color="#FFA41B" />
               </TouchableOpacity>
               <Text style={styles.txtPurchasePix}>Realize o pagamento utilizando o seguinte PIX:</Text>
