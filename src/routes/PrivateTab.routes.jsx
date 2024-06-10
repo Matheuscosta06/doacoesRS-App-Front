@@ -425,16 +425,37 @@ const PrivateTab = () => {
             tabBarInactiveTintColor: "#366ED8",
           }}
         />
-        <Tab.Screen
-          name="OrderPlaced"
-          component={OrderPlaced}
+
+        
+<Tab.Screen name="OrderPlaced" component={OrderPlaced}
           options={{
             tabBarIcon: ({ focused }) => (
               <FontAwesome5
-                name="dog"
+                name="tshirt"
                 size={38}
-                color={focused ? "#ffff" : "#366ED8"}
-              />
+                color={focused ? "#366ED8" : "#fff"} />
+            ),
+            tabBarItemStyle: {
+              display: "none",
+            },
+            tabBarStyle: {
+              position: "absolute",
+              bottom: 10,
+              left: 20,
+              right: 20,
+              elevation: 0,
+              backgroundColor: "#FFA41B",
+              borderRadius: 15,
+              height: 90,
+              borderColor: "transparent",
+            },
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: "#fff",
+            tabBarInactiveTintColor: "#366ED8",
+          }}
+        />
+
+              
         <Tab.Screen name="GiftCart" component={GiftCart}
           options={{
             tabBarIcon: ({ focused }) => (
