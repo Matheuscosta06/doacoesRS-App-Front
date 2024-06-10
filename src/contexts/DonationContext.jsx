@@ -118,8 +118,22 @@ const DonationProvider = ({ children }) => {
     }
   };
 
+  const updateStatusDonation = async (donationId) => {
+    setGlobalLoading(true);
+    try {
+      const response = await axios.put(`${apiURL}/donations/${donationId}`, {
+        status: "Aguardando pagamento"
+      });
+      setGlobalLoading(false);
+      return response.data;
+    } catch (error) {
+      setGlobalLoading(false);
+      return error.response.data;
+    }
+  };
+
   return (
-    <DonationContext.Provider value={{ createDonation, createDonationItem, getAllDonationsItemsByDonationId, getFullPriceByDonationId, createGiftItem, createGift, getDonationsByUserId }}>
+    <DonationContext.Provider value={{ createDonation, createDonationItem, getAllDonationsItemsByDonationId, getFullPriceByDonationId, createGiftItem, createGift, getDonationsByUserId, updateStatusDonation }}>
       {children}
     </DonationContext.Provider>
   );
