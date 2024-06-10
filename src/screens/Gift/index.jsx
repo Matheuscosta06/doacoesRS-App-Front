@@ -62,7 +62,7 @@ export default function Category() {
 
 
             <View style={styles.icones3}>
-              <TouchableOpacity style={styles.cardPix} onPress={() => navigation.navigate(`DetalhesPix`)}>
+              <TouchableOpacity style={styles.cardPix} onPress={() => navigation.navigate(`OutrosGift`)}>
 
                 <View style={styles.cardInsidePix}>
                   <Image source={require('../../../assets/iconPix.png')} style={styles.picimgPix} />

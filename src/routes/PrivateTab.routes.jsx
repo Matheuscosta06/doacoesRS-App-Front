@@ -178,6 +178,8 @@ const PrivateTab = () => {
 
           }}
         />
+
+        
         <Tab.Screen
           name="DetalhesAlimentosGift"
           component={DetalhesAlimentosGift}
