@@ -27,7 +27,7 @@ export default function Category() {
 
               </TouchableOpacity>
 
-              <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate(`DetalhesAlimentos`)}>
+              <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate(`DetalhesAlimentosGift`)}>
 
                 <View style={styles.cardInside}>
                   <Image source={require('../../../assets/iconFood.png')} style={styles.picimg} />
@@ -39,7 +39,7 @@ export default function Category() {
             </View>
 
             <View style={styles.icones2}>
-              <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesRoupas`)}>
+              <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesRoupasGift`)}>
 
                 <View style={styles.cardInside}>
                   <Image source={require('../../../assets/iconCabide.png')} style={styles.picimg} />

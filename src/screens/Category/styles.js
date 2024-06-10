@@ -23,10 +23,14 @@ const styles = StyleSheet.create({
   icones1: {
     display: 'flex',
     flexDirection: 'row',
+    marginLeft:10,
+  
+    
   },
   icones2: {
     display: 'flex',
     flexDirection: 'row',
+    marginLeft:10,
   },
   card: {
     marginTop: 30,

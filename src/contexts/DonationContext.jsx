@@ -43,7 +43,7 @@ const DonationProvider = ({ children }) => {
       }
     }
   };
-  const createGiftItem = async (itemId, donationId, quantity) => {
+  const createGiftItem = async (itemId, donationId, quantity, selectedLocation) => {
     setGlobalLoading(true);
     console.log(itemId, donationId, quantity);
     try {
