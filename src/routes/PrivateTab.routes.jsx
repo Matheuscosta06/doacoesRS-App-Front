@@ -16,8 +16,10 @@ import DetalhesRoupas from "../screens/DetalhesRoupas";
 import DetalhesHigiene from "../screens/DetalhesHigiene";
 import DetalhesPix from "../screens/DetalhesPix";
 import giftDetails from "../screens/GiftDetails";
+import DetalhesHigieneGift from "../screens/DetalhesHigieneGift";
+import DetalhesPetsGift from "../screens/DetalhesPetsGift";
+import GiftCart from "../screens/GiftCart";
 import { FontAwesome5 } from "@expo/vector-icons";
-
 const Tab = createBottomTabNavigator();
 
 const PrivateTab = () => {
@@ -110,6 +112,70 @@ const PrivateTab = () => {
             tabBarInactiveTintColor: "#366ED8",
           }}
         />
+          <Tab.Screen
+          name="DetalhesHigieneGift"
+          component={DetalhesHigieneGift}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="dog"
+                size={38}
+                color={focused ? "#ffff" : "#366ED8"}
+              />
+            ),
+            tabBarItemStyle: {
+              display: "none",
+            },
+            tabBarStyle: {
+              position: "absolute",
+              bottom: 10,
+              left: 20,
+              right: 20,
+              elevation: 0,
+              backgroundColor: "#FFA41B",
+              borderRadius: 15,
+              height: 90,
+              borderColor: "transparent",
+            },
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: "#fff",
+            tabBarInactiveTintColor: "#366ED8",
+
+          }}
+        />
+          <Tab.Screen
+          name="DetalhesPetsGift"
+          component={DetalhesPetsGift}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="dog"
+                size={38}
+                color={focused ? "#ffff" : "#366ED8"}
+              />
+            ),
+            tabBarItemStyle: {
+              display: "none",
+            },
+            tabBarStyle: {
+              position: "absolute",
+              bottom: 10,
+              left: 20,
+              right: 20,
+              elevation: 0,
+              backgroundColor: "#FFA41B",
+              borderRadius: 15,
+              height: 90,
+              borderColor: "transparent",
+            },
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: "#fff",
+            tabBarInactiveTintColor: "#366ED8",
+
+          }}
+        />
+
+
         <Tab.Screen
           name="Sobre"
           component={Sobre}
@@ -369,6 +435,13 @@ const PrivateTab = () => {
                 size={38}
                 color={focused ? "#ffff" : "#366ED8"}
               />
+        <Tab.Screen name="GiftCart" component={GiftCart}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="shopping-cart"
+                size={38}
+                color={focused ? "#366ED8" : "#fff"} />
             ),
             tabBarItemStyle: {
               display: "none",
@@ -387,7 +460,6 @@ const PrivateTab = () => {
             tabBarShowLabel: false,
             tabBarActiveTintColor: "#fff",
             tabBarInactiveTintColor: "#366ED8",
-
           }}
         />
 

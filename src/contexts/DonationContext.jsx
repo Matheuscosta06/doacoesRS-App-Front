@@ -43,6 +43,44 @@ const DonationProvider = ({ children }) => {
       }
     }
   };
+  const createGiftItem = async (itemId, donationId, quantity) => {
+    setGlobalLoading(true);
+    try {
+      const response = await axios.post(`${apiURL}/gift_item`, {
+        gift_id: itemId,
+        donation_id: donationId,
+        quantity,
+        delivery_place: "Local"
+      });
+      setGlobalLoading(false);
+      return response.data;
+    } catch (error) {
+      setGlobalLoading(false);
+      if (error.response) {
+        return error.response.data;
+      } else {
+        return { error: "Erro de conexão" };
+      }
+    }
+  }
+
+  const createGift = async (id, type, name, description, image) => {
+    setGlobalLoading(true);
+    try {
+      const response = await axios.post(`${apiURL}/gift`, {
+        id,
+        type,
+        name,
+        description,
+        image
+      });
+      setGlobalLoading(false);
+      return response.data;
+    } catch (error) {
+      setGlobalLoading(false);
+      return error.response.data;
+    }
+  };
 
   const getAllDonationsItemsByDonationId = async (donationId) => {
     setGlobalLoading(true);
@@ -69,7 +107,7 @@ const DonationProvider = ({ children }) => {
   };
 
   return (
-    <DonationContext.Provider value={{ createDonation, createDonationItem, getAllDonationsItemsByDonationId, getFullPriceByDonationId }}>
+    <DonationContext.Provider value={{ createDonation, createDonationItem, getAllDonationsItemsByDonationId, getFullPriceByDonationId, createGiftItem, createGift }}>
       {children}
     </DonationContext.Provider>
   );

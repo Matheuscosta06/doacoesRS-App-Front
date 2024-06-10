@@ -18,7 +18,7 @@ export default function Category() {
             <Text style={styles.titulo}>traga sua doação!!</Text>
 
             <View style={styles.icones1}>
-              <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesPets`)}>
+              <TouchableOpacity style={styles.card} onPress={() => navigation.navigate(`DetalhesPetsGift`)}>
 
                 <View style={styles.cardInside}>
                   <Image source={require('../../../assets/iconPets.png')} style={styles.picimg} />
@@ -48,7 +48,7 @@ export default function Category() {
 
               </TouchableOpacity>
 
-              <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate(`DetalhesHigiene`)}>
+              <TouchableOpacity style={styles.card2} onPress={() => navigation.navigate(`DetalhesHigieneGift`)}>
 
                 <View style={styles.cardInside}>
                   <Image source={require('../../../assets/iconHigiene.png')} style={styles.picimg} />
