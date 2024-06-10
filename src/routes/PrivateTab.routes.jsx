@@ -6,6 +6,7 @@ import Home from "../screens/Home";
 import Gift from "../screens/Gift";
 import Cart from "../screens/Cart";
 import Category from "../screens/Category";
+import OrderPlaced from "../screens/OrderPlaced";
 import Sobre from "../screens/Sobre";
 import Feedback from "../screens/feedback";
 import { Text } from "react-native";
@@ -50,6 +51,7 @@ const PrivateTab = () => {
               borderRadius: 15,
               height: 90,
               borderColor: "transparent",
+              zIndex: 210, // Added zIndex
             },
             tabBarShowLabel: false,
             tabBarActiveTintColor: "#ffff",
@@ -423,6 +425,16 @@ const PrivateTab = () => {
             tabBarInactiveTintColor: "#366ED8",
           }}
         />
+        <Tab.Screen
+          name="OrderPlaced"
+          component={OrderPlaced}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="dog"
+                size={38}
+                color={focused ? "#ffff" : "#366ED8"}
+              />
         <Tab.Screen name="GiftCart" component={GiftCart}
           options={{
             tabBarIcon: ({ focused }) => (

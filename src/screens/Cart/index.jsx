@@ -4,18 +4,21 @@ import { useFocusEffect } from "@react-navigation/native";
 import { DonationContext } from '../../contexts/DonationContext';
 import { CartContext } from '../../contexts/CartContext';
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
 import Feather from '@expo/vector-icons/Feather';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Entypo from '@expo/vector-icons/Entypo';
-import axios from 'axios';
+import PoPError from '../../components/PoPError';
 
 export default function Cart() {
+  const navigation = useNavigation();
   const apiURL = process.env.EXPO_PUBLIC_API_URL;
   const { createDonation, createDonationItem } = useContext(DonationContext);
   const { productsCart, removeProduct, addProduct, cancelProduct, getTotalCartValue } = useContext(CartContext);
   const [localProductsCart, setLocalProductsCart] = useState(productsCart);
   const [productDetails, setProductDetails] = useState([]);
   const [allValue, setAllValue] = useState(0);
+  const [popUpError, setPopUpError] = useState(null);
 
   useFocusEffect(
     useCallback(() => {
@@ -41,7 +44,7 @@ export default function Cart() {
 
   const sendProducts = async () => {
     if (localProductsCart.length == 0) {
-      alert('Adicione produtos ao carrinho');
+      setPopUpError('Você não possui produtos no carrinho.');
       return;
     } else {
       const responseDonation = await createDonation();
@@ -49,6 +52,7 @@ export default function Cart() {
       localProductsCart.map(async (product) => {
         await createDonationItem(donationId, product.product.id, product.qtd);
       });
+      navigation.navigate('OrderPlaced', { donationId });
     }
   }
 
@@ -95,6 +99,7 @@ export default function Cart() {
           </TouchableOpacity>
         </View>
       </ScrollView>
+      {popUpError && <PoPError msg={popUpError} setMsgError={setPopUpError} />}
     </View>
   );
 }
