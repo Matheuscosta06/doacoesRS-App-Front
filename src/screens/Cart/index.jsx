@@ -13,7 +13,7 @@ import PoPError from '../../components/PoPError';
 export default function Cart() {
   const navigation = useNavigation();
   const apiURL = process.env.EXPO_PUBLIC_API_URL;
-  const { createDonation, createDonationItem } = useContext(DonationContext);
+  const { createDonation, createDonationItem, updateStatusDonation } = useContext(DonationContext);
   const { productsCart, removeProduct, addProduct, cancelProduct, getTotalCartValue } = useContext(CartContext);
   const [localProductsCart, setLocalProductsCart] = useState(productsCart);
   const [productDetails, setProductDetails] = useState([]);
@@ -52,8 +52,9 @@ export default function Cart() {
       localProductsCart.map(async (product) => {
         await createDonationItem(donationId, product.product.id, product.qtd);
       });
+      await updateStatusDonation(donationId);
       navigation.navigate('OrderPlaced', { donationId });
-      
+
     }
   }
 
