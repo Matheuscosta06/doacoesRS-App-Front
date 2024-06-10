@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState, useCallback } from 'react';
 import { View, Text, TouchableOpacity, Image, TextInput, ScrollView } from 'react-native';
-import { useFocusEffect } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { DonationContext } from '../../contexts/DonationContext';
 import { CartContext } from '../../contexts/CartContext';
 import styles from './styles';
-import { useNavigation } from '@react-navigation/native';
 import Feather from '@expo/vector-icons/Feather';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Entypo from '@expo/vector-icons/Entypo';
@@ -12,13 +11,13 @@ import PoPError from '../../components/PoPError';
 
 export default function Cart() {
   const navigation = useNavigation();
-  const apiURL = process.env.EXPO_PUBLIC_API_URL;
   const { createDonation, createDonationItem, updateStatusDonation } = useContext(DonationContext);
   const { productsCart, removeProduct, addProduct, cancelProduct, getTotalCartValue } = useContext(CartContext);
   const [localProductsCart, setLocalProductsCart] = useState(productsCart);
-  const [productDetails, setProductDetails] = useState([]);
   const [allValue, setAllValue] = useState(0);
   const [popUpError, setPopUpError] = useState(null);
+  const [popUpPurchase, setPopUpPurchase] = useState(false);
+  const [donationId, setDonationId] = useState(null);
 
   useFocusEffect(
     useCallback(() => {
@@ -43,20 +42,27 @@ export default function Cart() {
   };
 
   const sendProducts = async () => {
-    if (localProductsCart.length == 0) {
+    if (localProductsCart.length === 0) {
       setPopUpError('Você não possui produtos no carrinho.');
       return;
     } else {
       const responseDonation = await createDonation();
       const donationId = responseDonation.donations.id;
+      setDonationId(donationId);
       localProductsCart.map(async (product) => {
         await createDonationItem(donationId, product.product.id, product.qtd);
       });
-      await updateStatusDonation(donationId);
-      navigation.navigate('OrderPlaced', { donationId });
-
+      setPopUpPurchase(true);
     }
-  }
+  };
+
+  const handlePurchase = () => {
+    setPopUpPurchase(false);
+    if (donationId) {
+      updateStatusDonation(donationId);
+      navigation.navigate('OrderPlaced', { donationId });
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -69,7 +75,6 @@ export default function Cart() {
         <View style={styles.subtitulocontainer}>
           <Text style={styles.subtitulo}>DOAÇÕES</Text>
         </View>
-
         <View style={styles.linhaLaranja2} />
         <View style={styles.containerProduct}>
           {localProductsCart.map((productData) => (
@@ -77,7 +82,6 @@ export default function Cart() {
               <TouchableOpacity style={styles.x} onPress={() => lastProduct(productData)}>
                 <Feather name="x" size={38} color="#FFA41B" />
               </TouchableOpacity>
-
               <Image source={{ uri: productData.product.image }} style={styles.image} />
               <Text style={styles.titleName}>{productData.product.name}</Text>
               <Text style={styles.txtPrice}>R${productData.product.value}</Text>
@@ -101,6 +105,18 @@ export default function Cart() {
           </TouchableOpacity>
         </View>
       </ScrollView>
+      {popUpPurchase && (
+        <View style={styles.containerPopUp}>
+          <TouchableOpacity style={styles.x} onPress={() => setPopUpPurchase(false)}>
+            <Feather name="x" size={38} color="#FFA41B" />
+          </TouchableOpacity>
+          <Text style={styles.txtPurchasePix}>Realize o pagamento utilizando o seguinte PIX:</Text>
+          <Image source={require('../../../assets/qr.png')} style={{ width: 200, height: 200 }} />
+          <TouchableOpacity onPress={() => handlePurchase()} style={styles.btn}>
+            <Text style={styles.txtBtn}>Pagamento Concluído</Text>
+          </TouchableOpacity>
+        </View>
+      )}
       {popUpError && <PoPError msg={popUpError} setMsgError={setPopUpError} />}
     </View>
   );

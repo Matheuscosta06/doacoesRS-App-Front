@@ -12,6 +12,31 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingTop: 20,
   },
+  
+  containerPopUp: {
+    backgroundColor: "#fff",
+    padding: 20,
+    borderRadius: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    position: "absolute",
+    top: "50%",
+    transform: [{ translateY: -10 }],
+    width: "80%",
+    maxHeight: "80%",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  
+  x: {
+    alignSelf: 'flex-end',
+  },
   primeiraLetra: {
     fontSize: 80,
     color: '#283444',
@@ -67,9 +92,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: "70%",
-  },
-  x: {
-    alignSelf: 'flex-end',
   },
   image: {
     width: 120,

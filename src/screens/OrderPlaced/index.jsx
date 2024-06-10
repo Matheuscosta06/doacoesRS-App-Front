@@ -27,13 +27,7 @@ export default function OrderPlaced({ route }) {
     fetchProducts();
   }, [donationId]);
 
-  const handlePurchase = () => {
-    setPopUpPurchase(!popUpPurchase);
-    if (popUpPurchase) {
-      productsCart.length = 0;
-      cancelProduct();
-    }
-  };
+
 
   return (
     <ScrollView>
@@ -67,25 +61,13 @@ export default function OrderPlaced({ route }) {
             <Text style={styles.txtPriceAll}>R${totalValue}</Text>
           </View>
           <View>
-            <TouchableOpacity onPress={() => handlePurchase()} style={styles.btn}>
-              <Text style={styles.txtBtn}>Fazer pagamento</Text>
-            </TouchableOpacity>
+
             <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.btn}>
               <Text style={styles.txtBtn}>Voltar para inicio</Text>
             </TouchableOpacity>
           </View>
         </View>
-        {
-          popUpPurchase && (
-            <View style={styles.containerPopUp}>
-              <TouchableOpacity style={styles.x} onPress={() => handlePurchase()}>
-                <Feather name="x" size={38} color="#FFA41B" />
-              </TouchableOpacity>
-              <Text style={styles.txtPurchasePix}>Realize o pagamento utilizando o seguinte PIX:</Text>
-              <Image source={require('../../../assets/qr.png')} style={{ width: 200, height: 200 }} />
-            </View>
-          )
-        }
+        
       </View >
     </ScrollView >
   );
