@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ffffff',
     paddingHorizontal: 20,
-    paddingTop: 30,
+
   },
   container2: {
     marginBottom: "30%",
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   txtDoacao: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 10,
@@ -30,16 +30,17 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   txtCod: {
-    fontSize: 16,
+    fontSize: 22,
     marginRight: 10,
     color: '#555',
   },
   txtThank: {
-    fontSize: 18,
+    fontSize: 22,
     fontStyle: 'italic',
     textAlign: 'center',
     marginBottom: 20,
-    color: '#555',
+    color: 'green',
+    fontWeight: 'bold',
   },
   cardProduct: {
     flexDirection: 'row',
@@ -57,8 +58,8 @@ const styles = StyleSheet.create({
     margin:"auto",
   },
   imageProduct: {
-    width: 84,
-    height: 84,
+    width: 95,
+    height: 95,
     marginRight: 10,
     borderRadius: 10,
   },
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   txtNameProduct: {
-    fontSize: 18,
+    fontSize: 25,
     fontWeight: 'bold',
     marginBottom: 5,
     color: '#333',
@@ -76,12 +77,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   txtValue: {
-    fontSize: 16,
+    fontSize: 20,
     marginRight: 5,
     color: '#555',
+    fontWeight: 'bold',
   },
   txtPrice: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#FFA41B',
   },
@@ -97,6 +99,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: '#ccc',
     paddingTop: 20,
+    paddingBottom: 160,
   },
   containerTotal: {
     alignItems: 'center',

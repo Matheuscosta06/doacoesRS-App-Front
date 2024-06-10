@@ -55,12 +55,18 @@ export default function OrderPlaced({ route }) {
                     <Text style={styles.txtValue}>Valor:</Text>
                     <Text style={styles.txtPrice}>R${product.product_value}</Text>
                   </View>
-                  <Text style={styles.txtQuantity}>Quantidade: {product.quantity}</Text>
+                  <View style={styles.containerValue}>
+                  <Text style={styles.txtValue}>Quantidade:</Text>
+                    <Text style={styles.txtPrice}>{product.quantity}</Text>
+                  </View>
                 </View>
+
               </View>
             </View>
           ))}
         </View>
+
+
         <View style={styles.containerPurchase}>
           <View style={styles.containerTotal}>
             <Text style={styles.titleTotal}>Total:</Text>
@@ -72,5 +78,6 @@ export default function OrderPlaced({ route }) {
         </View>
       </View>
     </ScrollView>
+
   );
 }
