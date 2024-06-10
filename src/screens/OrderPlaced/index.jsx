@@ -30,7 +30,8 @@ export default function OrderPlaced({ route }) {
   const handlePurchase = () => {
     setPopUpPurchase(!popUpPurchase);
     if (popUpPurchase) {
-      productsCart.map((product) => cancelProduct(product.product));
+      productsCart.length = 0;
+      cancelProduct();
     }
   };
 
