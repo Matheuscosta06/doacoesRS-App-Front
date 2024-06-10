@@ -59,9 +59,10 @@ export default function Cart() {
   const handlePurchase = () => {
     setPopUpPurchase(false);
     if (donationId) {
-      updateStatusDonation(donationId);
+      updateStatusDonation(donationId, "Aguardando Pagamento");
       navigation.navigate('OrderPlaced', { donationId });
     }
+    updateStatusDonation(donationId, "Em Preparo");
   };
 
   return (
