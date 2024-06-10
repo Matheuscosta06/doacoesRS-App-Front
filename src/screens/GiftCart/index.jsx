@@ -49,8 +49,8 @@ export default function GiftCart() {
             const donationId = responseDonation.donations.id;
             for (const gift of localGifts) {
                 console.log(gift.gift);
-                await createGift(gift.gift.id, gift.gift.type, gift.gift.name, gift.gift.description, gift.gift.image);
-                await createGiftItem(gift.gift.id, donationId, gift.qtd);
+                const responseGift = await createGift( gift.gift.type, gift.gift.name, gift.gift.description, gift.gift.image);
+                await createGiftItem(responseGift.gift.id, donationId, gift.qtd);
             }
         }
     }
