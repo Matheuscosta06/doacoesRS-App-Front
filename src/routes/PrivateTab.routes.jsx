@@ -91,7 +91,7 @@ const PrivateTab = () => {
           options={{
             tabBarIcon: ({ focused }) => (
               <Feather
-                name="gift"
+                name="smile"
                 size={38}
                 color={focused ? "#ffff" : "#366ED8"}
               />
