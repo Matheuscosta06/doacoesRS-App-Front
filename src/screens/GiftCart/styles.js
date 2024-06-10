@@ -128,8 +128,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFA41B',
     padding: 10,
     borderRadius: 8,
-    margin: 10,
-    width: "90%",
+    margin: 30,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -138,6 +137,19 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: "JosefinSans_500Medium",
   },
+  picker: {
+    marginHorizontal: 30,
+    marginTop: 10,
+    marginBottom: 10,
+    borderColor: '#C0C0C0',
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 10,
+  },
+    pickerTxt: {
+        fontSize: 20,
+        fontFamily: "JosefinSans_500Medium",
+    },
 });
 
 export default styles;
