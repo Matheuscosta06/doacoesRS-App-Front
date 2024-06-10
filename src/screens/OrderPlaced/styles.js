@@ -7,6 +7,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 30,
   },
+  container2: {
+    marginBottom: "30%",
+  },
   containerIcon: {
     alignSelf: 'center',
     marginBottom: 20,
@@ -45,12 +48,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#f9f9f9',
     padding: 10,
     borderRadius: 10,
+    borderWidth: 4,
+    borderColor: '#ffab14',
+  },
+  image: {
+    width: 150,
+    height: 150,
+    margin:"auto",
   },
   imageProduct: {
     width: 84,
     height: 84,
     marginRight: 10,
     borderRadius: 10,
+  },
+  productDetails: {
+    flex: 1,
   },
   txtNameProduct: {
     fontSize: 18,
@@ -71,6 +84,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: '#FFA41B',
+  },
+  txtQuantity: {
+    fontSize: 16,
+    color: '#555',
   },
   containerPurchase: {
     flexDirection: 'row',

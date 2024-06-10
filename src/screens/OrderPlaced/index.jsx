@@ -5,6 +5,8 @@ import Feather from '@expo/vector-icons/Feather';
 import { DonationContext } from '../../contexts/DonationContext';
 import { useNavigation } from '@react-navigation/native';
 import { CartContext } from '../../contexts/CartContext';
+import successImage from '../../../assets/success.png';
+
 
 export default function OrderPlaced({ route }) {
   const navigation = useNavigation();
@@ -29,20 +31,27 @@ export default function OrderPlaced({ route }) {
         <Feather style={styles.containerIcon} name="check" size={100} color="#fff" />
         <View style={styles.containerOrderPlaced}>
           <Text style={styles.txtDoacao}>Doação realizada com sucesso!</Text>
+          <Image source={successImage} style={styles.image} />
+
           <View style={styles.containerCod}>
             <Text style={styles.txtCod}>Código de doação:</Text>
             <Text style={styles.txtCod}>{donationId}</Text>
           </View>
           <Text style={styles.txtThank}>Obrigado por sua doação!</Text>
         </View>
-        <View>
+        <View style={styles.container2}>
           {products.map((product) => (
-            <View style={styles.cardProduct} key={product.donation_item_id}>
-              <Image source={{ uri: product.product_image }} style={styles.imageProduct} />
-              <Text style={styles.txtNameProduct}>{product.product_name}</Text>
-              <View style={styles.containerValue}>
-                <Text style={styles.txtValue}>Valor:</Text>
-                <Text style={styles.txtPrice}>R${product.product_value}</Text>
+            <View key={product.donation_item_id}>
+              <View style={styles.cardProduct}>
+                <Image source={{ uri: product.product_image }} style={styles.imageProduct} />
+                <View style={styles.productDetails}>
+                  <Text style={styles.txtNameProduct}>{product.product_name}</Text>
+                  <View style={styles.containerValue}>
+                    <Text style={styles.txtValue}>Valor:</Text>
+                    <Text style={styles.txtPrice}>R${product.product_value}</Text>
+                  </View>
+                  <Text style={styles.txtQuantity}>Quantidade: {product.quantity}</Text>
+                </View>
               </View>
             </View>
           ))}
