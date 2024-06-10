@@ -54,9 +54,7 @@ export default function Home() {
         <View style={styles.phrase}>
           <Text style={styles.phrase0}>Seu gesto, nossa força:</Text>
           <Text style={styles.phrase01}>doar hoje, construir amanhã.</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('DonationHistory')}>
-            <Text>teste</Text>
-          </TouchableOpacity>
+
         </View>
 
         <View style={styles.donatesGraphic} >
