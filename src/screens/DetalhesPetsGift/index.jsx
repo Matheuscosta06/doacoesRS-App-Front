@@ -76,11 +76,11 @@ export default function DetalhesPetGift() {
     return (
         <View style={{ flex: 1,}}>
             <GiftCart />
-            <LinearGradient colors={['#1DC59C', '#0E415F']} style={styles.container}>
+            <LinearGradient colors={['#366ED8', '#045844']} style={styles.container}>
                 <ScrollView>
                     <View style={styles.tituloContainer}>
-                        <Text style={styles.primeiraLetra}>H</Text>
-                        <Text style={styles.titulo1}>IGIÊNE</Text>
+                        <Text style={styles.primeiraLetra}>P</Text>
+                        <Text style={styles.titulo1}>ets</Text>
                     </View>
 
                     <View style={styles.linhaLaranja} />
