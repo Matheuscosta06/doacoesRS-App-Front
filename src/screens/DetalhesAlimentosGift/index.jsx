@@ -12,7 +12,7 @@ import GiftCart from '../../components/GiftCart';
 
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
 
-export default function DetalhesPetGift() {
+export default function DetalhesAlimentosGift() {
     const [products, setProducts] = useState([]);
     const [quantities, setQuantities] = useState({});
     const [showPopup, setShowPopup] = useState(false);
@@ -25,7 +25,7 @@ export default function DetalhesPetGift() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${apiURL}/products/type/pet`);
+                const response = await axios.get(`${apiURL}/products/type/food`);
                 setProducts(response.data.data);
             } catch (error) {
                 console.error(error);
@@ -74,13 +74,13 @@ export default function DetalhesPetGift() {
         }
     };
     return (
-        <View style={{ flex: 1,}}>
+        <View style={{ flex: 1, }}>
             <GiftCart />
-            <LinearGradient colors={['#366ED8', '#045844']} style={styles.container}>
+            <LinearGradient colors={['#FF0000', '#400A0A']} style={styles.container}>
                 <ScrollView>
                     <View style={styles.tituloContainer}>
-                        <Text style={styles.primeiraLetra}>P</Text>
-                        <Text style={styles.titulo1}>ets</Text>
+                        <Text style={styles.primeiraLetra}>A</Text>
+                        <Text style={styles.titulo1}>limentos</Text>
                     </View>
 
                     <View style={styles.linhaLaranja} />

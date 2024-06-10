@@ -75,7 +75,7 @@ export default function DetalhesPets() {
     return (
         <View style={{ flex: 1 }}>
             <Cart />
-            <LinearGradient colors={['#1DC59C', '#0E415F']} style={styles.container}>
+            <LinearGradient colors={['#366ED8', '#045844']} style={styles.container}>
                 <ScrollView>
                     <View style={styles.tituloContainer}>
                         <Text style={styles.primeiraLetra}>P</Text>
