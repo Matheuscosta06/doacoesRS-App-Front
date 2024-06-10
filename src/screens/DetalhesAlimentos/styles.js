@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 30,
         marginRight: '30%',
         marginTop: -10,
+        width: 360,
     },
     subtitulocontainer: {
         justifyContent: 'center',
@@ -49,6 +50,7 @@ const styles = StyleSheet.create({
         marginRight: '20%',
         marginTop: -7,
         marginBottom: 20,
+        width: 250,
     },
     productList: {
         paddingHorizontal: 20,
