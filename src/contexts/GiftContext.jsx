@@ -20,22 +20,24 @@ export default function GiftProvider({ children }) {
 
     const removeGift = (gift) => {
         const newGifts = [...gifts];
-        const item = newGifts.find((item) => item.id === gift);
+        const item = newGifts.find((item) => item.gift.id === gift.id);
 
         if (item.qtd > 1) {
-            item.qtd--;
-            setGifts(newGifts);
+            item.qtd -= 1;
         } else {
-            const arryFiltred = newGifts.filter((item) => item.id !== gift);
-            setGifts([...arryFiltred]);
+            newGifts.splice(newGifts.indexOf(item), 1);
         }
+        setGifts(newGifts);
     };
 
     const cancelGift = (gift) => {
         const newGifts = [...gifts];
-        const arryFiltred = newGifts.filter((item) => item.id !== gift);
-        setGifts([...arryFiltred]);
+        const item = newGifts.find((item) => item.id === gift);
+
+        newGifts.splice(newGifts.indexOf(item), 1);
+        setGifts(newGifts);
     };
+
 
     return (
         <GiftContext.Provider value={{ gifts, addGift, removeGift, cancelGift }}>
