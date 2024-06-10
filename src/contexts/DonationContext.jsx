@@ -50,8 +50,8 @@ const DonationProvider = ({ children }) => {
       const response = await axios.post(`${apiURL}/gift_item`, {
         gift_id: itemId,
         donation_id: donationId,
-        quantity : quantity,
-        delivery_place: selectedLocation
+        quantity: quantity,
+        delivery_place: "Senai Valinhos - Rua Prof. Atílio Martini, 160 - Vila Boa Vista, Valinhos - SP, 13270-540"
       });
       setGlobalLoading(false);
       return response.data;
@@ -64,6 +64,18 @@ const DonationProvider = ({ children }) => {
       }
     }
   }
+
+  const getDonationsByUserId = async (userId) => {
+    setGlobalLoading(true);
+    try {
+      const response = await axios.get(`${apiURL}/donations/user/${userId}`);
+      setGlobalLoading(false);
+      return response.data;
+    } catch (error) {
+      setGlobalLoading(false);
+      return error.response.data;
+    }
+  };
 
   const createGift = async (type, name, description, image) => {
     setGlobalLoading(true);
@@ -107,7 +119,7 @@ const DonationProvider = ({ children }) => {
   };
 
   return (
-    <DonationContext.Provider value={{ createDonation, createDonationItem, getAllDonationsItemsByDonationId, getFullPriceByDonationId, createGiftItem, createGift }}>
+    <DonationContext.Provider value={{ createDonation, createDonationItem, getAllDonationsItemsByDonationId, getFullPriceByDonationId, createGiftItem, createGift, getDonationsByUserId }}>
       {children}
     </DonationContext.Provider>
   );
