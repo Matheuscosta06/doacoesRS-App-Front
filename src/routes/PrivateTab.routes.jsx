@@ -120,18 +120,30 @@ const PrivateTab = () => {
           component={DonationHistory}
           options={{
             tabBarIcon: ({ focused }) => (
-              <Feather
-                name="smile"
+              <FontAwesome5
+                name="dog"
                 size={38}
                 color={focused ? "#ffff" : "#366ED8"}
               />
             ),
-            tabBarStyle: {
+            tabBarItemStyle: {
               display: "none",
             },
+            tabBarStyle: {
+              position: "absolute",
+              bottom: 10,
+              left: 20,
+              right: 20,
+              elevation: 0,
+              backgroundColor: "#FFA41B",
+              borderRadius: 15,
+              height: 90,
+              borderColor: "transparent",
+            },
             tabBarShowLabel: false,
-            tabBarActiveTintColor: "#ffff",
+            tabBarActiveTintColor: "#fff",
             tabBarInactiveTintColor: "#366ED8",
+
           }}
         />
         <Tab.Screen
