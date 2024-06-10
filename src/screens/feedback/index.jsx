@@ -44,6 +44,7 @@ export default function Feedback() {
             <Text style={styles.txt3}>Você pode ajudar compartilhando o site com seus amigos e familiares</Text>
           </View>
         </View>
+        
 
         <Text style={styles.texto}>Deixe sua dúvida ou Feedback</Text>
         <TextInput 
