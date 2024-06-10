@@ -14,6 +14,7 @@ export default function OrderPlaced({ route }) {
   const { getAllDonationsItemsByDonationId, getFullPriceByDonationId } = useContext(DonationContext);
   const [products, setProducts] = useState([]);
   const [totalValue, setTotalValue] = useState(null);
+  const { productsCart, cancelProduct } = useContext(CartContext);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -23,6 +24,10 @@ export default function OrderPlaced({ route }) {
       setTotalValue(total);
     };
     fetchProducts();
+    productsCart.length = 0;
+    cancelProduct();
+
+
   }, [donationId]);
 
   return (
