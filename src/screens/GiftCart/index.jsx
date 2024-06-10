@@ -77,7 +77,6 @@ export default function GiftCart() {
 
                             <Image source={{ uri: gift.gift.image }} style={styles.image} />
                             <Text style={styles.titleName}>{gift.gift.name}</Text>
-                            <Text style={styles.txtPrice}>R${gift.gift.value}</Text>
                             <View style={styles.containerQntd}>
                                 <TouchableOpacity onPress={() => incrementQuantity(gift)}>
                                     <FontAwesome5 name="plus" size={20} color="#fff" />
@@ -90,8 +89,8 @@ export default function GiftCart() {
                         </View>
                     ))}
                 </View>
-                <TouchableOpacity style={styles.btnDoar} onPress={sendGifts}>
-                    <Text style={styles.txtDoar}>DOAR</Text>
+                <TouchableOpacity style={styles.btnFinalizar} onPress={sendGifts}>
+                    <Text style={styles.txtFinalizar}>DOAR</Text>
                 </TouchableOpacity>
             </ScrollView>
         </View>

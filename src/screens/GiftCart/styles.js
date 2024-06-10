@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
   },
   titleName: {
     color: '#fff',
+    marginTop: 10,
     fontSize: 25,
     fontFamily: "JosefinSans_700Bold",
   },
@@ -127,7 +128,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFA41B',
     padding: 10,
     borderRadius: 8,
-    marginLeft: "auto",
+    margin: 10,
+    width: "90%",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   txtFinalizar: {
     color: '#fff',
