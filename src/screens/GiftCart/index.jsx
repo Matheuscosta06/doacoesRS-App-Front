@@ -106,6 +106,9 @@ export default function GiftCart() {
                 lastGift(gift);
             }
             setPopUpSuccess(true); // Exibir pop-up de sucesso
+            gifts.length = 0;
+            cancelGift();
+            
         }
     }
 
