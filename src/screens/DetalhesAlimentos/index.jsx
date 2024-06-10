@@ -74,8 +74,17 @@ export default function DetalhesAlimentos() {
             console.log(cardPopup);
         }
     };
+
+    const headleAddProduct = (product, quantity) => {
+        if (quantity === 0) {
+            addProduct(product, 1);
+        } else {
+            addProduct(product, quantity);
+            setQuantities({});
+        }
+    };
     return (
-        <View style={{ flex: 1,}}>
+        <View style={{ flex: 1, }}>
             <Cart />
             <LinearGradient colors={['#FF0000', '#400A0A']} style={styles.container}>
                 <ScrollView>
@@ -122,7 +131,7 @@ export default function DetalhesAlimentos() {
                                                 <Text style={styles.textButton}>+12</Text>
                                             </TouchableOpacity>
                                         </View>
-                                        <TouchableOpacity style={styles.addCart} onPress={() => addProduct(product, quantities[product.id] || 0) || setQuantities({})}>
+                                        <TouchableOpacity style={styles.addCart} onPress={() => headleAddProduct(product, quantities[product.id] || 0) || setQuantities({})}>
                                             <Text style={styles.addCartText}>Adicionar ao carrinho</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity style={styles.arrowBack} onPress={() => popShow(product.id)}>

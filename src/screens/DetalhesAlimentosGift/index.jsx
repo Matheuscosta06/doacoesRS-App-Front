@@ -73,6 +73,14 @@ export default function DetalhesAlimentosGift() {
             console.log(cardPopup);
         }
     };
+    const headleAddProduct = (product, quantity) => {
+        if (quantity === 0) {
+            addGift(product, 1);
+        } else {
+            addGift(product, quantity);
+            setQuantities({});
+        }
+    };
     return (
         <View style={{ flex: 1, }}>
             <GiftCart />
@@ -121,7 +129,7 @@ export default function DetalhesAlimentosGift() {
                                                 <Text style={styles.textButton}>+12</Text>
                                             </TouchableOpacity>
                                         </View>
-                                        <TouchableOpacity style={styles.addCart} onPress={() => addGift(product, quantities[product.id] || 0) || setQuantities({})}>
+                                        <TouchableOpacity style={styles.addCart} onPress={() => headleAddProduct(product, quantities[product.id] || 0) || setQuantities({})}>
                                             <Text style={styles.addCartText}>Adicionar ao carrinho</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity style={styles.arrowBack} onPress={() => popShow(product.id)}>

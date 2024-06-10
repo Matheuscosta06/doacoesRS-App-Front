@@ -131,6 +131,7 @@ const styles = StyleSheet.create({
     margin: 30,
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 160,
   },
   txtFinalizar: {
     color: '#fff',
