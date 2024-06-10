@@ -53,6 +53,7 @@ export default function Cart() {
         await createDonationItem(donationId, product.product.id, product.qtd);
       });
       navigation.navigate('OrderPlaced', { donationId });
+      
     }
   }
 
