@@ -107,15 +107,17 @@ export default function Cart() {
         </View>
       </ScrollView>
       {popUpPurchase && (
-        <View style={styles.containerPopUp}>
-          <TouchableOpacity style={styles.x} onPress={() => setPopUpPurchase(false)}>
-            <Feather name="x" size={38} color="#FFA41B" />
-          </TouchableOpacity>
-          <Text style={styles.txtPurchasePix}>Realize o pagamento utilizando o seguinte PIX:</Text>
-          <Image source={require('../../../assets/qr.png')} style={{ width: 200, height: 200 }} />
-          <TouchableOpacity onPress={() => handlePurchase()} style={styles.btn}>
-            <Text style={styles.txtBtn}>Pagamento Concluído</Text>
-          </TouchableOpacity>
+        <View style={styles.screen}>
+          <View style={styles.containerPopUp}>
+            <TouchableOpacity style={styles.x} onPress={() => setPopUpPurchase(false)}>
+              <Feather name="x" size={38} color="white" />
+            </TouchableOpacity>
+            <Text style={styles.txtPurchasePix}>Realize o pagamento utilizando o seguinte PIX:</Text>
+            <Image source={require('../../../assets/qr.png')} style={{ width: 200, height: 200 }} />
+            <TouchableOpacity onPress={() => handlePurchase()} style={styles.button}>
+              <Text style={styles.buttonText}>Pagamento Concluído</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       )}
       {popUpError && <PoPError msg={popUpError} setMsgError={setPopUpError} />}

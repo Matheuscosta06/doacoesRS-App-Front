@@ -1,4 +1,3 @@
-import { all } from "axios";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
@@ -12,32 +11,56 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingTop: 20,
   },
-  
-  containerPopUp: {
-    backgroundColor: "#fff",
-    padding: 20,
-    borderRadius: 20,
+  errors: {
+    color: "#f27474",
+    fontSize: 21,
+    fontFamily: "JosefinSans_500Medium",
+    textAlign: "center",
+  },
+  text: {
+    color: "black",
+    fontSize: 21,
+    fontFamily: "JosefinSans_500Medium",
+    textAlign: "center", 
+  },
+  screen: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    zIndex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     alignItems: "center",
     justifyContent: "center",
-    position: "absolute",
-    left: "auto",
-    right: "auto",
-    bottom: "auto",
-
-    transform: [{ translateY: -10 }],
-    maxHeight: "80%",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
   },
-  
-  x: {
-    alignSelf: 'flex-end',
+  containerPopUp: {
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "white",
+    width: "90%",
+    borderRadius: 40,
+    marginBottom: 5,
+    padding: 10,
+    paddingBottom: 40,
+    paddingTop: 40,
+    position: "absolute",
+    zIndex: 2,
+    gap: 20,
+  },
+  button: {
+    alignItems: "center",
+    backgroundColor: "#FFA41B",
+    borderRadius: 20,
+    marginBottom: 20,
+    marginTop: 20,
+    padding: 14,
+    width: "80%",
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 20,
+    fontFamily: "JosefinSans_700Bold",
   },
   primeiraLetra: {
     fontSize: 80,
@@ -67,7 +90,6 @@ const styles = StyleSheet.create({
     color: '#283444',
     fontWeight: 'bold',
     zIndex: 1,
-
   },
   linhaLaranja2: {
     height: 5,
@@ -97,7 +119,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 120,
-    height: 130
+    height: 130,
   },
   titleName: {
     color: '#fff',
@@ -157,6 +179,17 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 20,
     fontFamily: "JosefinSans_500Medium",
+  },
+  txtPurchasePix: {
+    color: 'black',
+    fontSize: 21,
+    fontFamily: "JosefinSans_500Medium",
+    textAlign: "center",
+  },
+  x: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
   },
 });
 

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
 import styles from './styles';
 import Feather from '@expo/vector-icons/Feather';
@@ -12,8 +12,6 @@ export default function OrderPlaced({ route }) {
   const { getAllDonationsItemsByDonationId, getFullPriceByDonationId } = useContext(DonationContext);
   const [products, setProducts] = useState([]);
   const [totalValue, setTotalValue] = useState(null);
-  const [popUpPurchase, setPopUpPurchase] = useState(false);
-  const { cancelProduct, productsCart } = useContext(CartContext);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -21,13 +19,9 @@ export default function OrderPlaced({ route }) {
       const total = await getFullPriceByDonationId(donationId);
       setProducts(items);
       setTotalValue(total);
-      console.log(productsCart);
-
     };
     fetchProducts();
   }, [donationId]);
-
-
 
   return (
     <ScrollView>
@@ -42,33 +36,27 @@ export default function OrderPlaced({ route }) {
           <Text style={styles.txtThank}>Obrigado por sua doação!</Text>
         </View>
         <View>
-          {
-            products.map((product) => (
-              <View style={styles.cardProduct} key={product.donation_item_id}>
-                <Image source={{ uri: product.product_image }} style={{ width: 84, height: 84 }} />
-                <Text style={styles.txtNameProduct}>{product.product_name}</Text>
-                <View style={styles.containerValue}>
-                  <Text style={styles.txtValue}>Valor:</Text>
-                  <Text style={styles.txtPrice}>R${product.product_value}</Text>
-                </View>
+          {products.map((product) => (
+            <View style={styles.cardProduct} key={product.donation_item_id}>
+              <Image source={{ uri: product.product_image }} style={styles.imageProduct} />
+              <Text style={styles.txtNameProduct}>{product.product_name}</Text>
+              <View style={styles.containerValue}>
+                <Text style={styles.txtValue}>Valor:</Text>
+                <Text style={styles.txtPrice}>R${product.product_value}</Text>
               </View>
-            ))
-          }
+            </View>
+          ))}
         </View>
         <View style={styles.containerPurchase}>
-          <View style={{ justifyContent: 'center' }}>
+          <View style={styles.containerTotal}>
             <Text style={styles.titleTotal}>Total:</Text>
             <Text style={styles.txtPriceAll}>R${totalValue}</Text>
           </View>
-          <View>
-
-            <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.btn}>
-              <Text style={styles.txtBtn}>Voltar para inicio</Text>
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.btn}>
+            <Text style={styles.txtBtn}>Voltar para o início</Text>
+          </TouchableOpacity>
         </View>
-        
-      </View >
-    </ScrollView >
+      </View>
+    </ScrollView>
   );
 }
