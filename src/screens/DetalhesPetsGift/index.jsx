@@ -80,7 +80,7 @@ export default function DetalhesPetGift() {
                 <ScrollView>
                     <View style={styles.tituloContainer}>
                         <Text style={styles.primeiraLetra}>P</Text>
-                        <Text style={styles.titulo1}>ets</Text>
+                        <Text style={styles.titulo1}>ETS</Text>
                     </View>
 
                     <View style={styles.linhaLaranja} />

@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 30,
         marginRight: "30%",
         marginTop: -10,
+        width: 360,
+
     },
     subtitulocontainer: {
         paddingLeft: "40%",

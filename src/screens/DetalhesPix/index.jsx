@@ -13,9 +13,9 @@ export default function DetalhesPix() {
         <ScrollView>
             <LinearGradient colors={['#37E467', '#17422B']} style={styles.mainContainer}>
                 <View style={styles.contentContainer}>
-                    <Text style={styles.txt1}>Dinheiro</Text>
+                    <Text style={styles.txt1}>DINHEIRO</Text>
                     <hr style={styles.linha1}></hr>
-                    <Text style={styles.txt2}>Doações</Text>
+                    <Text style={styles.txt2}>DOAÇÕES</Text>
                     <hr style={styles.linha2}></hr>
                     <View style={styles.box}>
                         <Text style={styles.text}>
