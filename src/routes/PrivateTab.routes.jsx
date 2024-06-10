@@ -23,6 +23,7 @@ import DetalhesAlimentosGift from "../screens/DetalhesAlimentosGift";
 import DetalhesRoupasGift from "../screens/DetalhesRoupasGift";
 import GiftCart from "../screens/GiftCart";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 const Tab = createBottomTabNavigator();
 
 const PrivateTab = () => {
@@ -67,7 +68,7 @@ const PrivateTab = () => {
           options={{
             tabBarIcon: ({ focused }) => (
               <Feather
-                name="gift"
+                name="shopping-cart"
                 size={38}
                 color={focused ? "#fff" : "#366ED8"}
               />
@@ -94,7 +95,7 @@ const PrivateTab = () => {
           options={{
             tabBarIcon: ({ focused }) => (
               <Feather
-                name="smile"
+                name="gift"
                 size={38}
                 color={focused ? "#ffff" : "#366ED8"}
               />
@@ -116,37 +117,6 @@ const PrivateTab = () => {
           }}
         />
         <Tab.Screen
-          name="DonationHistory"
-          component={DonationHistory}
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <FontAwesome5
-                name="dog"
-                size={38}
-                color={focused ? "#ffff" : "#366ED8"}
-              />
-            ),
-            tabBarItemStyle: {
-              display: "none",
-            },
-            tabBarStyle: {
-              position: "absolute",
-              bottom: 10,
-              left: 20,
-              right: 20,
-              elevation: 0,
-              backgroundColor: "#FFA41B",
-              borderRadius: 15,
-              height: 90,
-              borderColor: "transparent",
-            },
-            tabBarShowLabel: false,
-            tabBarActiveTintColor: "#fff",
-            tabBarInactiveTintColor: "#366ED8",
-
-          }}
-        />
-        <Tab.Screen
           name="DetalhesHigieneGift"
           component={DetalhesHigieneGift}
           options={{
@@ -155,10 +125,10 @@ const PrivateTab = () => {
                 name="dog"
                 size={38}
                 color={focused ? "#ffff" : "#366ED8"}
-              />
-            ),
-            tabBarItemStyle: {
-              display: "none",
+                />
+              ),
+              tabBarItemStyle: {
+                display: "none",
             },
             tabBarStyle: {
               position: "absolute",
@@ -174,7 +144,7 @@ const PrivateTab = () => {
             tabBarShowLabel: false,
             tabBarActiveTintColor: "#fff",
             tabBarInactiveTintColor: "#366ED8",
-
+            
           }}
         />
 
@@ -184,9 +154,9 @@ const PrivateTab = () => {
           options={{
             tabBarIcon: ({ focused }) => (
               <FontAwesome5
-                name="dog"
-                size={38}
-                color={focused ? "#ffff" : "#366ED8"}
+              name="dog"
+              size={38}
+              color={focused ? "#ffff" : "#366ED8"}
               />
             ),
             tabBarItemStyle: {
@@ -206,7 +176,7 @@ const PrivateTab = () => {
             tabBarShowLabel: false,
             tabBarActiveTintColor: "#fff",
             tabBarInactiveTintColor: "#366ED8",
-
+            
           }}
         />
 
@@ -217,9 +187,9 @@ const PrivateTab = () => {
           options={{
             tabBarIcon: ({ focused }) => (
               <FontAwesome5
-                name="dog"
-                size={38}
-                color={focused ? "#ffff" : "#366ED8"}
+              name="dog"
+              size={38}
+              color={focused ? "#ffff" : "#366ED8"}
               />
             ),
             tabBarItemStyle: {
@@ -239,7 +209,7 @@ const PrivateTab = () => {
             tabBarShowLabel: false,
             tabBarActiveTintColor: "#fff",
             tabBarInactiveTintColor: "#366ED8",
-
+            
           }}
         />
         <Tab.Screen
@@ -248,9 +218,9 @@ const PrivateTab = () => {
           options={{
             tabBarIcon: ({ focused }) => (
               <FontAwesome5
-                name="dog"
-                size={38}
-                color={focused ? "#ffff" : "#366ED8"}
+              name="dog"
+              size={38}
+              color={focused ? "#ffff" : "#366ED8"}
               />
             ),
             tabBarItemStyle: {
@@ -270,7 +240,7 @@ const PrivateTab = () => {
             tabBarShowLabel: false,
             tabBarActiveTintColor: "#fff",
             tabBarInactiveTintColor: "#366ED8",
-
+            
           }}
         />
         <Tab.Screen
@@ -279,9 +249,9 @@ const PrivateTab = () => {
           options={{
             tabBarIcon: ({ focused }) => (
               <Feather
-                name="users"
-                size={38}
-                color={focused ? "#fff" : "#366ED8"}
+              name="users"
+              size={38}
+              color={focused ? "#fff" : "#366ED8"}
               />
             ),
             tabBarStyle: {
@@ -329,16 +299,16 @@ const PrivateTab = () => {
             tabBarShowLabel: false,
             tabBarActiveTintColor: "#fff",
             tabBarInactiveTintColor: "#366ED8",
-
+            
           }}
         />
         <Tab.Screen name="DetalhesAlimentos" component={DetalhesAlimentos}
           options={{
             tabBarIcon: ({ focused }) => (
               <FontAwesome5
-                name="hamburger"
-                size={38}
-                color={focused ? "#366ED8" : "#fff"} />
+              name="hamburger"
+              size={38}
+              color={focused ? "#366ED8" : "#fff"} />
             ),
             tabBarItemStyle: {
               display: "none",
@@ -366,7 +336,7 @@ const PrivateTab = () => {
                 name="tshirt"
                 size={38}
                 color={focused ? "#366ED8" : "#fff"} />
-            ),
+              ),
             tabBarItemStyle: {
               display: "none",
             },
@@ -390,7 +360,7 @@ const PrivateTab = () => {
           options={{
             tabBarIcon: ({ focused }) => (
               <FontAwesome5
-                name="soap"
+              name="soap"
                 size={38}
                 color={focused ? "#366ED8" : "#fff"} />
             ),
@@ -417,9 +387,9 @@ const PrivateTab = () => {
           options={{
             tabBarIcon: ({ focused }) => (
               <FontAwesome5
-                name="app-store"
-                size={38}
-                color={focused ? "#366ED8" : "#fff"} />
+              name="app-store"
+              size={38}
+              color={focused ? "#366ED8" : "#fff"} />
             ),
             tabBarItemStyle: {
               display: "none",
@@ -447,7 +417,7 @@ const PrivateTab = () => {
                 name="app-store"
                 size={38}
                 color={focused ? "#366ED8" : "#fff"} />
-            ),
+              ),
             tabBarItemStyle: {
               display: "none",
             },
@@ -472,9 +442,9 @@ const PrivateTab = () => {
           options={{
             tabBarIcon: ({ focused }) => (
               <FontAwesome5
-                name="app-store"
-                size={38}
-                color={focused ? "#366ED8" : "#fff"} />
+              name="app-store"
+              size={38}
+              color={focused ? "#366ED8" : "#fff"} />
             ),
             tabBarItemStyle: {
               display: "none",
@@ -500,9 +470,9 @@ const PrivateTab = () => {
           options={{
             tabBarIcon: ({ focused }) => (
               <FontAwesome5
-                name="tshirt"
-                size={38}
-                color={focused ? "#366ED8" : "#fff"} />
+              name="tshirt"
+              size={38}
+              color={focused ? "#366ED8" : "#fff"} />
             ),
             tabBarItemStyle: {
               display: "none",
@@ -529,9 +499,9 @@ const PrivateTab = () => {
           options={{
             tabBarIcon: ({ focused }) => (
               <FontAwesome5
-                name="tshirt"
-                size={38}
-                color={focused ? "#366ED8" : "#fff"} />
+              name="tshirt"
+              size={38}
+              color={focused ? "#366ED8" : "#fff"} />
             ),
             tabBarItemStyle: {
               display: "none",
@@ -552,6 +522,34 @@ const PrivateTab = () => {
             tabBarInactiveTintColor: "#366ED8",
           }}
         />
+          <Tab.Screen
+           name="DonationHistory"
+           component={DonationHistory}
+           options={{
+             tabBarIcon: ({ focused }) => (
+               <FontAwesome
+                 name="dropbox"
+                 size={38}
+                 color={focused ? "#ffff" : "#366ED8"}
+               />
+             ),
+             tabBarStyle: {
+               position: "absolute",
+               bottom: 10,
+               left: 20,
+               right: 20,
+               elevation: 0,
+               backgroundColor: "#FFA41B",
+               borderRadius: 15,
+               height: 90,
+               borderColor: "transparent",
+             },
+             tabBarShowLabel: false,
+             tabBarActiveTintColor: "#fff",
+             tabBarInactiveTintColor: "#366ED8",
+ 
+           }}
+         />
 
 
         <Tab.Screen name="GiftCart" component={GiftCart}
