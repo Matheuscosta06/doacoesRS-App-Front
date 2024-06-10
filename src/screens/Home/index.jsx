@@ -129,6 +129,15 @@ alimentpos: #C70808 */}
             </View>
 
           </TouchableOpacity>
+      
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Feedback")}
+            style={styles.btn_comprar3}
+          >
+            <View style={styles.textDiv2}>
+              <Text style={styles.btnText_comprar2}>principais dúvidas</Text>
+            </View>
+          </TouchableOpacity>
         </View>
         <View style={styles.estatisticas}>
           <View style={styles.blueLine1} />

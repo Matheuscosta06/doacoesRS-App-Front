@@ -8,7 +8,7 @@ import Cart from "../screens/Cart";
 import Category from "../screens/Category";
 import OrderPlaced from "../screens/OrderPlaced";
 import Sobre from "../screens/Sobre";
-import Feedback from "../screens/feedback";
+import Feedback from "../screens/Feedback";
 import { Text } from "react-native";
 import DetalhesPets from "../screens/DetalhesPets";
 import DetalhesAlimentos from "../screens/DetalhesAlimentos";
@@ -440,17 +440,17 @@ const PrivateTab = () => {
             tabBarInactiveTintColor: "#366ED8",
           }}
         />
-        <Tab.Screen
-          name="Feedback"
-          component={Feedback}
+        <Tab.Screen name="Feedback" component={Feedback}
           options={{
             tabBarIcon: ({ focused }) => (
-              <Feather
-                name="message-square"
+              <FontAwesome5
+                name="app-store"
                 size={38}
-                color={focused ? "#fff" : "#366ED8"}
-              />
+                color={focused ? "#366ED8" : "#fff"} />
             ),
+            tabBarItemStyle: {
+              display: "none",
+            },
             tabBarStyle: {
               position: "absolute",
               bottom: 10,
@@ -467,6 +467,7 @@ const PrivateTab = () => {
             tabBarInactiveTintColor: "#366ED8",
           }}
         />
+
         <Tab.Screen name="Cart" component={Cart}
           options={{
             tabBarIcon: ({ focused }) => (
