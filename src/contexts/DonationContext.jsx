@@ -122,7 +122,7 @@ const DonationProvider = ({ children }) => {
     setGlobalLoading(true);
     try {
       const response = await axios.put(`${apiURL}/donations/${donationId}`, {
-        status: { statusParams }
+        status: statusParams
       });
       setGlobalLoading(false);
       return response.data;
