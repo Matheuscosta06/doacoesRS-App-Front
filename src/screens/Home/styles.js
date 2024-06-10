@@ -218,15 +218,35 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  btn_comprar3:{
+    marginTop: 80,
+    width: 270,
+    height: 120,
+    borderWidth: 4,
+    borderRadius: 20,
+    borderColor: '#ffab14',
+    backgroundColor: '#283444',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   img01:{
     marginLeft: 20
   },
   textDiv:{
     marginLeft: 20
   },
+  textDiv2:{
+    margin: "auto"
+  },
   btnText_comprar: {
     textAlign: 'center',
     fontFamily: "JosefinSans_500Medium",
+  },
+  btnText_comprar2: {
+    fontFamily: "JosefinSans_500Medium",
+    color: '#fff',
+    fontSize: 25
   },
   estatisticas:{
     width: '100%',

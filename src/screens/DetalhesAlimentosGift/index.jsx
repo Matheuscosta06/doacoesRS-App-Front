@@ -88,7 +88,7 @@ export default function DetalhesAlimentosGift() {
                 <ScrollView>
                     <View style={styles.tituloContainer}>
                         <Text style={styles.primeiraLetra}>A</Text>
-                        <Text style={styles.titulo1}>limentos</Text>
+                        <Text style={styles.titulo1}>LIMENTOS</Text>
                     </View>
 
                     <View style={styles.linhaLaranja} />

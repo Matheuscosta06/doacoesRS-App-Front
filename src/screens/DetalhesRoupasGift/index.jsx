@@ -88,7 +88,7 @@ export default function DetalhesRoupasGift() {
                 <ScrollView>
                     <View style={styles.tituloContainer}>
                         <Text style={styles.primeiraLetra}>R</Text>
-                        <Text style={styles.titulo1}>oupas</Text>
+                        <Text style={styles.titulo1}>OUPAS</Text>
                     </View>
 
                     <View style={styles.linhaLaranja} />
