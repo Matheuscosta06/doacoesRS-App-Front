@@ -20,9 +20,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     position: "absolute",
-    top: "50%",
+    top: "20%",
+    left: 0,
+    right: 0,
+    bottom: "20%",
+    padding: 40,
+
     transform: [{ translateY: -10 }],
-    width: "80%",
     maxHeight: "80%",
     shadowColor: "#000",
     shadowOffset: {
