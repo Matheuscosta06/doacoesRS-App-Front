@@ -116,37 +116,6 @@ const PrivateTab = () => {
           }}
         />
         <Tab.Screen
-          name="DonationHistory"
-          component={DonationHistory}
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <FontAwesome5
-                name="dog"
-                size={38}
-                color={focused ? "#ffff" : "#366ED8"}
-              />
-            ),
-            tabBarItemStyle: {
-              display: "none",
-            },
-            tabBarStyle: {
-              position: "absolute",
-              bottom: 10,
-              left: 20,
-              right: 20,
-              elevation: 0,
-              backgroundColor: "#FFA41B",
-              borderRadius: 15,
-              height: 90,
-              borderColor: "transparent",
-            },
-            tabBarShowLabel: false,
-            tabBarActiveTintColor: "#fff",
-            tabBarInactiveTintColor: "#366ED8",
-
-          }}
-        />
-        <Tab.Screen
           name="DetalhesHigieneGift"
           component={DetalhesHigieneGift}
           options={{
@@ -298,7 +267,34 @@ const PrivateTab = () => {
             tabBarInactiveTintColor: "#366ED8",
           }}
         />
+        <Tab.Screen
+          name="DonationHistory"
+          component={DonationHistory}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="donate"
+                size={38}
+                color={focused ? "#ffff" : "#366ED8"}
+              />
+            ),
+            tabBarStyle: {
+              position: "absolute",
+              bottom: 10,
+              left: 20,
+              right: 20,
+              elevation: 0,
+              backgroundColor: "#FFA41B",
+              borderRadius: 15,
+              height: 90,
+              borderColor: "transparent",
+            },
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: "#fff",
+            tabBarInactiveTintColor: "#366ED8",
 
+          }}
+        />
         <Tab.Screen
           name="DetalhesPets"
           component={DetalhesPets}
@@ -422,33 +418,6 @@ const PrivateTab = () => {
             tabBarItemStyle: {
               display: "none",
             },
-            tabBarStyle: {
-              position: "absolute",
-              bottom: 10,
-              left: 20,
-              right: 20,
-              elevation: 0,
-              backgroundColor: "#FFA41B",
-              borderRadius: 15,
-              height: 90,
-              borderColor: "transparent",
-            },
-            tabBarShowLabel: false,
-            tabBarActiveTintColor: "#fff",
-            tabBarInactiveTintColor: "#366ED8",
-          }}
-        />
-        <Tab.Screen
-          name="Feedback"
-          component={Feedback}
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <Feather
-                name="message-square"
-                size={38}
-                color={focused ? "#fff" : "#366ED8"}
-              />
-            ),
             tabBarStyle: {
               position: "absolute",
               bottom: 10,
