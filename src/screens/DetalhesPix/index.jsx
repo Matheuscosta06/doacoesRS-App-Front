@@ -31,7 +31,7 @@ export default function DetalhesPix() {
                       
                     </View>
 
-                    <Text style={styles.textchave}>Chave PIX: 123.456.789-10</Text>
+                    <Text style={styles.textchave}>Chave PIX: 455.525.538-20</Text>
                 </View>
                 </LinearGradient>
         </ScrollView>
