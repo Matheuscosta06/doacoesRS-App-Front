@@ -49,7 +49,7 @@ export default function GiftCart() {
             const donationId = responseDonation.donations.id;
             for (const gift of localGifts) {
                 console.log(gift.gift);
-                const responseGift = await createGift( gift.gift.type, gift.gift.name, gift.gift.description, gift.gift.image);
+                const responseGift = await createGift(gift.gift.type, gift.gift.name, gift.gift.description, gift.gift.image);
                 await createGiftItem(responseGift.gift.id, donationId, gift.qtd);
             }
         }
@@ -71,27 +71,26 @@ export default function GiftCart() {
                 <View style={styles.containerProduct}>
                     {localGifts.map((gift) => (
                         <View style={styles.card} key={gift.gift.id}>
-                            <Image source={{ uri: `${apiURL}/uploads/${gift.gift.image}` }} style={styles.image} />
-                            <Text style={styles.name}>{gift.gift.name}</Text>
-                            <Text style={styles.price}>R$ {gift.gift.price}</Text>
-                            <View style={styles.qtdContainer}>
-                                <TouchableOpacity style={styles.btnQtd} onPress={() => decrementQuantity(gift)}>
-                                    <Feather name="minus" size={20} color="#283444" />
+                            <TouchableOpacity style={styles.x} onPress={() => lastGift(gift)}>
+                                <Feather name="x" size={38} color="#FFA41B" />
+                            </TouchableOpacity>
+
+                            <Image source={{ uri: gift.gift.image }} style={styles.image} />
+                            <Text style={styles.titleName}>{gift.gift.name}</Text>
+                            <View style={styles.containerQntd}>
+                                <TouchableOpacity onPress={() => incrementQuantity(gift)}>
+                                    <FontAwesome5 name="plus" size={20} color="#fff" />
                                 </TouchableOpacity>
-                                <TextInput style={styles.qtd} value={String(gift.qtd)} />
-                                <TouchableOpacity style={styles.btnQtd} onPress={() => incrementQuantity(gift)}>
-                                    <Feather name="plus" size={20} color="#283444" />
+                                <TextInput style={styles.input} value={String(gift.qtd)} />
+                                <TouchableOpacity onPress={() => decrementQuantity(gift)}>
+                                    <Entypo name="minus" size={20} color="#fff" />
                                 </TouchableOpacity>
                             </View>
-                            <TouchableOpacity style={styles.btnRemove} onPress={() => lastGift(gift)}>
-                                <FontAwesome5 name="trash-alt" size={20} color="#283444" />
-                            </TouchableOpacity>
                         </View>
                     ))}
                 </View>
-
-                <TouchableOpacity style={styles.btnDoar} onPress={sendGifts}>
-                    <Text style={styles.txtDoar}>DOAR</Text>
+                <TouchableOpacity style={styles.btnFinalizar} onPress={sendGifts}>
+                    <Text style={styles.txtFinalizar}>DOAR</Text>
                 </TouchableOpacity>
             </ScrollView>
         </View>
