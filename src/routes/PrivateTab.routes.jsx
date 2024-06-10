@@ -12,6 +12,7 @@ import Feedback from "../screens/feedback";
 import { Text } from "react-native";
 import DetalhesPets from "../screens/DetalhesPets";
 import DetalhesAlimentos from "../screens/DetalhesAlimentos";
+import DonationHistory from "../screens/DonationHistory";
 import DetalhesRoupas from "../screens/DetalhesRoupas";
 import DetalhesHigiene from "../screens/DetalhesHigiene";
 import DetalhesPix from "../screens/DetalhesPix";
@@ -112,7 +113,7 @@ const PrivateTab = () => {
             tabBarInactiveTintColor: "#366ED8",
           }}
         />
-          <Tab.Screen
+        <Tab.Screen
           name="DetalhesHigieneGift"
           component={DetalhesHigieneGift}
           options={{
@@ -143,7 +144,38 @@ const PrivateTab = () => {
 
           }}
         />
-          <Tab.Screen
+        <Tab.Screen
+          name="DonationHistory"
+          component={DonationHistory}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome5
+                name="dog"
+                size={38}
+                color={focused ? "#ffff" : "#366ED8"}
+              />
+            ),
+            tabBarItemStyle: {
+              display: "none",
+            },
+            tabBarStyle: {
+              position: "absolute",
+              bottom: 10,
+              left: 20,
+              right: 20,
+              elevation: 0,
+              backgroundColor: "#FFA41B",
+              borderRadius: 15,
+              height: 90,
+              borderColor: "transparent",
+            },
+            tabBarShowLabel: false,
+            tabBarActiveTintColor: "#fff",
+            tabBarInactiveTintColor: "#366ED8",
+
+          }}
+        />
+        <Tab.Screen
           name="DetalhesPetsGift"
           component={DetalhesPetsGift}
           options={{
@@ -426,8 +458,8 @@ const PrivateTab = () => {
           }}
         />
 
-        
-<Tab.Screen name="OrderPlaced" component={OrderPlaced}
+
+        <Tab.Screen name="OrderPlaced" component={OrderPlaced}
           options={{
             tabBarIcon: ({ focused }) => (
               <FontAwesome5
@@ -455,7 +487,7 @@ const PrivateTab = () => {
           }}
         />
 
-              
+
         <Tab.Screen name="GiftCart" component={GiftCart}
           options={{
             tabBarIcon: ({ focused }) => (

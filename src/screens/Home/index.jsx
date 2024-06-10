@@ -54,6 +54,9 @@ export default function Home() {
         <View style={styles.phrase}>
           <Text style={styles.phrase0}>Seu gesto, nossa força:</Text>
           <Text style={styles.phrase01}>doar hoje, construir amanhã.</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('DonationHistory')}>
+            <Text>teste</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.donatesGraphic} >
@@ -97,21 +100,21 @@ pets : #008B6B
 roupas: #620A71
 alimentpos: #C70808 */}
 
-          <Text style={styles.titlex}>Doe Agora</Text>
-          <View style={styles.blueLine} />
+        <Text style={styles.titlex}>Doe Agora</Text>
+        <View style={styles.blueLine} />
 
         <View style={styles.btn_doacoes}>
-        <TouchableOpacity
+          <TouchableOpacity
             onPress={() => navigation.navigate("Category")}
             style={styles.btn_comprar}
           >
 
-            <Image source={require('../../../assets/iconCompra.png')} style={styles.img01}/>
+            <Image source={require('../../../assets/iconCompra.png')} style={styles.img01} />
             <View style={styles.textDiv}>
-            <Text style={styles.btnText_comprar}>Compre sua doação</Text>
-            <Text style={styles.btnText_comprar}>Aqui</Text>
+              <Text style={styles.btnText_comprar}>Compre sua doação</Text>
+              <Text style={styles.btnText_comprar}>Aqui</Text>
             </View>
-           
+
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -119,16 +122,16 @@ alimentpos: #C70808 */}
             style={styles.btn_comprar2}
           >
 
-            <Image source={require('../../../assets/iconDoar.png')} style={styles.img01}/>
+            <Image source={require('../../../assets/iconDoar.png')} style={styles.img01} />
             <View style={styles.textDiv}>
-            <Text style={styles.btnText_comprar}>Cadastre sua doação</Text>
-            <Text style={styles.btnText_comprar}>Aqui</Text>
+              <Text style={styles.btnText_comprar}>Cadastre sua doação</Text>
+              <Text style={styles.btnText_comprar}>Aqui</Text>
             </View>
-           
+
           </TouchableOpacity>
         </View>
         <View style={styles.estatisticas}>
-        <View style={styles.blueLine1} />
+          <View style={styles.blueLine1} />
           <Text style={styles.estatisticasTitle}>Estatísticas do RS</Text>
           <View style={styles.blueLine2} />
 
@@ -143,16 +146,16 @@ alimentpos: #C70808 */}
             </View>
             <View style={styles.card3}>
               <Text style={styles.IncidentesCity}>
-              Roca Sales 
-              Cruzeiro do Sul 
-              Arroio do Meio</Text>
+                Roca Sales
+                Cruzeiro do Sul
+                Arroio do Meio</Text>
               <Text style={styles.IncidenteName}>Cidades + afetadas</Text>
             </View>
             <Text style={styles.aviso}>*Atualizado diariamente</Text>
           </View>
         </View>
 
-       
+
 
       </View>
     </ScrollView>
