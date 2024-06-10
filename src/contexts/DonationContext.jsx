@@ -43,14 +43,14 @@ const DonationProvider = ({ children }) => {
       }
     }
   };
-  const createGiftItem = async (itemId, donationId, quantity, local) => {
+  const createGiftItem = async (itemId, donationId, quantity) => {
     setGlobalLoading(true);
     try {
       const response = await axios.post(`${apiURL}/gift_item`, {
         gift_id: itemId,
         donation_id: donationId,
         quantity,
-        delivery_place: local
+        delivery_place: "Local"
       });
       setGlobalLoading(false);
       return response.data;
@@ -64,8 +64,26 @@ const DonationProvider = ({ children }) => {
     }
   }
 
+  const createGift = async (id, type, name, description, image) => {
+    setGlobalLoading(true);
+    try {
+      const response = await axios.post(`${apiURL}/gift`, {
+        id,
+        type,
+        name,
+        description,
+        image
+      });
+      setGlobalLoading(false);
+      return response.data;
+    } catch (error) {
+      setGlobalLoading(false);
+      return error.response.data;
+    }
+  };
+
   return (
-    <DonationContext.Provider value={{ createDonation, createDonationItem, createGiftItem }}>
+    <DonationContext.Provider value={{ createDonation, createDonationItem, createGiftItem, createGift }}>
       {children}
     </DonationContext.Provider>
   );

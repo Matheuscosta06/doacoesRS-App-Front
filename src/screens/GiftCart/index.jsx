@@ -10,10 +10,15 @@ import Entypo from '@expo/vector-icons/Entypo';
 
 export default function GiftCart() {
     const apiURL = process.env.EXPO_PUBLIC_API_URL;
-    const { createDonation, createGiftItem } = useContext(DonationContext);
+    const { createDonation, createGiftItem, createGift } = useContext(DonationContext);
     const { gifts, removeGift, addGift, cancelGift } = useContext(GiftContext);
     const [localGifts, setLocalGifts] = useState(gifts);
     const [giftDetails, setGiftDetails] = useState([]);
+
+    useEffect(() => {
+        console.log(localGifts);
+    }, [gifts]);
+
 
     useFocusEffect(
         useCallback(() => {
@@ -38,12 +43,15 @@ export default function GiftCart() {
             console.log(localGifts);
             alert('Adicione produtos ao carrinho');
             return;
-        } else {
+        }
+        else {
             const responseDonation = await createDonation();
             const donationId = responseDonation.donations.id;
-            localGifts.map(async (gift) => {
+            for (const gift of localGifts) {
+                console.log(gift.gift);
+                await createGift(gift.gift.id, gift.gift.type, gift.gift.name, gift.gift.description, gift.gift.image);
                 await createGiftItem(gift.gift.id, donationId, gift.qtd);
-            });
+            }
         }
     }
 
@@ -61,7 +69,7 @@ export default function GiftCart() {
 
                 <View style={styles.linhaLaranja2} />
                 <View style={styles.containerProduct}>
-                    {/* {localGifts.map((gift) => (
+                    {localGifts.map((gift) => (
                         <View style={styles.card} key={gift.gift.id}>
                             <Image source={{ uri: `${apiURL}/uploads/${gift.gift.image}` }} style={styles.image} />
                             <Text style={styles.name}>{gift.gift.name}</Text>
@@ -79,7 +87,7 @@ export default function GiftCart() {
                                 <FontAwesome5 name="trash-alt" size={20} color="#283444" />
                             </TouchableOpacity>
                         </View>
-                    ))} */}
+                    ))}
                 </View>
 
                 <TouchableOpacity style={styles.btnDoar} onPress={sendGifts}>

@@ -7,7 +7,7 @@ export default function GiftProvider({ children }) {
 
     const addGift = (gift, qtd) => {
         const newGifts = [...gifts];
-        const item = newGifts.find((item) => item.id === gift);
+        const item = newGifts.find((item) => item.gift.id === gift.id);
 
         if (!item) {
             newGifts.push({ gift: gift, qtd: qtd });
