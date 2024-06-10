@@ -5,8 +5,11 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import { CartContext } from '../../contexts/CartContext';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import styles from './styles';
 import Cart from '../../components/Cart';
-import styles from './styles'; // Importando estilos
+
+
+
 
 const apiURL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -15,15 +18,15 @@ export default function DetalhesAlimentos() {
     const [quantities, setQuantities] = useState({});
     const [showPopup, setShowPopup] = useState(false);
     const [cardPopup, setCardPopup] = useState(null);
+    const [scroll, setScroll] = useState(true);
 
-    const { productsCart, addProduct, removeProduct } = useContext(CartContext);
     const navigation = useNavigation();
+    const { productsCart, addProduct } = useContext(CartContext);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`${apiURL}/products/type/food`);
-                console.log(response.data.data);
                 setProducts(response.data.data);
             } catch (error) {
                 console.error(error);
@@ -31,6 +34,10 @@ export default function DetalhesAlimentos() {
         };
         fetchData();
     }, []);
+
+    useEffect(() => {
+        console.log(productsCart);
+    }, [productsCart]);
 
     const add = (id) => {
         setQuantities({
@@ -59,23 +66,22 @@ export default function DetalhesAlimentos() {
     const popShow = (id) => {
         if (cardPopup === id) {
             setCardPopup(null);
+            setScroll(true);
             console.log(cardPopup);
         } else {
             setCardPopup(id);
+            setScroll(false);
             console.log(cardPopup);
         }
     };
-  
-  
-
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1,}}>
             <Cart />
-            <ScrollView >
-                <LinearGradient colors={['#FF0000', '#400A0A']} style={styles.container}>
+            <LinearGradient colors={['#FF0000', '#400A0A']} style={styles.container}>
+                <ScrollView>
                     <View style={styles.tituloContainer}>
                         <Text style={styles.primeiraLetra}>A</Text>
-                        <Text style={styles.titulo1}>LIMENTOS</Text>
+                        <Text style={styles.titulo1}>limentos</Text>
                     </View>
 
                     <View style={styles.linhaLaranja} />
@@ -116,11 +122,11 @@ export default function DetalhesAlimentos() {
                                                 <Text style={styles.textButton}>+12</Text>
                                             </TouchableOpacity>
                                         </View>
-                                        <TouchableOpacity style={styles.addCart} onPress={() => addProduct(product, quantities[product.id] || 0)}>
+                                        <TouchableOpacity style={styles.addCart} onPress={() => addProduct(product, quantities[product.id] || 0) || setQuantities({})}>
                                             <Text style={styles.addCartText}>Adicionar ao carrinho</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity style={styles.arrowBack} onPress={() => popShow(product.id)}>
-                                            <AntDesign name="left" size={24} color="red" />
+                                            <AntDesign name="left" size={24} color="#FF6347" />
                                         </TouchableOpacity>
                                     </View>
                                 ) : (
@@ -137,8 +143,10 @@ export default function DetalhesAlimentos() {
                             <Text>Carregando...</Text>
                         )}
                     </View>
-                </LinearGradient>
-            </ScrollView>
+                </ScrollView>
+            </LinearGradient>
         </View>
     );
 }
+
+
