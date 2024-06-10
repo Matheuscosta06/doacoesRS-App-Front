@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#f8f8f8',
         paddingBottom: "20%",
     },
+
     tituloContainer: {
         flexDirection: 'row',
         paddingLeft: 40,
@@ -40,6 +41,18 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         zIndex: 1,
+
+    },
+    subtitulocontainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: 10,
+    }, subtitulo: {
+        fontSize: 40,
+        color: 'white',
+        fontWeight: 'bold',
+        zIndex: 1,
+
     },
     linhaLaranja2: {
         height: 5,
@@ -69,6 +82,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
+
     },
     viewCardContainer: {
         borderColor: '#FF7D04',
@@ -117,6 +131,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 10,
         margin:"auto"
+
     },
     qtd: {
         marginHorizontal: 10,
@@ -124,9 +139,11 @@ const styles = StyleSheet.create({
         color: '#555',
     },
     multipleButtonsContainer: {
+        
         flexDirection: 'row',
         marginBottom: 10,
         margin:"auto"
+
     },
     buttons: {
         backgroundColor: '#FF6347',
@@ -165,3 +182,54 @@ const styles = StyleSheet.create({
 });
 
 export default styles;
+
+
+
+
+
+
+
+
+//tituloContainer: {
+//     flexDirection: 'row',
+//     paddingLeft: 40,
+//     paddingRight: 20,
+//     paddingTop: 20,
+// },
+// primeiraLetra: {
+//     fontSize: 80,
+//     color: '#283444',
+//     fontWeight: 'bold',
+//     marginBottom: -8,
+// },
+// titulo1: {
+//     fontSize: 50,
+//     color: '#283444',
+//     marginTop: "auto",
+//     fontWeight: 'bold',
+// },
+// linhaLaranja: {
+//     height: 5,
+//     backgroundColor: '#FF7D04',
+//     marginHorizontal: 30,
+//     marginRight: "32%",
+//     marginTop: -10,
+// },
+// subtitulocontainer: {
+//     paddingLeft: "40%",
+//     paddingTop: 20,
+// },
+// subtitulo: {
+//     fontSize: 40,
+//     color: 'white',
+//     fontWeight: 'bold',
+//     zIndex: 1,
+
+// },
+// linhaLaranja2: {
+//     height: 5,
+//     backgroundColor: '#FF7D04',
+//     marginHorizontal: 30,
+//     marginLeft: "30%",
+//     marginTop: -7,
+// },
